@@ -18,40 +18,8 @@ class ChordNode:
     routingTable=[]
     chord_size:int
 
-    ##### setters getters
-
-    def get_ip(self):
-        return self.ip
-
-    ##### setters getters
 
 
-    def __init__(self,network:Network_Handler,bootstrap_node=None):
-        self.network=network
-        self.ip=self.randIP.generate_random_ip()
-        if not (bootstrap_node is None):
-            bootFlag=self.bootstap(bootstrap_node)
-            if bootFlag:
-                print("node"+ self.ip+"added to chord on position"+self.chord_position)
-
-
-    ########### NETWORKING (will change) #############################################
-
-    def send_message(self,dst_ip,message):
-        self.network.send_message(self,dst_ip,message)
-
-    def receive_message(self,sender_ip,message):
-        print(f"Node {self.ip} received a message from {sender_ip}: {message}")
-
-        #if message is method
-        if message['type']=='method':
-            method=getattr(self,message['method'],None)
-            if callable(method):
-                result = method(*message.get('args',[]))
-                self.send_message(sender_ip,{'type':'method_result','result':result})
-
-
-    ########### NETWORKING (will change)#########################################
 
     def bootstap(self, node: 'ChordNode'):
         data=node.insert_new_node(self.ip)
