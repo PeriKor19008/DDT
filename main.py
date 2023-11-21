@@ -1,16 +1,24 @@
-# This is a sample Python script.
+from CHORD import Chord_node
+from flask import Flask, request
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+app = Flask(__name__)
 
+@app.route('/', methods=['POST'])
+def handle_post():
+    data = request.get_data(as_text=True)
+    return data
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+@app.route('/init', methods=['POST'])
+def handle_post_init():
+    data = request.get_data(as_text=True)
+    return data+"init"
 
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    node = Chord_node.node_init()
+    print("node ready")
+    app.run(host='0.0.0.0', port=5000)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+
+
+

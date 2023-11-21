@@ -1,5 +1,15 @@
-from BTree import BTree
-from Networking import randIP
+from B_tree import BTree
+import random
+from Network import Network_Handler
+import time
+
+
+class ChordRoutes:
+    def __init__(self,ip,position,last_com):
+        self.ip=ip
+        self.position=position
+        self.last_com=last_com
+
 class ChordNode:
     ip:str
     chord_position:int
@@ -8,12 +18,40 @@ class ChordNode:
     routingTable=[]
     chord_size:int
 
-    def __init__(self,bootstrap_node=None):
-        self.ip=randIP.generate_random_ip()
+    ##### setters getters
+
+    def get_ip(self):
+        return self.ip
+
+    ##### setters getters
+
+
+    def __init__(self,network:Network_Handler,bootstrap_node=None):
+        self.network=network
+        self.ip=self.randIP.generate_random_ip()
         if not (bootstrap_node is None):
             bootFlag=self.bootstap(bootstrap_node)
             if bootFlag:
                 print("node"+ self.ip+"added to chord on position"+self.chord_position)
+
+
+    ########### NETWORKING (will change) #############################################
+
+    def send_message(self,dst_ip,message):
+        self.network.send_message(self,dst_ip,message)
+
+    def receive_message(self,sender_ip,message):
+        print(f"Node {self.ip} received a message from {sender_ip}: {message}")
+
+        #if message is method
+        if message['type']=='method':
+            method=getattr(self,message['method'],None)
+            if callable(method):
+                result = method(*message.get('args',[]))
+                self.send_message(sender_ip,{'type':'method_result','result':result})
+
+
+    ########### NETWORKING (will change)#########################################
 
     def bootstap(self, node: 'ChordNode'):
         data=node.insert_new_node(self.ip)
@@ -37,10 +75,8 @@ class ChordNode:
         # hash func for key
         return -1
 
-    def key_lookup(self,key):
-        # find node that has or will save the key
-        self.hash_function_key()
-        #lookup node that hash func returns
+    def lookup(self,position):
+        return -1
 
     def insert_data(self,key):
         # insert data to appropriate node
@@ -92,3 +128,16 @@ class ChordNode:
     def get_successors_of_node(self):
         successors=[]
         return successors
+
+
+    def randIP(self):
+        return '.'.join(str(random.randint(0, 255)) for _ in range(4))
+
+
+
+
+
+
+
+
+

@@ -1,2 +1,0 @@
-class BTree:
-    temp:int
