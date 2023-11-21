@@ -1,17 +1,36 @@
 from BTree import BTree
-class Node:
+from Networking import randIP
+class ChordNode:
     ip:str
+    chord_position:int
     data:BTree
     successors=[]
     routingTable=[]
+    chord_size:int
 
-    def bootstap(self):
-        # function to "join" node to chord
-        return -1
+    def __init__(self,bootstrap_node=None):
+        self.ip=randIP.generate_random_ip()
+        if not (bootstrap_node is None):
+            bootFlag=self.bootstap(bootstrap_node)
+            if bootFlag:
+                print("node"+ self.ip+"added to chord on position"+self.chord_position)
+
+    def bootstap(self, node: 'ChordNode'):
+        data=node.insert_new_node(self.ip)
+        self.chord_position=data[0]
+        self.successors=data[1]
+        self.chord_size=data[2]
+        self.routingTable=self.init_routing_table()
+        return 1
+
 
     def  hash_function_node(self,ip):
-        # hash func for node ip
-        return -1
+        h=0
+        i=1
+        for n in ip:
+            h= h+n+(i*7)
+            i=i+1
+        return h % self.chord_size
 
 
     def hash_function_key(self):
@@ -51,15 +70,25 @@ class Node:
         # update the routing table
         return -1
 
+    def init_routing_table(self):
+        return -1
+
     def insert_new_node(self,ip):
-        # insert new node to chord based on ip
 
-        # insert node base on hashed ip
-        self.hash_function_node()
+        data=[]
+        #hash ip of node to find its position
+        data.append(self.hash_function_node(ip))
+        #find its successors
+        data.append(self.get_successors_of_node(data[0]))
+        data.append(self.chord_size)
 
-        #if needed update routing table or successors list
+    # send data to node
+        return data
 
     def depart_chord(self):
         # controlled departure from chord
         return -1
 
+    def get_successors_of_node(self):
+        successors=[]
+        return successors
