@@ -1,0 +1,11 @@
+1) Make Dockerfile
+    If any new modules are needed add them on docker file (RUN pip install <module>
+
+2) Build the docker image. You need to do this every time you make changes to source code. (only one build for all containers)
+    docker build -t <app> .
+    <app> == name of image
+
+3) Run docker image
+    docker run -p <5000>:5000 <app>
+    <5000> == port that docker listens
+    <app> == name of image

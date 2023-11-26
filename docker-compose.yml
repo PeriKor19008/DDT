@@ -1,0 +1,11 @@
+version: '3'
+services:
+  myapp:
+    image: app
+    ports:
+      - "5000"  # Expose the port if needed
+    networks:
+      - CHORD
+
+networks:
+  CHORD:
