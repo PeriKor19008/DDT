@@ -14,7 +14,7 @@
         <app> == name of image
 
 3.1) run images with docker compose
-    sudo docker-compose up --scale myapp=<2>
+    sudo docker-compose up
         <2> == number of containers you want to create
 
 
