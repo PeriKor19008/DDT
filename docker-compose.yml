@@ -1,11 +1,17 @@
 version: '3'
 services:
-  myapp:
+  myapp1:
     image: app
-    ports:
-      - "5000"  # Expose the port if needed
     networks:
-      - CHORD
+      mynetwork:
+    ports:
+      - "5001:5001"
+  myapp2:
+    image: app
+    networks:
+      mynetwork:
+    ports:
+      - "5000:5000"
 
 networks:
-  CHORD:
+  mynetwork:

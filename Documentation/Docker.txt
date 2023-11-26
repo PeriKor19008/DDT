@@ -3,9 +3,23 @@
 
 2) Build the docker image. You need to do this every time you make changes to source code. (only one build for all containers)
     docker build -t <app> .
-    <app> == name of image
+        <app> == name of image
+
+
+
 
 3) Run docker image
-    docker run -p <5000>:5000 <app>
-    <5000> == port that docker listens
-    <app> == name of image
+    docker run -it -p <5000>:5000 <app>
+        <5000> == port that docker listens
+        <app> == name of image
+
+3.1) run images with docker compose
+    sudo docker-compose up --scale myapp=<2>
+        <2> == number of containers you want to create
+
+
+ example of curl command to : curl -X POST -d 'Hello, Docker' http://127.0.0.1:5000/
+
+
+
+ ////////////////////////////////////////

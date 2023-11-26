@@ -1,5 +1,5 @@
-from CHORD import Chord_node
-from flask import Flask, request
+from CHORD_test import Chord_node
+from flask import Flask, request, make_response
 import requests
 
 app = Flask(__name__)
@@ -7,13 +7,16 @@ app = Flask(__name__)
 @app.route('/bootstrap', methods=['POST'])
 def bootstrap():
     data = request.get_data(as_text=True)
-    host='http://127.0.0.1:5001/init'
-    response= requests.post(host,"peri init")
-    return response
+    print("bootstrap invoked with data:"+data)
 
+    responce = requests.post(data,"data sent by bootstrap")
+    print("data sent to container by bootstrap \n")
+    return data
 @app.route('/', methods=['POST'])
 def handle_post():
+
     data = request.get_data(as_text=True)
+    print("url \' / \' invoked with data: "+ data)
     return data
 
 @app.route('/insertnode', methods=['POST'])
