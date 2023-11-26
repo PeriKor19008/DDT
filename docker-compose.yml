@@ -4,17 +4,20 @@ services:
     image: app
     networks:
       mynetwork:
-
+    ports:
+      - "5001:5001"
   myapp2:
     image: app
     networks:
       mynetwork:
-
+    ports:
+      - "5000:5000"
   myapp3:
     image: app
     networks:
       mynetwork:
-
+    ports:
+      - "5002:5002"
 
 networks:
   mynetwork:
