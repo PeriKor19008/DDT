@@ -34,6 +34,7 @@ class ChordNode:
             hash = int(i) * 7 + hash
         return hash % 32
 
+ #test
 
     def bootstrap(self,data):
         # get data
