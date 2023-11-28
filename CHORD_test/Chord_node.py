@@ -1,5 +1,5 @@
 import random
-from .B_tree import BTree
+from B_tree import BTree
 
 
 def node_init():
