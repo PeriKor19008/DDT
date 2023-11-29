@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 import re
-from array import array
+
 def get_education_from_page(url):
     response = requests.get(url)
     html_content = response.content
