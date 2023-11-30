@@ -3,7 +3,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import re
 
-def get_education_from_page(url):
+def get_education(url):
     response = requests.get(url)
     html_content = response.content
     soup = BeautifulSoup(html_content, 'html.parser')
@@ -11,21 +11,40 @@ def get_education_from_page(url):
     info_box = soup.find('table', class_='infobox biography vcard')
     if info_box:
         alma_mater_label = info_box.find('th', class_="infobox-label",  string='Alma\xa0mater')
+        
         if alma_mater_label:
             info_box_data = alma_mater_label.find_next()
-            final = info_box_data.find_all('a')
-            names = [link.get_text(strip=True) for link in final]
+            alma_mater_row = info_box_data.find_all('a')
+            alma_mater_data = [link.get_text(strip=True) for link in alma_mater_row]
 
-            return names
+            info_box_awards = get_awards(info_box)
+
+            return alma_mater_data, info_box_awards
            
     education_div = soup.find('div', id='mw-normal-catlinks')
     if education_div:
         ul_element = education_div.find('ul')
         if ul_element:
             alumni_titles = [li.get_text(strip=True).replace('alumni', '') for li in ul_element.find_all('li') if 'alumni' in li.get_text().lower()]
-            return alumni_titles
+            info_box_awards = get_awards(info_box)
+
+            return alumni_titles, info_box_awards
                 
+    return None, None
+
+def get_awards(awards):
+
+    if awards:
+        awards_label = awards.find('th', class_="infobox-label",  string='Awards')
+        if awards_label:
+            info_box_data = awards_label.find_next()
+            awards_row = info_box_data.find_all('a')
+            awards_data = [link.get_text(strip=True) for link in awards_row]
+
+            return awards_data
+    
     return None
+
 
 def remove_parentheses(title):
     return re.sub(r'\([^)]*\)', '', title)
@@ -40,7 +59,7 @@ specific_div = soup.find('div', class_='mw-content-ltr mw-parser-output')
 li_elements = specific_div.find_all('li')
 
 data = []
-for li in li_elements[:-13]:  
+for li in li_elements[670:-13]:  
     person_data = {}
     first_a_tag = li.find('a', href=True)
     if first_a_tag:
@@ -49,7 +68,7 @@ for li in li_elements[:-13]:
         person_url = 'https://en.wikipedia.org' + first_a_tag['href']
         print(f"Checking URL for {person_data['Name']}: {person_url}")
         
-        person_data['Education'] = get_education_from_page(person_url)
+        person_data['Education'], person_data['Awards'] = get_education(person_url)
 
         data.append(person_data)
 
