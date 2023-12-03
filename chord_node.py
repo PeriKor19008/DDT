@@ -16,7 +16,7 @@ class ChordNode:
         temp_self_route = Routes(-1,self.ip)
         self.predecessors: List[Routes] = [temp_self_route]
         self.successors: List[Routes] = [temp_self_route]
-        self.routing_table: List[Routes]
+        self.routing_table: List[Routes] = None
         self.btree: BTree
         self.position:int
 
@@ -88,7 +88,26 @@ class ChordNode:
     def lookup_iner(self,key:int):
         closest_successor = -1
         for pr in self.predecessors:
-            if pr.position == key:
-                return pr
+            if pr.position == key: return pr
+
         for suc in self.successors:
-            if suc.position == key:
+            if suc.position == key: return suc
+
+            if (suc.position > closest_successor.position) and (suc.position < key):
+                closest_successor = suc
+
+        if self.routing_table != None:
+            for r in self.routing_table:
+                if r.position == key: return r
+                if r.position > closest_successor.position and r.position < key :
+                    closest_successor = r
+
+        return closest_successor
+
+    def lookup(self,key:int):
+        closest_successor = self.lookup_iner(key)
+        if closest_successor.position == key: return closest_successor
+        ip = closest_successor.ip + "lookup"
+        data_to_send = {"key":key}
+        response = requests.post(ip,json.dumps(data_to_send))
+        return response
