@@ -3,17 +3,20 @@ from flask import Flask, request, make_response
 import requests
 import json
 import socket
-
+from routes import Routes
+from typing import List
 
 class ChordNode:
 
     def __init__(self):
 
+
         self.chord_size:str
         self.ip = self.get_ip()
-        self.successor = [self]
-        self.predecessor = [self]
-        self.routing_table = []
+        temp_self_route = Routes(-1,self.ip)
+        self.predecessors: List[Routes] = [temp_self_route]
+        self.successors: List[Routes] = [temp_self_route]
+        self.routing_table: List[Routes] = None
         self.btree: BTree
         self.position:int
 
@@ -73,11 +76,38 @@ class ChordNode:
 
 
     def get_init_data(self,data):
-        data = json.loads(request.get_data(as_text=True))
+        data = json.loads(request.get_data())
         self.position = data("position")
-        self.successor = data("successors")
-        self.predecessor = data("predecessors")
-        self.routing_table = self.make_routing_table
+        self.successors = data("successors")
+        self.predecessors = data("predecessors")
+        self.routing_table = self.make_routing_table()
 
     def make_routing_table(self):
         return -1
+
+    def lookup_iner(self,key:int):
+        closest_successor = -1
+        for pr in self.predecessors:
+            if pr.position == key: return pr
+
+        for suc in self.successors:
+            if suc.position == key: return suc
+
+            if (suc.position > closest_successor.position) and (suc.position < key):
+                closest_successor = suc
+
+        if self.routing_table != None:
+            for r in self.routing_table:
+                if r.position == key: return r
+                if r.position > closest_successor.position and r.position < key :
+                    closest_successor = r
+
+        return closest_successor
+
+    def lookup(self,key:int):
+        closest_successor = self.lookup_iner(key)
+        if closest_successor.position == key: return closest_successor
+        ip = closest_successor.ip + "lookup"
+        data_to_send = {"key":key}
+        response = requests.post(ip,json.dumps(data_to_send))
+        return response

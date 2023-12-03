@@ -1,5 +1,6 @@
 from chord_node import ChordNode,request
 from flask import Flask
+import json
 
 app = Flask(__name__)
 
@@ -8,10 +9,17 @@ node = ChordNode()
 def bootstrap():
     data = request.get_data(as_text=True)
     return node.bootstrap(data)
+
 @app.route('/', methods=['POST'])
 def handle_post():
     data = request.get_data(as_text=True)
     return node.handle_post(data)
+
+@app.route('/lookup', methods=['POST'])
+def lookup():
+    data = json.loads(request.get_data())
+    key = data("key")
+    node.lookup(key)
 
 @app.route('/insertnode', methods=['POST'])
 def init():
