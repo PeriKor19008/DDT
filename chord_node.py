@@ -5,13 +5,14 @@ import json
 import socket
 from routes import Routes
 from typing import List
+import math
 
 class ChordNode:
 
-    def __init__(self):
+    def __init__(self,size):
 
-
-        self.chord_size:str
+        self.chord_size=size
+        self.successor_num:int
         self.ip = self.get_ip()
         temp_self_route = Routes(-1,self.ip)
         self.predecessors: List[Routes] = [temp_self_route]
@@ -22,14 +23,20 @@ class ChordNode:
 
 
     def get_successors(self,position):
-        return -1
+        suc_list = []
+        for suc in range(position + self.successor_num):
+            suc_list.append(self.lookup(suc))
+        return suc_list
 
     def get_predecessor(self,position):
-        return -1
+        pre_list = []
+        for pre in range(position + self.successor_num):
+            pre_list.append(self.lookup(pre))
+        return pre_list
 
     def get_ip(self):
         name = socket.gethostname()
-        return socket.gethostbyname(name) + "/5000"
+        return socket.gethostbyname(name) + ":5000/"
 
     def hash_ip(self,ip: str):
         hash = 0

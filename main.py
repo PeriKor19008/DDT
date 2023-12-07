@@ -4,7 +4,7 @@ import json
 
 app = Flask(__name__)
 
-node = ChordNode()
+node = ChordNode(16)
 @app.route('/bootstrap', methods=['POST'])
 def bootstrap():
     data = request.get_data(as_text=True)
