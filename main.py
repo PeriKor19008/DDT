@@ -19,17 +19,17 @@ def handle_post():
 def lookup():
     data = json.loads(request.get_data())
     key = data("key")
-    node.lookup(key)
+    return node.lookup(key)
 
 @app.route('/insertnode', methods=['POST'])
 def init():
     data = request.get_data(as_text=True)
-    node.init(data)
+    return node.init(data)
 
 @app.route('/init_data', methods=['POST'])
 def get_init_data():
     data = request.get_data(as_text=True)
-    node.get_init_data(data)
+    return node.get_init_data(data)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

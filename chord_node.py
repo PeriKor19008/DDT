@@ -12,7 +12,7 @@ class ChordNode:
     def __init__(self,size):
 
         self.chord_size=size
-        self.successor_num:int
+        self.successor_num = int(math.log2(self.chord_size))
         self.ip = self.get_ip()
         temp_self_route = Routes(-1,self.ip)
         self.predecessors: List[Routes] = [temp_self_route]
@@ -41,16 +41,16 @@ class ChordNode:
     def hash_ip(self,ip: str):
         hash = 0
         for i in ip:
-            hash = int(i) * 7 + hash
+            hash = ord(i) * 7 + hash
         return hash % 32
 
- #test
+
 
     def bootstrap(self,data):
         # get data
-        data = json.loads(request.get_data(as_text=True))
-        host = data("ip")
-        domain = "insertnode"
+        host = data
+        domain = "/insertnode"
+        print("bbbbbbb")
         # send request
         response = requests.post(host + domain, json={"ip": self.ip})
         return data
@@ -64,9 +64,9 @@ class ChordNode:
 
 
     def init(self,data):
-        data = json.loads(request.get_data(as_text=True))
 
-        new_node_ip = data("ip")
+
+        new_node_ip = data
         new_node_position = self.hash_ip(new_node_ip)
 
         new_node_successors = self.get_successors(new_node_position)
@@ -114,7 +114,7 @@ class ChordNode:
     def lookup(self,key:int):
         closest_successor = self.lookup_iner(key)
         if closest_successor.position == key: return closest_successor
-        ip = closest_successor.ip + "lookup"
+        ip = closest_successor.ip + "/lookup"
         data_to_send = {"key":key}
         response = requests.post(ip,json.dumps(data_to_send))
         return response
