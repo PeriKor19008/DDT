@@ -13,5 +13,5 @@ class Routes:
         routes_list=[]
         for route in routes:
             routes_list.append(Routes(route['position'], route['ip']))
-        #routes_list = [Routes(route['position'], route['ip']) for route in routes]
+
         return routes_list
