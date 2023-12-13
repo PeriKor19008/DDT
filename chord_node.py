@@ -7,6 +7,7 @@ from routes import Routes
 from typing import List
 import math
 
+
 class ChordNode:
 
     def __init__(self,size):
@@ -118,3 +119,11 @@ class ChordNode:
         data_to_send = {"key":key}
         response = requests.post(ip,json.dumps(data_to_send))
         return response
+    
+    def is_alive(self):
+        # Check if the next successor is alive
+        next_successor_ip = self.lookup(self.position + 1).json()["ip"]
+        next_successor_response = requests.post(f"http://{next_successor_ip}")
+        if next_successor_response.status_code != 200:
+            return "rebuild table"
+        return "alive"
