@@ -1,4 +1,5 @@
-all json
+contains example jsons of the data that each method sends
+
 
 
 bootstrap:
@@ -6,3 +7,20 @@ bootstrap:
 
 insertnode:
     {"ip" : <"100.100.100.100:200">}
+
+init_data:
+{
+  "position": 12,
+  "successors": [
+    {
+      "position": -1,
+      "ip": "172.18.0.2:5000/"
+    }
+  ],
+  "predecessors": [
+    {
+      "position": -1,
+      "ip": "172.18.0.2:5000/"
+    }
+  ]
+}

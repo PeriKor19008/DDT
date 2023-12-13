@@ -13,7 +13,7 @@ class ChordNode:
     def __init__(self,size):
 
         self.chord_size=size
-        self.successor_num:int
+        self.successor_num = int(math.log2(self.chord_size))
         self.ip = self.get_ip()
         temp_self_route = Routes(-1,self.ip)
         self.predecessors: List[Routes] = [temp_self_route]
@@ -25,12 +25,24 @@ class ChordNode:
 
     def get_successors(self,position):
         suc_list = []
+        if self.successors[0].ip==self.ip:
+            self.position=self.hash_ip(self.ip)
+            tmp = self.successors[0]
+            tmp.position=self.position
+            suc_list.append(tmp)
+            return suc_list
         for suc in range(position + self.successor_num):
             suc_list.append(self.lookup(suc))
         return suc_list
 
     def get_predecessor(self,position):
         pre_list = []
+        if self.successors[0].ip==self.ip:
+            self.position = self.hash_ip(self.ip)
+            tmp = self.successors[0]
+            tmp.position = self.position
+            pre_list.append(tmp)
+            return pre_list
         for pre in range(position + self.successor_num):
             pre_list.append(self.lookup(pre))
         return pre_list
@@ -42,16 +54,16 @@ class ChordNode:
     def hash_ip(self,ip: str):
         hash = 0
         for i in ip:
-            hash = int(i) * 7 + hash
-        return hash % 32
+            hash = ord(i) * 7 + hash
+        return hash % self.chord_size
 
- #test
+
 
     def bootstrap(self,data):
         # get data
-        data = json.loads(request.get_data(as_text=True))
-        host = data("ip")
-        domain = "insertnode"
+        host = data
+        domain = "/insertnode"
+        print("bbbbbbb")
         # send request
         response = requests.post(host + domain, json={"ip": self.ip})
         return data
@@ -65,29 +77,37 @@ class ChordNode:
 
 
     def init(self,data):
-        data = json.loads(request.get_data(as_text=True))
 
-        new_node_ip = data("ip")
+
+        new_node_ip = data
         new_node_position = self.hash_ip(new_node_ip)
 
         new_node_successors = self.get_successors(new_node_position)
         new_node_predecessors = self.get_predecessor(new_node_position)
 
+        json_successors=json.dumps(new_node_successors,default=Routes.serialize_routes,indent=2)
+        json_predecessors = json.dumps(new_node_predecessors, default=Routes.serialize_routes, indent=2)
         data_to_send = {"position": new_node_position,
-                        "successors": new_node_successors,
-                        "predecessors": new_node_predecessors}
+                        "successors": json_successors,
+                        "predecessors": json_predecessors}
 
-        domain = "inti_data"
+        domain = "/init_data"
+        dt = json.dumps(data_to_send)
         response = requests.post(new_node_ip + domain, json.dumps(data_to_send))
 
         return data
 
 
     def get_init_data(self,data):
-        data = json.loads(request.get_data())
-        self.position = data("position")
-        self.successors = data("successors")
-        self.predecessors = data("predecessors")
+
+        data = json.loads(data)
+
+        tmp = json.loads(data["successors"])
+        self.successors = Routes.deserialize_routes(tmp)
+        tmp = json.loads(data["predecessors"])
+        self.predecessors = Routes.deserialize_routes(tmp)
+        self.position = data.get("position")
+
         self.routing_table = self.make_routing_table()
 
     def make_routing_table(self):
@@ -115,7 +135,7 @@ class ChordNode:
     def lookup(self,key:int):
         closest_successor = self.lookup_iner(key)
         if closest_successor.position == key: return closest_successor
-        ip = closest_successor.ip + "lookup"
+        ip = closest_successor.ip + "/lookup"
         data_to_send = {"key":key}
         response = requests.post(ip,json.dumps(data_to_send))
         return response
