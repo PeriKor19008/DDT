@@ -8,7 +8,7 @@ fi
 
 filename="docker-compose.yml"
 
-# sudo service docker start
+sudo service docker start
 
 if [ "$#" -eq 0 ]; then
   if [ -s "$filename" ]; then
