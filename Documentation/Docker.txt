@@ -1,25 +1,26 @@
-1) Make Dockerfile
-    If any new modules are needed add them on docker file (RUN pip install <module>
+Steps to run:
+    Step 1: chmod +x run-compose.sh
+    Step 2:
+        Case 1: ./run-compose.sh - If you only want to run docker
+            -> Only runs "sudo docker-compose up".
+            -> Checks if "docker-compose.yml" exists or is not empty.
+            -> Run this only if you already built before.
+        Case 2: ./run-compose.sh <num_images>(int) - Remakes the "docker-compose.yml"
+            Example: ./run-compose.sh 2
+            -> This command changes the number of images.
+            -> It doesn't build only runs "sudo docker-compose up".
+            -> No need to build the image again if you are only changing the "docker-compose.yml" file.
+        Case 2: ./run-compose.sh build - Builds the image
+            -> The difference with Case 1 is that it also builds the image.
+            -> Checks if "docker-compose.yml" exists or is not empty.
+            -> Run this if you changed the code in .py files.
+        Case 3: ./run-compose.sh <num_images>(int) build
+            Example: ./run-compose.sh 2 build
+            -> Creates the images and builds.
+            -> Run this if "docker-compose.yml" doesn't exists and there is no build.
+            -> Or if you wanna change the number of images and you also changed the code in .py files.
 
-2) Build the docker image. You need to do this every time you make changes to source code. (only one build for all containers)
-    docker build -t <app> .
-        <app> == name of image
 
+Example curl command: curl -X POST -d 'Hello, Docker' http://127.0.0.1:5000/
 
-
-
-3) Run docker image
-    docker run -it -p <5000>:5000 <app>
-        <5000> == port that docker listens
-        <app> == name of image
-
-3.1) run images with docker compose
-    sudo docker-compose up
-        <2> == number of containers you want to create
-
-
- example of curl command to : curl -X POST -d 'Hello, Docker' http://127.0.0.1:5000/
-
-
-
- ////////////////////////////////////////
+# ==============
