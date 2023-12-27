@@ -38,9 +38,14 @@ if [ -n "$1" ]; then
     for ((i=1; i<=$1; i++)); do
       echo "  myapp$i:" >> "$filename"
       echo "    image: app" >> "$filename"
+      echo "    volumes:" >> "$filename"
+      echo "      - ./log/:/log" >> "$filename"
       echo "    networks:" >> "$filename"
-      echo "      - mynetwork" >> "$filename"
+      echo "      mynetwork:" >> "$filename"
     done
+
+    echo "volumes:" >> "$filename"
+    echo "  shared-data:" >> "$filename"
 
     echo "networks:" >> "$filename"
     echo "  mynetwork:" >> "$filename"

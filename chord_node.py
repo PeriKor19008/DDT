@@ -73,6 +73,9 @@ class ChordNode:
         data = request.get_data(as_text=True)
         name = self.ip
         print("url \' / \' invoked with data: " + name)
+        file = open("/log/log.txt", 'a')
+        file.write(name + "\n")
+
         return name
 
 

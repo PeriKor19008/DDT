@@ -45,6 +45,6 @@ def schedule_ping():
         timer.join()
 
 if __name__ == '__main__':
-    ping_thread = threading.Thread(target=schedule_ping)
-    ping_thread.start()
+    # ping_thread = threading.Thread(target=schedule_ping)
+    # ping_thread.start()
     app.run(host='0.0.0.0', port=5000)

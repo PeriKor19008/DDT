@@ -2,19 +2,17 @@ version: '3'
 services:
   myapp1:
     image: app
+    volumes:
+      - ./log/:/log
     networks:
       mynetwork:
-
   myapp2:
     image: app
+    volumes:
+      - ./log/:/log
     networks:
       mynetwork:
-
-  #myapp3:
-    #image: app
-    #networks:
-      #mynetwork:
-
-
+volumes:
+  shared-data:
 networks:
   mynetwork:
