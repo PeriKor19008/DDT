@@ -1,7 +1,8 @@
 from chord_node import ChordNode,request
-from flask import Flask
+from flask import Flask, jsonify
 import json
 import threading
+from routes import Routes
 
 app = Flask(__name__)
 
@@ -18,17 +19,19 @@ def handle_post():
 
 @app.route('/lookup', methods=['POST'])
 def lookup():
-    data = json.loads(request.get_data())
-    key = data("key")
-    return node.lookup(key)
+    data = request.get_json()
+    key = data["key"]
 
-@app.route('/insertnode', methods=['POST'])
+    return jsonify(Routes.serialize_routes(node.lookup(key)))
+
+@app.route('/insertnode', methods=['GET'])
 def init():
-    data = request.get_data(as_text=True)
+    data = request.get_json()
     return node.init(data)
 
 @app.route('/init_data', methods=['POST'])
 def get_init_data():
+    print("aaaaamain")
     data = request.get_data(as_text=True)
     return node.get_init_data(data)
 
@@ -36,6 +39,10 @@ def get_init_data():
 def ping():
     result = node.is_alive()
     return result
+@app.route('/show_routes', methods=['POST'])
+def show_routes():
+    return node.log_routes()
+
 
 def schedule_ping():
     while True:

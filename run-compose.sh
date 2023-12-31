@@ -38,6 +38,8 @@ if [ -n "$1" ]; then
     for ((i=1; i<=$1; i++)); do
       echo "  myapp$i:" >> "$filename"
       echo "    image: app" >> "$filename"
+      echo "    stdin_open: true" >> "$filename"
+      echo "    tty: true" >> "$filename"
       echo "    volumes:" >> "$filename"
       echo "      - ./log/:/log" >> "$filename"
       echo "    networks:" >> "$filename"
