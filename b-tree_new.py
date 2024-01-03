@@ -10,18 +10,25 @@ class BTree:
         self.root = Node(True)
         self.t = t
 
-    def search(self, key, node=None):
-        node = self.root if node == None else node
-    
+    def is_subset(self, subset, superset):
+        return all(item in superset for item in subset)
+
+    def search(self, education, node=None, matches=None):
+        node = self.root if node is None else node
+        matches = matches if matches is not None else []
+
         i = 0
-        while i < len(node.keys) and key > node.keys[i]:
+        while i < len(node.keys):
+            if self.is_subset(education, node.keys[i]['Education']):
+                matches.append((node, i))
+                # print(node.keys[i])
             i += 1
-        if i < len(node.keys) and key == node.keys[i]:
-            return (node, i)
-        elif node.leaf:
-            return None
-        else:
-            return self.search(key, node.children[i])
+
+        if not node.leaf:
+            for i in range(len(node.children)):
+                self.search(education, node.children[i], matches)
+
+        return matches
 
     def split_child(self, x, i):
         t = self.t
@@ -45,7 +52,7 @@ class BTree:
             z.children = y.children[t: 2 * t]
             y.children = y.children[0: t] # video incorrectly has t-1
 
-    def insert(self, k):
+    def insert(self, data):
         t = self.t
         root = self.root
 
@@ -55,32 +62,32 @@ class BTree:
             self.root = new_root
             new_root.children.insert(0, root)
             self.split_child(new_root, 0)
-            self.insert_non_full(new_root, k)
+            self.insert_non_full(new_root, data)
         else:
-            self.insert_non_full(root, k)
+            self.insert_non_full(root, data)
 
-    def insert_non_full(self, x, k):
+    def insert_non_full(self, x, data):
         t = self.t
         i = len(x.keys) - 1
 
         # find the correct spot in the leaf to insert the key
         if x.leaf:
             x.keys.append(None)
-            while i >= 0 and k < x.keys[i]:
+            while i >= 0 and data['Education'] < x.keys[i]['Education']:
                 x.keys[i + 1] = x.keys[i]
                 i -= 1
-            x.keys[i + 1] = k
+            x.keys[i + 1] = data
         # if not a leaf, find the correct subtree to insert the key
         else:
-            while i >= 0 and k < x.keys[i]:
+            while i >= 0 and data['Education'] < x.keys[i]['Education']:
                 i -= 1
             i += 1
             # if child node is full, split it
             if len(x.children[i].keys) == (2 * t) - 1:
                 self.split_child(x, i)
-                if k > x.keys[i]:
+                if data['Education'] > x.keys[i]['Education']:
                     i += 1
-            self.insert_non_full(x.children[i], k)
+            self.insert_non_full(x.children[i], data)
 
     def delete(self, x, k):
         t = self.t
@@ -215,97 +222,5 @@ class BTree:
                 self.print_tree(i, level)
 
 
-def delete_example():
-    first_leaf = Node(True)
-    first_leaf.keys = [1, 9]
-
-    second_leaf = Node(True)
-    second_leaf.keys = [17, 19, 21]
-
-    third_leaf = Node(True)
-    third_leaf.keys = [23, 25, 27]
-
-    fourth_leaf = Node(True)
-    fourth_leaf.keys = [31, 32, 39]
-
-    fifth_leaf = Node(True)
-    fifth_leaf.keys = [41, 47, 50]
-
-    sixth_leaf = Node(True)
-    sixth_leaf.keys = [56, 60]
-
-    seventh_leaf = Node(True)
-    seventh_leaf.keys = [72, 90]
-
-    root_left_child = Node()
-    root_left_child.keys = [15, 22, 30]
-    root_left_child.children.append(first_leaf)
-    root_left_child.children.append(second_leaf)
-    root_left_child.children.append(third_leaf)
-    root_left_child.children.append(fourth_leaf)
-
-    root_right_child = Node()
-    root_right_child.keys = [55, 63]
-    root_right_child.children.append(fifth_leaf)
-    root_right_child.children.append(sixth_leaf)
-    root_right_child.children.append(seventh_leaf)
-
-    root = Node()
-    root.keys = [40]
-    root.children.append(root_left_child)
-    root.children.append(root_right_child)
-
-    B = BTree(3)
-    B.root = root
-    print('\n--- Original B-Tree ---\n')
-    B.print_tree(B.root)
-
-    print('\n--- Case 1: DELETED 21 ---\n')
-    B.delete(B.root, 21)
-    B.print_tree(B.root)
-
-    print('\n--- Case 2a: DELETED 30 ---\n')
-    B.delete(B.root, 30)
-    B.print_tree(B.root)
-
-    print('\n--- Case 2b: DELETED 27 ---\n')
-    B.delete(B.root, 27)
-    B.print_tree(B.root)
-
-    print('\n--- Case 2c: DELETED 22 ---\n')
-    B.delete(B.root, 22)
-    B.print_tree(B.root)
-
-    print('\n--- Case 3b: DELETED 17 ---\n')
-    B.delete(B.root, 17)
-    B.print_tree(B.root)
-
-    print('\n--- Case 3a: DELETED 9 ---\n')
-    B.delete(B.root, 9)
-    B.print_tree(B.root)
 
 
-def insert_and_search_example():
-    B = BTree(3)
-
-    for i in range(10):
-        B.insert(i)
-
-    B.print_tree(B.root)
-    print()
-
-    keys_to_search_for = [2, 9, 11, 4]
-    for key in keys_to_search_for:
-        if B.search(key) is not None:
-            print(f'{key} is in the tree')
-        else:
-            print(f'{key} is NOT in the tree')
-
-
-def main():
-    print('\n--- INSERT & SEARCH ---\n')
-    insert_and_search_example()
-
-    delete_example()
-
-main()
