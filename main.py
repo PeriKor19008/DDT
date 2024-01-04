@@ -43,6 +43,39 @@ def ping():
 def show_routes():
     return node.log_routes()
 
+@app.route('/insert_data', methods=['POST'])
+def btree_insert_route():
+    data = request.get_json()
+    result = node.insert_data(data)
+    return result
+
+@app.route('/retrieve_data', methods=['GET'])
+def btree_search_route():
+    search_data = request.get_json()
+    search_key = search_data['Education']   
+    result = node.retrieve_data(search_key)
+    return result
+
+@app.route('/search_data', methods=['GET'])
+def btree_search_route():
+    search_data = request.get_json()
+    search_key = search_data['Education']
+    result = node.search_data(search_key)
+    return result
+
+@app.route('/store_data', methods=['POST'])
+def store_data_route():
+    btree_state_data = request.data
+    result = node.store_data()
+    return result
+
+@app.route('/receive_data', methods=['POST'])
+def receive_data_route():
+    btree_state_data = request.data
+    btree_filename = request.args.get('filename')
+    with open(btree_filename, 'wb') as file:
+        file.write(btree_state_data)
+
 
 def schedule_ping():
     while True:

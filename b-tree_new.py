@@ -1,3 +1,5 @@
+import pickle
+
 class Node:
     def __init__(self, leaf=False):
         self.keys = []
@@ -221,6 +223,16 @@ class BTree:
             for i in x.children:
                 self.print_tree(i, level)
 
+    def save_state(self, filename):
+            with open(filename, 'wb') as file:
+                pickle.dump(self.root, file)
+
+    def load_state(self, filename):
+        try:
+            with open(filename, 'rb') as file:
+                self.root = pickle.load(file)
+        except FileNotFoundError:
+            self.root = Node(True)  # If the file doesn't exist, create a new B-tree
 
 
 

@@ -94,6 +94,9 @@ class ChordNode:
         #self.log("bootstrap to "+data)
         data = response.content
         self.get_init_data(data)
+
+        btree_filename = f"cont_data/state_{self.ip.replace('.', '_').replace(':', '_')}.pkl"
+        self.btree.load_state(btree_filename)
         return data
 
 
@@ -145,12 +148,14 @@ class ChordNode:
         return "self.routing_table"
 
     def make_routing_table(self):
-       return self.lookup(self.position+1)
+        table = []
+        for position in range (self.chord_size):
+            result = self.lookup(position)
+            table.append(result)
+        return table
 
     def lookup_iner(self,key:int):
         closest_successor = -1
-
-
 
         for pr in self.predecessors:
             if pr.position == key:
@@ -214,3 +219,70 @@ class ChordNode:
             file.write("route position: "+str(route.position)+"---route ip: "+route.ip)
 
         return "routes"
+
+    def insert_data(self, data):
+        
+        key = data['Education']
+        target_node = self.lookup(key)
+
+        if target_node.ip == self.ip:
+            if not hasattr(self, 'btree'):
+                t = 3
+                self.btree = BTree(t)
+            self.btree.insert(data)
+            return "Data inserted successfully"
+        else:
+            target_node_ip = "http://" + target_node.ip + "/insert_data"
+            requests.post(target_node_ip, json=data)
+            return "Data sent to the appropriate node for insertion"
+
+    def retrieve_data(self, search_key):
+        target_node = self.lookup(search_key)
+
+        if target_node.ip == self.ip:
+            if not hasattr(self, 'btree'):
+                return "B-tree is not initialized"
+
+            matches = self.btree.search(search_key)
+
+            search_results = []
+            for node, index in matches:
+                search_results.append(node.keys[index])
+
+            if search_results:
+                return jsonify(search_results)
+            else:
+                return "No data found"
+        else:
+            target_node_ip = "http://" + target_node.ip + "/retrieve_data"
+            response = requests.get(target_node_ip, json={"Education": search_key})
+            return response.text
+
+    def search_data(self, search_key):
+
+        if not hasattr(self, 'btree'):
+            return "B-tree is not initialized"
+
+        matches = self.btree.search(search_key)
+        search_results = []
+        for node, index in matches:
+            search_results.append(node.keys[index])
+
+        if search_results:
+            return jsonify(search_results)
+        else:
+            return "No matching data found"
+
+    def store_data(self):
+        btree_filename = f"cont_data/state_{self.ip.replace('.', '_').replace(':', '_')}.pkl"
+        self.btree.save_state(btree_filename)
+        selected_nodes = random.sample(self.routing_table, min(2, len(self.routing_table)))
+
+        for selected_node in selected_nodes:
+            if selected_node.ip != self.ip:
+                target_node_ip = "http://" + selected_node.ip + "/receive_data"
+                with open(btree_filename, 'rb') as file:
+                    btree_state_data = file.read()
+                    requests.post(target_node_ip, data=btree_state_data, headers={'Content-Type': 'application/octet-stream'},
+                              params={'filename': btree_filename})
+                    return "Data stored"
