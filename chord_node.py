@@ -1,7 +1,7 @@
 from datetime import datetime
-
-from B_tree import BTree
-from flask import Flask, request, make_response
+import random
+from b_tree_new import BTree
+from flask import Flask, request, make_response, jsonify
 import requests
 import json
 import socket
@@ -21,7 +21,7 @@ class ChordNode:
         self.predecessors: List[Routes] = [temp_self_route]
         self.successors: List[Routes] = [temp_self_route]
         self.routing_table: List[Routes] = None
-        self.btree: BTree
+        self.btree: BTree = BTree(False)
         self.position:int
 
     def log(self,mess:str):
@@ -149,8 +149,10 @@ class ChordNode:
 
     def make_routing_table(self):
         table = []
-        for position in range (self.chord_size):
-            result = self.lookup(position)
+        i=1
+        while i<math.sqrt(self.chord_size) :
+            i=i*2
+            result = self.lookup(i)
             table.append(result)
         return table
 
@@ -189,9 +191,9 @@ class ChordNode:
     def lookup(self,key:int):
         print(key)
         closest_successor = self.lookup_iner(key)
-        if closest_successor[0]:
-            return closest_successor[1]
-        ip = "http://"+closest_successor.ip + "lookup"
+        if closest_successor[1]:
+            return closest_successor[0]
+        ip = "http://"+closest_successor[0].ip + "lookup"
         data_to_send = {"key":key}
         response = requests.post(ip,json={"key":key})
         #self.log("lookup")

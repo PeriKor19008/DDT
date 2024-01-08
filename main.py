@@ -50,14 +50,14 @@ def btree_insert_route():
     return result
 
 @app.route('/retrieve_data', methods=['GET'])
-def btree_search_route():
+def btree_search_route_retrieve():
     search_data = request.get_json()
     search_key = search_data['Education']   
     result = node.retrieve_data(search_key)
     return result
 
 @app.route('/search_data', methods=['GET'])
-def btree_search_route():
+def btree_search_route_search():
     search_data = request.get_json()
     search_key = search_data['Education']
     result = node.search_data(search_key)
