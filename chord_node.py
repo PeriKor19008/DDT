@@ -24,6 +24,20 @@ class ChordNode:
         self.btree: BTree = BTree(False)
         self.position:int
 
+    def  get_back_references(self):
+        r = (self.position - self.predecessors[0]) % self.chord_size
+        references = []
+
+        for i in range(math.sqrt(self.chord_size)):
+            references.append((self.position - (2 ^ i)) % self.chord_size)
+        j= len(references)
+        for i in range(j):
+            for k in range(r):
+                references.append(references[i]-k)
+
+        return set(references)
+
+
     def log(self,mess:str):
         file = open("/log/log.txt", 'a')
         time = datetime.now()
@@ -48,8 +62,12 @@ class ChordNode:
             tmp.position=self.position
             suc_list.append(tmp)
             return suc_list
-        for suc in range(position + self.successor_num):
-            suc_list.append(self.lookup(suc))
+
+        for i in range(self.successor_num):
+            if suc_list:
+                suc_list.append(self.lookup((position+i+1) % self.chord_size))
+            else:
+                suc_list.append(self.lookup((1 + suc_list[-1]) % self.chord_size))
         return suc_list
 
     def get_predecessor(self,position):
@@ -60,8 +78,12 @@ class ChordNode:
             tmp.position = self.position
             pre_list.append(tmp)
             return pre_list
-        for pre in range(position + self.successor_num):
-            pre_list.append(self.lookup(pre))
+
+        for i in range(self.chord_size):
+            if pre_list:
+                pre_list.append(self.lookup((position-(i+1)) % self.chord_size))
+            else:
+                pre_list.append(self.lookup((pre_list[-1]-1) % self.chord_size))
         return pre_list
 
     def get_ip(self):
@@ -82,7 +104,35 @@ class ChordNode:
 
         return distance_clockwise < distance_f2s and distance_counterclockwise < distance_f2s
 
+    def lookup_back_references(self, references):
+        nodes = []
+        for r in references:
+            nodes.append(self.lookup(r))
+        return set(nodes)
 
+    def inform_node(self,node:Routes,s:int):
+        domain = "inform"
+        response = requests.post(node.ip + domain,json={"type": s})
+
+    def handle_inform(self,node_ip:str,s:int):
+        node_position = self.hash_ip(node_ip)
+        if s == 1: #node entering the ring
+            ##add node to routing
+
+
+            if self.routing_table[0].position > node_position:
+                return 'error'
+            for i in range(len(self.routing_table)-1):
+                if self.routing_table[i+1].position > node_position and self.position + 2 ^(i+1) > node_position:
+                    tmp = Routes(node_position,node_ip + ':5000')
+                    self.routing_table[i]=tmp
+
+
+        else: #node exiting ring
+            ##remove node from routing
+            for i in range(len(self.routing_table)):
+                if self.routing_table[i].position == node_position:
+                    self.routing_table[i] = self.lookup(node_position - 1)
 
     def bootstrap(self,data):
         # get data
@@ -95,9 +145,15 @@ class ChordNode:
         data = response.content
         self.get_init_data(data)
 
+        nodes = self.lookup_back_references(self.get_back_references())
+
+        for node in nodes:
+            self.inform_node(node,1)
+
         btree_filename = f"cont_data/state_{self.ip.replace('.', '_').replace(':', '_')}.pkl"
         self.btree.load_state(btree_filename)
         return data
+
 
 
     def handle_post(self,data):
@@ -151,9 +207,9 @@ class ChordNode:
         table = []
         i=1
         while i<math.sqrt(self.chord_size) :
-            i=i*2
             result = self.lookup(i)
             table.append(result)
+            i = i * 2
         return table
 
     def lookup_iner(self,key:int):

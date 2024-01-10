@@ -76,6 +76,11 @@ def receive_data_route():
     with open(btree_filename, 'wb') as file:
         file.write(btree_state_data)
 
+@app.route('/inform',methods=['POST'])
+def receive_inform():
+    data=request.get_json()
+    return node.handle_inform(request.remote_addr ,data['type'])
+
 
 def schedule_ping():
     while True:
