@@ -12,6 +12,13 @@ def bootstrap():
     data = request.get_data(as_text=True)
     return node.bootstrap(data)
 
+@app.route('/init_data', methods=['POST'])
+def get_init_data():
+    print("aaaaamain")
+    data = request.get_data(as_text=True)
+    return node.get_init_data(data)
+
+
 @app.route('/', methods=['POST'])
 def handle_post():
     data = request.get_data(as_text=True)
@@ -29,11 +36,7 @@ def init():
     data = request.get_json()
     return node.init(data)
 
-@app.route('/init_data', methods=['POST'])
-def get_init_data():
-    print("aaaaamain")
-    data = request.get_data(as_text=True)
-    return node.get_init_data(data)
+
 
 @app.route('/ping', methods=['POST'])
 def ping():
