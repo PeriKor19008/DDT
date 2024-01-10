@@ -95,8 +95,8 @@ class ChordNode:
         data = response.content
         self.get_init_data(data)
 
-        btree_filename = f"cont_data/state_{self.ip.replace('.', '_').replace(':', '_')}.pkl"
-        self.btree.load_state(btree_filename)
+        # btree_filename = f"cont_data/state_{self.ip.replace('.', '_').replace(':', '_')}.pkl"
+        # self.btree.load_state(btree_filename)
         return data
 
 
@@ -143,17 +143,17 @@ class ChordNode:
         self.position = data.get("position")
 
         self.routing_table = self.make_routing_table()
-        print(self.routing_table)
+        # print(self.routing_table)
         #self.log("get_init_data")
         return "self.routing_table"
 
     def make_routing_table(self):
         table = []
         i=1
-        while i<math.sqrt(self.chord_size) :
-            i=i*2
+        while i <= math.floor(math.sqrt(self.chord_size)) :
             result = self.lookup(i)
             table.append(result)
+            i=i*2
         return table
 
     def lookup_iner(self,key:int):
@@ -167,15 +167,15 @@ class ChordNode:
             for r in self.routing_table:
                 if r.position == key:
                     return [r, False]
-                if r.position > closest_successor.position and r.position < key :
+                if r.position > closest_successor.position and r.position < key:
                     closest_successor = r
 
-        f = self
+        f = Routes(self.position, self.ip)
         for suc in self.successors:
 
             if suc.position == key:
                 return [suc,True]
-            if self.is_between(f.position,suc.position,key):
+            if self.is_between(f.position,suc.position,key) or (self.position == f.position):
                 return [f,True]
             f = suc
             if closest_successor == -1:
@@ -223,23 +223,24 @@ class ChordNode:
         return "routes"
 
     def insert_data(self, data):
-        
-        key = data['Education']
-        target_node = self.lookup(key)
 
-        if target_node.ip == self.ip:
-            if not hasattr(self, 'btree'):
-                t = 3
-                self.btree = BTree(t)
-            self.btree.insert(data)
-            return "Data inserted successfully"
-        else:
-            target_node_ip = "http://" + target_node.ip + "/insert_data"
-            requests.post(target_node_ip, json=data)
-            return "Data sent to the appropriate node for insertion"
+        for edu in data["Education"]:
+            key = self.hash_ip(edu)
+            target_node = self.lookup(key)
+
+            if target_node.ip == self.ip:
+                if not hasattr(self, 'btree'):
+                    t = 3
+                    self.btree = BTree(t)
+                self.btree.insert(data)
+                return "Data inserted successfully"
+            else:
+                target_node_ip = "http://" + target_node.ip + "/insert_data"
+                requests.post(target_node_ip, json=data)
+                return "Data sent to the appropriate node for insertion"
 
     def retrieve_data(self, search_key):
-        target_node = self.lookup(search_key)
+        target_node = self.lookup(self.hash_ip(search_key))
 
         if target_node.ip == self.ip:
             if not hasattr(self, 'btree'):

@@ -47,6 +47,7 @@ def get_education(url):
             awards = get_awards(info_box, mw_headline_awards)
             
             return alma_mater_data, awards
+
     # If the table doesn't exists we search for the container in the box of the website       
     education_div = soup.find('div', id='mw-normal-catlinks')
     if education_div:
@@ -123,7 +124,6 @@ def main():
     df['Name'] = df['Name'].apply(remove_parentheses)
     df['Education'] = df['Education'].apply(clean_links)
     df.to_csv('web_crawler/computer_scientists.csv', index=False)
-
 
 if __name__ == "__main__":
     main()

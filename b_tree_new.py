@@ -21,7 +21,7 @@ class BTree:
 
         i = 0
         while i < len(node.keys):
-            if self.is_subset(education, node.keys[i]['Education']):
+            if education in node.keys[i]['Education']:
                 matches.append((node, i))
                 # print(node.keys[i])
             i += 1
