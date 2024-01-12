@@ -12,7 +12,7 @@ from chord_node_log import ChordNodeLog
 
 
 helper = ChordNodeHelper()
-loger = ChordNodeLog
+loger = ChordNodeLog()
 
 
 class ChordNode:
@@ -22,48 +22,59 @@ class ChordNode:
         self.chord_size: int = size
         self.successor_num = int(math.log2(self.chord_size))
         self.ip = helper.get_ip()
-        temp_self_route = Routes(-1, self.ip)
-        self.predecessors: List[Routes] = [temp_self_route]
-        self.successors: List[Routes] = [temp_self_route]
-        self.routing_table: List[Routes] = None
+        self._position: int = helper.hash(self.ip, self.chord_size)
+        temp_self_route = Routes(self.position, self.ip)
+        self.predecessors: List[Routes] = [temp_self_route] * self.successor_num
+        self.successors: List[Routes] = [temp_self_route] * self.successor_num
+        self.routing_table: List[Routes] = [temp_self_route] * self.successor_num
         self.btree: BTree = BTree(False)
-        self.position: int
 
+    @property
+    def position(self) -> int:
+        return self._position
 
 
     def bootstrap(self, data):
         # get data
         host = data
         domain = "/insertnode"
-        print("bbbbbbb")
+
         # send request
-        response = requests.get(host + domain, json={"ip": self.ip})
+        response = requests.get(host + domain, json={"ip": self.ip, "pos": self.position})
         #self.log("bootstrap to "+data)
         data = response.content
         self.get_init_data(data)
 
         nodes = helper.lookup_back_references(helper.get_back_references(self), self)
-
-        for node in nodes:
+        for node in nodes.union({r.ip for r in (self.successors + self.predecessors)}):
             self.inform_node(node,1)
+
 
         btree_filename = f"cont_data/state_{self.ip.replace('.', '_').replace(':', '_')}.pkl"
         self.btree.load_state(btree_filename)
+        loger.log_routes(self)
         return data
 
     def init(self, data):
 
 
         new_node_ip = data["ip"]
-        new_node_position = helper.hash_ip(new_node_ip, self.chord_size)
+        new_node_position = data["pos"]
+
+
 
         new_node_successors = helper.get_successors(new_node_position, self)
         new_node_predecessors = helper.get_predecessor(new_node_position, self)
-
+        if self.successors[0].position == self.position:
+            for i in range(len(self.successors)):
+                self.successors[i] = Routes(new_node_position, new_node_ip)
+            for i in range(len(self.predecessors)):
+                self.predecessors[i] = Routes(new_node_position, new_node_ip)
+            for i in range(len(self.routing_table)):
+                self.routing_table[i] = Routes(new_node_position, new_node_ip)
         json_successors=json.dumps(new_node_successors,default=Routes.serialize_routes,indent=2)
         json_predecessors = json.dumps(new_node_predecessors, default=Routes.serialize_routes, indent=2)
-        data_to_send = {"position": new_node_position,
-                        "successors": json_successors,
+        data_to_send = {"successors": json_successors,
                         "predecessors": json_predecessors}
 
         data= json.dumps(data_to_send)
@@ -73,35 +84,53 @@ class ChordNode:
         return data
 
     def get_init_data(self, data):
-        print("aaaaaaaa")
+        print(data)
         data = json.loads(data)
 
         tmp = json.loads(data["successors"])
         self.successors = Routes.deserialize_routes(tmp)
         tmp = json.loads(data["predecessors"])
         self.predecessors = Routes.deserialize_routes(tmp)
-        self.position = data.get("position")
-
+        for i in range(len(self.routing_table)):
+            self.routing_table[i] = self.successors[0]
         self.routing_table = self.make_routing_table()
-        print(self.routing_table)
+
         #self.log("get_init_data")
         return "self.routing_table"
     def lookup(self, key: int):
-        print(key)
-        closest_successor = helper.lookup_inner(key,self)
-        if closest_successor[1]:
-            return closest_successor[0]
-        ip = "http://" + closest_successor[0].ip + "lookup"
-        data_to_send = {"key": key}
-        response = requests.post(ip, json={"key": key})
-        # self.log("lookup")
+        #closest_successor = helper.lookup_inner(key, self)
+        print("lookup " + str(key) + "pos:" + str(self.position))
+        for suc in self.successors:
+            if helper.is_between(self.position, suc.position, key, self.chord_size) or suc.position == key:
+                return suc
+        for r in self.routing_table:
+            f=self.position
+            s=r.position
+            if helper.is_between(f, s, key, self.chord_size) or suc.position == key:
+                return requests.get("http://" + r.ip + "/lookup", json={"key": key})
+        response = requests.get("http://" + self.routing_table[-1].ip + "/lookup", json={"key": key})
+        data = json.loads(response.content.decode('utf-8'))
+        return Routes(data["position"], data["ip"])
 
-        return response
+        # print("lookup"+str(key) + "self pos= ")
+        # print( str(self.position) + "closest suc=" )
+        # print({attr: getattr(closest_successor[0], attr) for attr in dir(closest_successor[0])})
+        # print(str(closest_successor[0].position))
+        # print(str(closest_successor[1])+"  ")
+        # print(str(self.successors[0].position))
+        #
+        # if closest_successor[1]:
+        #     return closest_successor[0]
+        # ip = "http://" + closest_successor[0].ip + "lookup"
+        # response = requests.get(ip, json={"key": key}).content.decode('utf-8')
+        # # self.log("lookup")
+        #
+        # return response
 
     def insert_data(self, data):
 
         key = data['Education']
-        target_node = self.lookup(key)
+        target_node = Routes.deserialize_routes(self.lookup(key))
 
         if target_node.ip == self.ip:
             if not hasattr(self, 'btree'):
@@ -166,22 +195,40 @@ class ChordNode:
                                   params={'filename': btree_filename})
                     return "Data stored"
 
-    def inform_node(self, node: Routes, s: int) -> None:
-        domain = "inform"
-        response = requests.post(node.ip + domain,json={"type": s})
+    def inform_node(self, node_ip: str, s: int):
+        domain = "/inform"
+
+
+        response = requests.post("http://" + node_ip + domain,json={"type": s})
+        return response
 
     def handle_inform(self, node_ip: str, s :int):
-        node_position = helper.hash_ip(node_ip, self.chord_size)
+        loger.log_routes(self)
+        node_position = helper.hash(node_ip, self.chord_size)
+        print("handle response" + str(node_position))
         if s == 1: #node entering the ring
             ##add node to routing
 
+            i = 0
+            for n in (self.predecessors + self.successors):
 
+                print("geting node in suc-pre")
+                self.predecessors.insert(i, Routes(node_position,node_ip + ':5000'))
+                self.predecessors.pop()
+
+            i = i +1
+            if self.routing_table is None:
+                self.routing_table = [Routes(node_position, node_ip + ':5000')]
             if self.routing_table[0].position > node_position:
                 return 'error'
-            for i in range(len(self.routing_table)-1):
-                if self.routing_table[i+1].position > node_position and self.position + 2 ^(i+1) > node_position:
+            for i in range(len(self.routing_table)):
+
+                if self.position==self.routing_table[i].position or (helper.is_between(self.position+(2^i), self.routing_table[i].position,node_position,self.chord_size)):
                     tmp = Routes(node_position,node_ip + ':5000')
                     self.routing_table[i]=tmp
+                    print("geting node in routing")
+
+
 
 
         else: #node exiting ring
@@ -189,6 +236,7 @@ class ChordNode:
             for i in range(len(self.routing_table)):
                 if self.routing_table[i].position == node_position:
                     self.routing_table[i] = self.lookup(node_position - 1)
+        loger.log_routes(self)
 
     def handle_post(self, data):
         data = request.get_data(as_text=True)
@@ -201,11 +249,11 @@ class ChordNode:
 
     def make_routing_table(self):
         table = []
-        i=1
-        while i<math.sqrt(self.chord_size) :
-            result = self.lookup(i)
+
+        for i in range(len(self.routing_table)) :
+            result = self.lookup((2 ** i) + (self.position))
             table.append(result)
-            i = i * 2
+            i = i + 1
         return table
 
     def is_alive(self):

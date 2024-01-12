@@ -1,51 +1,53 @@
 import math
 import requests
 from routes import Routes
-from chord_node import ChordNode
 import socket
 
 class ChordNodeHelper:
 
 
 
-    def lookup_inner(self, key: int, node: ChordNode):
-        closest_successor = -1
-
-        for pr in node.predecessors:
-            if pr.position == key:
-                return [pr, True]
-
-        if node.routing_table != None:
-            for r in node.routing_table:
-                if r.position == key:
-                    return [r, False]
-                if (r.position > closest_successor.position) and (r.position < key):
-                    closest_successor = r
+    def lookup_inner(self, key: int, node):
+        closest_successor = node.successors[0]
+        print("closest succesesor"+str(closest_successor.position))
+        for n in node.predecessors + node.successors:
+            if n.position == key:
+                return [n, True]
 
         f = Routes(node.position, node.ip)
         for suc in node.successors:
 
-            if suc.position == key:
-                return [suc, True]
             if self.is_between(f.position, suc.position, key, node.chord_size):
-                return [f, True]
-            f = suc
-            if closest_successor == -1:
-                closest_successor = suc
+                return [suc, True]
 
-            if (suc.position > closest_successor.position) and (suc.position < key):
-                closest_successor = suc
+
+        print("node routing"+str(node.routing_table[0].position))
+        for r in range(len(node.routing_table)):
+            print("r position"+str(node.routing_table[r].position))
+
+            if node.routing_table[r].position == key:
+                print("a")
+                return [r, False]
+            if (node.routing_table[r].position > closest_successor.position) and (node.routing_table[r].position > key):
+                closest_successor = r
+                print("b")
+                return [closest_successor, False]
+
 
         return [closest_successor, False]
 
 
 
 
+
+
+
+
     def  get_back_references(self,node):
-        r = (node.position - node.predecessors[0]) % node.chord_size
+        r = (node.position - node.predecessors[0].position) % node.chord_size
         references = []
 
-        for i in range(math.sqrt(node.chord_size)):
+        for i in range(int(math.sqrt(node.chord_size))):
             references.append((node.position - (2 ^ i)) % node.chord_size)
         j= len(references)
         for i in range(j):
@@ -64,48 +66,49 @@ class ChordNodeHelper:
         return distance_clockwise < distance_f2s and distance_counterclockwise < distance_f2s
 
 
-    def get_successors(self, position, node: ChordNode):
+    def get_successors(self, position, node):
         suc_list = []
         if node.successors[0].ip == node.ip:
-            node.position = self.hash_ip(node.ip, node.chord_size)
+
             tmp = node.successors[0]
             tmp.position = node.position
-            suc_list.append(tmp)
+            suc_list = [tmp] * node.successor_num
             return suc_list
 
         for i in range(node.successor_num):
-            if suc_list:
-                suc_list.append(self.lookup((position+i+1) % node.chord_size, node))
+            if not suc_list:
+                suc_list.append(node.lookup((position+i+1) % node.chord_size))
             else:
-                suc_list.append(self.lookup((1 + suc_list[-1]) % node.chord_size, node))
+                suc_list.append(node.lookup((1 + suc_list[-1].position) % node.chord_size))
         return suc_list
 
-    def get_predecessor(self, position, node: ChordNode):
+    def get_predecessor(self, position, node):
         pre_list = []
         if node.successors[0].ip == node.ip:
-            node.position = self.hash_ip(node.ip, node.chord_size)
+
             tmp = node.successors[0]
             tmp.position = node.position
-            pre_list.append(tmp)
+            pre_list = [tmp] * node.successor_num
             return pre_list
 
         for i in range(node.chord_size):
             if pre_list:
-                pre_list.append(self.lookup((position-(i+1)) % node.chord_size, node))
+                pre_list.append(node.lookup((position-(i+1)) % node.chord_size))
             else:
-                pre_list.append(self.lookup((pre_list[-1]-1) % node.chord_size, node))
+                pre_list.append(node.lookup((pre_list[-1].position-1) % node.chord_size))
         return pre_list
 
-    def hash_ip(self, ip: str, chord_size: int) -> int:
+    def hash(self, string: str, chord_size: int) -> int:
         h = 0
-        for i in ip:
+        for i in string:
             h = ord(i) * 7 + h
         return h % chord_size
 
-    def lookup_back_references(self, references, node: ChordNode):
+    def lookup_back_references(self, references, node):
         nodes = []
         for r in references:
-            nodes.append(self.lookup(r, node))
+            tmp = node.lookup(r)
+            nodes.append(tmp.ip)
         return set(nodes)
 
     def get_ip(self) -> str:

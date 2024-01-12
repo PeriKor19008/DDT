@@ -16,14 +16,17 @@ class ChordNodeLog:
                        + "--------" + "\n")
 
     def log_routes(self, node) -> None:
-        file = open("/log/log"+node.ip.replace(".","_").replace(":","_").replace("/" , "_")+"_routes.txt", 'w')
-        file.write("SUCCESSORS \n")
-        for succ in node.successors:
-            file.write("succ position: "+str(succ.position)+"---succ ip: "+succ.ip+"")
-        file.write("SUCCESSORS \n------\n\n\nPREDECESSORS\n")
-        for pre in node.predecessors:
-            file.write("pre position: "+str(pre.position)+"---pre ip: "+pre.ip)
-        file.write("PREDECESSORS\n-----\n\n\nROUTING TABLE\n")
-        for route in node.routing_table:
-            file.write("route position: "+str(route.position)+"---route ip: "+route.ip)
+            print("--------------------------------------------------------\n")
+            print("self position ="+ str(node.position))
+            print("SUCCESSORS \n")
+            for succ in node.successors:
+                print("succ position: "+str(succ.position)+"---succ ip: "+succ.ip+"\n")
+            print("SUCCESSORS \n------\n\n\nPREDECESSORS\n")
+            for pre in node.predecessors:
+                print("pre position: "+str(pre.position)+"---pre ip: "+pre.ip+"\n")
+            print("PREDECESSORS\n-----\n\n\nROUTING TABLE\n")
+            if node.routing_table:
+                for route in node.routing_table:
+                    print("route position: "+str(route.position)+"---route ip: "+route.ip+"\n")
+            print("--------------------------------------------------------\n")
 

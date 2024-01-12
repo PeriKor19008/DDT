@@ -1,20 +1,27 @@
-from chord_node import ChordNode,request
+from chord_node import ChordNode, request
 from flask import Flask, jsonify
 import json
 import threading
 from routes import Routes
+import logging
+
+
+
 
 app = Flask(__name__)
 
 node = ChordNode(16)
+
+app.logger.setLevel(logging.DEBUG)
+app.logger.addHandler(logging.StreamHandler())
 @app.route('/bootstrap', methods=['POST'])
 def bootstrap():
+    logging.debug('bootstrap')
     data = request.get_data(as_text=True)
     return node.bootstrap(data)
 
 @app.route('/init_data', methods=['POST'])
 def get_init_data():
-    print("aaaaamain")
     data = request.get_data(as_text=True)
     return node.get_init_data(data)
 
@@ -24,12 +31,16 @@ def handle_post():
     data = request.get_data(as_text=True)
     return node.handle_post(data)
 
-@app.route('/lookup', methods=['POST'])
+@app.route('/lookup', methods=['GET'])
 def lookup():
+    print("lookup"+ str(request.get_data()))
     data = request.get_json()
+    print("lookup" + str(data["key"]))
     key = data["key"]
 
-    return jsonify(Routes.serialize_routes(node.lookup(key)))
+    result = node.lookup(key)
+    print(result)
+    return jsonify({"position": result.position, "ip": result.ip})
 
 @app.route('/insertnode', methods=['GET'])
 def init():
@@ -40,6 +51,7 @@ def init():
 
 @app.route('/ping', methods=['POST'])
 def ping():
+
     result = node.is_alive()
     return result
 @app.route('/show_routes', methods=['POST'])
@@ -81,8 +93,9 @@ def receive_data_route():
 
 @app.route('/inform',methods=['POST'])
 def receive_inform():
+    print("inform")
     data=request.get_json()
-    return node.handle_inform(request.remote_addr ,data['type'])
+    return jsonify(node.handle_inform(request.remote_addr +":5000/", data['type']))
 
 
 def schedule_ping():
@@ -95,4 +108,5 @@ def schedule_ping():
 if __name__ == '__main__':
     # ping_thread = threading.Thread(target=schedule_ping)
     # ping_thread.start()
+
     app.run(host='0.0.0.0', port=5000)
