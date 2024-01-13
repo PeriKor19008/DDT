@@ -1,5 +1,7 @@
 
 import random
+import time
+
 from b_tree_new import BTree
 from flask import request,  jsonify
 import requests
@@ -93,39 +95,32 @@ class ChordNode:
         self.predecessors = Routes.deserialize_routes(tmp)
         for i in range(len(self.routing_table)):
             self.routing_table[i] = self.successors[0]
+        print("log1")
+        loger.log_routes(self)
+        print("log2")
+        time.sleep(1)
         self.routing_table = self.make_routing_table()
 
         #self.log("get_init_data")
         return "self.routing_table"
     def lookup(self, key: int):
         #closest_successor = helper.lookup_inner(key, self)
-        print("lookup " + str(key) + "pos:" + str(self.position))
+        print("lookup " + str(key) + "  pos:" + str(self.position))
         for suc in self.successors:
+            print("between " + str(self.position)+" " +str(suc.position)+" " +str(key)+" "+str(helper.is_between(self.position, suc.position, key, self.chord_size)))
             if helper.is_between(self.position, suc.position, key, self.chord_size) or suc.position == key:
+                print("suc:" + str(suc.position))
                 return suc
+
         for r in self.routing_table:
+            print("routing loop")
             f=self.position
             s=r.position
             if helper.is_between(f, s, key, self.chord_size) or suc.position == key:
-                return requests.get("http://" + r.ip + "/lookup", json={"key": key})
-        response = requests.get("http://" + self.routing_table[-1].ip + "/lookup", json={"key": key})
-        data = json.loads(response.content.decode('utf-8'))
-        return Routes(data["position"], data["ip"])
+                print("rout " + str(r.position))
+                response = requests.get("http://" + r.ip + "/lookup", json={"key": key})
 
-        # print("lookup"+str(key) + "self pos= ")
-        # print( str(self.position) + "closest suc=" )
-        # print({attr: getattr(closest_successor[0], attr) for attr in dir(closest_successor[0])})
-        # print(str(closest_successor[0].position))
-        # print(str(closest_successor[1])+"  ")
-        # print(str(self.successors[0].position))
-        #
-        # if closest_successor[1]:
-        #     return closest_successor[0]
-        # ip = "http://" + closest_successor[0].ip + "lookup"
-        # response = requests.get(ip, json={"key": key}).content.decode('utf-8')
-        # # self.log("lookup")
-        #
-        # return response
+        return Routes(self.position, self.ip)
 
     def insert_data(self, data):
 

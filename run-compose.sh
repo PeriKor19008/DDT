@@ -57,7 +57,7 @@ if [ -n "$1" ]; then
     fi
 
   elif [[ "$1" == "build" && "$#" -eq 1 ]]; then
-    sudo docker build -t app .
+    sudo docker build --no-cache -t app .
     sudo docker-compose up --remove-orphans
   else
     echo "Incorrect arguments: num_images(int) build | build | No arguments"

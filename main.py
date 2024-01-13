@@ -1,3 +1,5 @@
+import time
+
 from chord_node import ChordNode, request
 from flask import Flask, jsonify
 import json
@@ -33,13 +35,16 @@ def handle_post():
 
 @app.route('/lookup', methods=['GET'])
 def lookup():
-    print("lookup"+ str(request.get_data()))
+    print("lookup from main "+ str(request.get_data()))
+    #time.sleep(1)
     data = request.get_json()
-    print("lookup" + str(data["key"]))
+    print("lookup data " + str(data["key"]))
     key = data["key"]
 
     result = node.lookup(key)
-    print(result)
+    print("result=" + str(result))
+    if isinstance(result,Routes):
+        return result
     return jsonify({"position": result.position, "ip": result.ip})
 
 @app.route('/insertnode', methods=['GET'])
