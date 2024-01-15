@@ -124,41 +124,44 @@ class ChordNode:
 
     def insert_data(self, data):
 
-        key = data['Education']
-        target_node = Routes.deserialize_routes(self.lookup(key))
+        for edu in data["Education"]:
+            key = helper.hash(edu, self.chord_size)
+            target_node = self.lookup(key)
 
-        if target_node.ip == self.ip:
-            if not hasattr(self, 'btree'):
-                t = 3
-                self.btree = BTree(t)
-            self.btree.insert(data)
-            return "Data inserted successfully"
-        else:
-            target_node_ip = "http://" + target_node.ip + "/insert_data"
-            requests.post(target_node_ip, json=data)
-            return "Data sent to the appropriate node for insertion"
+            if target_node.ip == self.ip:
+                if not hasattr(self, 'btree'):
+                    t = 3
+                    self.btree = BTree(t)
+                self.btree.insert(data)
+                return "Data inserted successfully"
+            else:
+                target_node_ip = "http://" + target_node.ip + "/insert_data"
+                requests.post(target_node_ip, json=data)
+                return "Data sent to the appropriate node for insertion"
 
     def retrieve_data(self, search_key):
-        target_node = self.lookup(search_key)
 
-        if target_node.ip == self.ip:
-            if not hasattr(self, 'btree'):
-                return "B-tree is not initialized"
+        for data in search_key:
+            target_node = self.lookup(helper.hash(data, self.chord_size))
 
-            matches = self.btree.search(search_key)
+            if target_node.ip == self.ip:
+                if not hasattr(self, 'btree'):
+                    return "B-tree is not initialized"
 
-            search_results = []
-            for node, index in matches:
-                search_results.append(node.keys[index])
+                matches = self.btree.search(data)
 
-            if search_results:
-                return jsonify(search_results)
+                search_results = []
+                for node, index in matches:
+                    search_results.append(node.keys[index])
+
+                if search_results:
+                    return jsonify(search_results)
+                else:
+                    return "No data found"
             else:
-                return "No data found"
-        else:
-            target_node_ip = "http://" + target_node.ip + "/retrieve_data"
-            response = requests.get(target_node_ip, json={"Education": search_key})
-            return response.text
+                target_node_ip = "http://" + target_node.ip + "/retrieve_data"
+                response = requests.get(target_node_ip, json={"Education": data})
+                return response.text
 
     def search_data(self, search_key):
 

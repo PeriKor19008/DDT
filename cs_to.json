@@ -1,0 +1,5154 @@
+[
+  {
+    "Name": "Atta ur Rehman Khan",
+    "Education": [
+      "University of Malaya",
+      "COMSATS University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Wil van der Aalst",
+    "Education": [
+      "Eindhoven University of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Scott Aaronson",
+    "Education": [
+      "Cornell University",
+      "University of California Berkeley"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Rediet Abebe",
+    "Education": [
+      "Cornell University",
+      "University of Cambridge",
+      "Harvard University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Hal Abelson",
+    "Education": [
+      "Princeton University",
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Serge Abiteboul",
+    "Education": [
+      "University of Southern California"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Samson Abramsky",
+    "Education": [
+      "King's College Cambridge",
+      "Queen Mary University of London"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Leonard Adleman",
+    "Education": [
+      "University of California Berkeley"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Manindra Agrawal",
+    "Education": [
+      "Indian Institute of Technology Kanpur"
+    ],
+    "Awards": 8
+  },
+  {
+    "Name": "Luis von Ahn",
+    "Education": [
+      "Duke University",
+      "BS",
+      "Carnegie Mellon University"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Alfred Aho",
+    "Education": [
+      "University of Toronto",
+      "Princeton University"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Frances E. Allen",
+    "Education": [
+      "University at Albany",
+      "University of Michigan"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Gene Amdahl",
+    "Education": [
+      "South Dakota State University",
+      "BS",
+      "University of Wisconsin",
+      "MS",
+      "PhD"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "David P. Anderson",
+    "Education": [
+      "Wesleyan University",
+      "University of Wisconsin-Madison"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Lisa Anthony",
+    "Education": [
+      "Drexel University",
+      "Carnegie Mellon University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Andrew Appel",
+    "Education": [
+      "Carnegie Mellon University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Cecilia R. Aragon",
+    "Education": [
+      "California Institute of Technology",
+      "University of California Berkeley"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Bruce Arden",
+    "Education": [
+      "Purdue University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Angie Jones",
+    "Education": [
+      "Tennessee State University",
+      "North Carolina State University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Sanjeev Arora",
+    "Education": [
+      "SB",
+      "Massachusetts Institute of Technology",
+      "PhD",
+      "UC Berkeley"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Winifred Asprey",
+    "Education": [
+      "Vassar College",
+      "University of Iowa"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "John Vincent Atanasoff",
+    "Education": [
+      "University of Florida",
+      "Iowa State University",
+      "University of Wisconsin\u2013Madison"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Shakuntala Atre",
+    "Education": [
+      "Savitribai Phule Pune University",
+      "Heidelberg University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Charles Babbage",
+    "Education": [
+      "Peterhouse Cambridge"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Charles Bachman",
+    "Education": [
+      "University of Pennsylvania",
+      "Michigan State University"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Roland Carl Backhouse",
+    "Education": [
+      "Alumni of Churchill College Cambridge",
+      "Alumni of Imperial College London"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "John Backus",
+    "Education": [
+      "University of Virginia",
+      "University of Pittsburgh",
+      "Haverford College",
+      "Columbia University"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "David F. Bacon",
+    "Education": [
+      "U.C. Berkeley"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "David Bader ",
+    "Education": [
+      "Lehigh University",
+      "University of Maryland College Park"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Victor Bahl",
+    "Education": [
+      "University of Massachusetts Amherst",
+      "Modern School New Delhi"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Anthony James Barr",
+    "Education": [
+      "North Carolina State University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Jean Bartik",
+    "Education": [
+      "Northwest Missouri State Teachers College",
+      "University of Pennsylvania"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Andrew Barto",
+    "Education": [
+      "University of Michigan"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Friedrich L. Bauer",
+    "Education": [
+      "Ludwig Maximilian University of Munich"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Rudolf Bayer",
+    "Education": [
+      "University of Illinois at Urbana\u2013Champaign"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Gordon Bell",
+    "Education": [
+      "MIT"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Steven M. Bellovin",
+    "Education": [
+      "Columbia University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Cecilia Berdichevsky",
+    "Education": [
+      "University of Buenos Aires"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Tim Berners-Lee",
+    "Education": [
+      "Alumni of The Queen's College Oxford"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Daniel J. Bernstein",
+    "Education": [
+      "University of California Berkeley",
+      "New York University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Peter Bernus",
+    "Education": [
+      "Budapest University of Technology and Economics"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Abhay Bhushan",
+    "Education": [
+      "Indian Institute of Technology Kanpur",
+      "Massachusetts Institute of Technology",
+      "MIT Sloan School of Management"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Dines Bj\u00f8rner",
+    "Education": [
+      "Technical University of Denmark"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Gerrit Blaauw",
+    "Education": [
+      "Harvard University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Sue Black ",
+    "Education": [
+      "London South Bank University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "David Blei",
+    "Education": [
+      "Brown University",
+      "University of California Berkeley"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Dorothy Blum",
+    "Education": [
+      "Brooklyn College"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Lenore Blum",
+    "Education": [
+      "Simmons College",
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Manuel Blum",
+    "Education": [
+      "Massachusetts Institute of Technology",
+      "BA",
+      "MA",
+      "PhD"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Barry Boehm",
+    "Education": [
+      "Harvard College",
+      "Harvard University",
+      "University of California Los Angeles"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Corrado B\u00f6hm",
+    "Education": [
+      "ETH Z\u00fcrich"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Kurt Bollacker",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Jeff Bonwick",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Grady Booch",
+    "Education": [
+      "United States Air Force Academy",
+      "University of California Santa Barbara"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "George Boole",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Andrew Donald Booth",
+    "Education": [
+      "Jesus College"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Kathleen Booth",
+    "Education": [
+      "University of London"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Anita Borg",
+    "Education": [
+      "New York University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Bert Bos",
+    "Education": [
+      "University of Groningen"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Mikhail Botvinnik",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Jonathan Bowen",
+    "Education": [
+      "University College",
+      "Oxford"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Stephen R. Bourne",
+    "Education": [
+      "Alumni of King's College London",
+      "Alumni of Trinity College Cambridge"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Harry Bouwman",
+    "Education": [
+      "Vrije Universiteit Amsterdam",
+      "Radboud University Nijmegen"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Robert S. Boyer",
+    "Education": [
+      "Alumni of the University of Edinburgh"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Karlheinz Brandenburg",
+    "Education": [
+      "University of Erlangen-Nuremberg"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Gilles Brassard",
+    "Education": [
+      "Universit\u00e9 de Montr\u00e9al",
+      "Cornell University College of Engineering"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Lawrence M. Breed",
+    "Education": [
+      "Stanford University"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Jack E. Bresenham",
+    "Education": [
+      "Stanford University",
+      "University of New Mexico"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Sergey Brin",
+    "Education": [
+      "Stanford University School of Engineering",
+      "University of Maryland College Park"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "David J. Brown ",
+    "Education": [
+      "Pennsylvania School of Engineering and Applied Science",
+      "St John's College Cambridge"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Per Brinch Hansen",
+    "Education": [
+      "Technical University of Denmark"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Sjaak Brinkkemper",
+    "Education": [
+      "Radboud University Nijmegen"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Fred Brooks",
+    "Education": [
+      "Duke University",
+      "Harvard University"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Rod Brooks",
+    "Education": [
+      "Stanford University",
+      "Flinders University"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Margaret Burnett",
+    "Education": [
+      "Miami University",
+      "University of Kansas"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Michael Butler ",
+    "Education": [
+      "Trinity College Dublin",
+      "Wolfson College",
+      "Oxford"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Pino Caballero Gil",
+    "Education": [
+      "University of La Laguna"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Tracy Camp",
+    "Education": [
+      "The College of William and Mary",
+      "Michigan State University",
+      "Kalamazoo College"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Martin Campbell-Kelly",
+    "Education": [
+      "Sunderland Polytechnic"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Rosemary Candlin",
+    "Education": [
+      "University of Cambridge"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Rod Canion",
+    "Education": [
+      "University of Houston"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Bryan Cantrill",
+    "Education": [
+      "Brown University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Luca Cardelli",
+    "Education": [
+      "University of Pisa",
+      "University of Edinburgh"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "John Carmack",
+    "Education": [
+      "University of Missouri\u2013Kansas City"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Michael E. Caspersen",
+    "Education": [],
+    "Awards": 4
+  },
+  {
+    "Name": "Edwin Catmull",
+    "Education": [
+      "University of Utah"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Vint Cerf",
+    "Education": [
+      "Stanford University",
+      "BS",
+      "University of California Los Angeles",
+      "MS",
+      "PhD"
+    ],
+    "Awards": 12
+  },
+  {
+    "Name": "Gregory Chaitin",
+    "Education": [
+      "The Bronx High School of Science",
+      "City College of New York"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Robert Cailliau",
+    "Education": [
+      "Ghent University",
+      "University of Michigan"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Zhou Chaochen",
+    "Education": [
+      "Peking University",
+      "Chinese Academy of Sciences"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Peter Chen",
+    "Education": [
+      "National Taiwan University",
+      "Harvard University"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Leonardo Chiariglione",
+    "Education": [
+      "University of Tokyo"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Tracy Chou",
+    "Education": [
+      "Stanford University",
+      "B.S.",
+      "M.S."
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Alonzo Church",
+    "Education": [
+      "Princeton University",
+      "BS",
+      "PhD"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Alberto Ciaramella",
+    "Education": [
+      "Sapienza University of Rome"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Edmund M. Clarke",
+    "Education": [
+      "Cornell University"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "John Cocke ",
+    "Education": [
+      "Duke University"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Edgar F. Codd",
+    "Education": [
+      "Exeter College Oxford",
+      "University of Michigan"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Jacques Cohen ",
+    "Education": [
+      "Grenoble Alpes University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Ian Coldwater",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Simon Colton",
+    "Education": [
+      "Durham University",
+      "University of Liverpool",
+      "University of Edinburgh"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Alain Colmerauer",
+    "Education": [
+      "Grenoble Institute of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Douglas Comer",
+    "Education": [
+      "Houghton University",
+      "Penn State College of Engineering"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Paul Justin Compton",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Richard W. Conway",
+    "Education": [
+      "Cornell University"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Gordon Cormack",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Stephen Cook",
+    "Education": [
+      "Harvard University",
+      "University of Michigan"
+    ],
+    "Awards": 9
+  },
+  {
+    "Name": "James Cooley",
+    "Education": [
+      "Manhattan College",
+      "Columbia School of Engineering and Applied Science"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Danese Cooper",
+    "Education": [
+      "University of California Los Angeles"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Fernando J. Corbat\u00f3",
+    "Education": [
+      "California Institute of Technology",
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Kit Cosper",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Patrick Cousot",
+    "Education": [
+      "\u00c9cole Nationale Sup\u00e9rieure des Mines de Nancy"
+    ],
+    "Awards": 10
+  },
+  {
+    "Name": "Ingemar Cox",
+    "Education": [
+      "University College London",
+      "Oxford University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Seymour Cray",
+    "Education": [
+      "University of Minnesota"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Nello Cristianini",
+    "Education": [
+      "University of Trieste",
+      "University of London",
+      "University of Bristol"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Jon Crowcroft",
+    "Education": [
+      "University of Cambridge",
+      "University College London"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "W. Bruce Croft",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Glen Culler",
+    "Education": [
+      "University of California Berkeley",
+      "University of California Los Angeles"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Haskell Curry",
+    "Education": [
+      "Harvard University",
+      "University of G\u00f6ttingen"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Luigi Dadda",
+    "Education": [
+      "Politecnico di Milano"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Ole-Johan Dahl",
+    "Education": [
+      "University of Oslo"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Ryan Dahl",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Andries van Dam",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Samir Das",
+    "Education": [
+      "Georgia Tech",
+      "Indian Institute of Science",
+      "Jadavpur University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Neil Daswani",
+    "Education": [
+      "Stanford University",
+      "Columbia University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Christopher J. Date",
+    "Education": [
+      "University of Cambridge"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Terry A. Davis",
+    "Education": [
+      "Arizona State University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Jeff Dean",
+    "Education": [
+      "University of Minnesota",
+      "University of Washington"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Erik Demaine",
+    "Education": [
+      "Dalhousie University",
+      "University of Waterloo"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Tom DeMarco",
+    "Education": [
+      "Cornell University",
+      "Columbia University",
+      "University of Paris"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Richard DeMillo",
+    "Education": [
+      "University of St. Thomas",
+      "Georgia Institute of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Dorothy E. Denning",
+    "Education": [
+      "University of Michigan",
+      "Purdue University"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Peter J. Denning",
+    "Education": [
+      "Massachusetts Institute of Technology",
+      "Manhattan College"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Michael Dertouzos",
+    "Education": [
+      "University of Arkansas",
+      "MIT School of Engineering"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Alexander Dewdney",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Robert Dewar",
+    "Education": [
+      "University of Chicago"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Vinod Dham",
+    "Education": [
+      "Delhi College of Engineering",
+      "Delhi Technological University",
+      "Delhi University",
+      "University of Cincinnati"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Jan Dietz",
+    "Education": [
+      "Eindhoven University of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Whitfield Diffie",
+    "Education": [
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Edsger W. Dijkstra",
+    "Education": [
+      "Leiden University"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Matthew Dillon",
+    "Education": [
+      "University of California Berkeley"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Alan Dix",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Jack Dongarra",
+    "Education": [
+      "Chicago State University",
+      "BS",
+      "Illinois Institute of Technology",
+      "MS",
+      "University of New Mexico",
+      "PhD"
+    ],
+    "Awards": 15
+  },
+  {
+    "Name": "Marco Dorigo",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Paul Dourish",
+    "Education": [
+      "Alumni of the University of Edinburgh"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Charles Stark Draper",
+    "Education": [
+      "Massachusetts Institute of Technology",
+      "Stanford University"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Susan Dumais",
+    "Education": [
+      "Indiana University",
+      "Bates College"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Adam Dunkels",
+    "Education": [
+      "Lule\u00e5 University of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Jon Michael Dunn",
+    "Education": [
+      "Oberlin College",
+      "University of Pittsburgh"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Schahram Dustdar",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Peter Eades",
+    "Education": [
+      "Australian National University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Annie Easley",
+    "Education": [
+      "Cleveland State University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Wim Ebbinkhuijsen",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "John Presper Eckert",
+    "Education": [
+      "University of Pennsylvania"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Alan Edelman",
+    "Education": [
+      "MIT",
+      "Yale University"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Brendan Eich",
+    "Education": [
+      "University of Illinois Urbana-Champaign",
+      "Santa Clara University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Philip Emeagwali",
+    "Education": [
+      "George Washington University School of Engineering and Applied Science",
+      "Oregon State University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "E. Allen Emerson",
+    "Education": [
+      "University of Texas at Austin College of Natural Sciences",
+      "Harvard University"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Douglas Engelbart",
+    "Education": [
+      "Oregon State University",
+      "University of California Berkeley"
+    ],
+    "Awards": 7
+  },
+  {
+    "Name": "Barbara Engelhardt",
+    "Education": [
+      "Stanford University",
+      "University of California Berkeley"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "David Eppstein",
+    "Education": [
+      "Stanford University",
+      "Columbia University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Andrey Ershov",
+    "Education": [
+      "Moscow State University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Philip Don Estridge",
+    "Education": [
+      "University of Florida"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Oren Etzioni",
+    "Education": [
+      "Harvard University",
+      "Carnegie Mellon University"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Christopher Riche Evans",
+    "Education": [
+      "University College London",
+      "University of Reading"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "David C. Evans",
+    "Education": [
+      "University of Utah"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Shimon Even",
+    "Education": [
+      "Harvard University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Scott Fahlman",
+    "Education": [
+      "MIT School of Engineering"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Edward Feigenbaum",
+    "Education": [
+      "Carnegie Mellon University"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Edward Felten",
+    "Education": [
+      "California Institute of Technology",
+      "University of Washington College of Engineering"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Tim Finin",
+    "Education": [
+      "MIT School of Engineering",
+      "Grainger College of Engineering"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Raphael Finkel",
+    "Education": [
+      "University of Chicago",
+      "Stanford University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Donald Firesmith",
+    "Education": [
+      "Arizona State University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Gary William Flake",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Tommy Flowers",
+    "Education": [
+      "Alumni of the University of London"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Robert W. Floyd",
+    "Education": [
+      "University of Chicago"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Sally Floyd",
+    "Education": [
+      "University of California Berkeley"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Lawrence J. Fogel",
+    "Education": [
+      "Rutgers University",
+      "UCLA Henry Samueli School of Engineering and Applied Science",
+      "Polytechnic Institute of New York University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "James D. Foley",
+    "Education": [
+      "University of Michigan",
+      "Lehigh University"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Ken Forbus",
+    "Education": [
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "L. R. Ford, Jr.",
+    "Education": [
+      "University of Chicago",
+      "University of Illinois Urbana-Champaign"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Lance Fortnow",
+    "Education": [
+      "Cornell University",
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Mahmoud Samir Fayed",
+    "Education": [
+      "Menoufia University",
+      "King Saud University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Martin Fowler ",
+    "Education": [
+      "Alumni of University College London"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Robert France",
+    "Education": [
+      "University of the West Indies",
+      "Trinidad and Tobago",
+      "Massey University",
+      "New Zealand"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Herbert W. Franke",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Edward Fredkin",
+    "Education": [
+      "California Institute of Technology"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Yoav Freund",
+    "Education": [
+      "The Hebrew University of Jerusalem",
+      "University of California Santa Cruz"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Daniel P. Friedman",
+    "Education": [
+      "University of Houston"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Charlotte Froese Fischer",
+    "Education": [
+      "University of British Columbia",
+      "University of Cambridge"
+    ],
+    "Awards": 7
+  },
+  {
+    "Name": "Ping Fu",
+    "Education": [
+      "University of California San Diego"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Xiaoming Fu",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Kunihiko Fukushima",
+    "Education": [
+      "Kyoto University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "D. R. Fulkerson",
+    "Education": [
+      "Southern Illinois University",
+      "University of Wisconsin\u2013Madison"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Richard P. Gabriel",
+    "Education": [
+      "Massachusetts Institute of Technology School of Science",
+      "University of Illinois",
+      "Stanford University School of Engineering",
+      "Northeastern University"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Zvi Galil",
+    "Education": [
+      "Tel Aviv University",
+      "BSc",
+      "MSc",
+      "Cornell University",
+      "PhD"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Bernard Galler",
+    "Education": [
+      "University of Chicago",
+      "University of California Los Angeles"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Hector Garcia-Molina",
+    "Education": [
+      "Monterrey Institute of Technology and Higher Education",
+      "Stanford University School of Engineering"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Michael Garey",
+    "Education": [
+      "University of Wisconsin\u2013Madison"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Hugo de Garis",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Bill Gates",
+    "Education": [
+      "Harvard College",
+      "Lakeside School (Seattle)"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "David Gelernter",
+    "Education": [
+      "Yale University",
+      "BA",
+      "State University of New York at Stony Brook",
+      "PhD"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Lisa Gelobter",
+    "Education": [
+      "Brown University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Charles Geschke",
+    "Education": [
+      "Carnegie Mellon University",
+      "Saint Ignatius High School (Cleveland)",
+      "Xavier University"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Zoubin Ghahramani",
+    "Education": [
+      "University of Pennsylvania",
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Sanjay Ghemawat",
+    "Education": [
+      "Cornell University",
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Jeremy Gibbons",
+    "Education": [
+      "Alumni of the University of Oxford",
+      "Alumni of the University of Edinburgh"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Juan E. Gilbert",
+    "Education": [
+      "Miami University",
+      "University of Cincinnati"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Lee Giles",
+    "Education": [
+      "Rhodes College",
+      "University of Tennessee",
+      "University of Michigan",
+      "University of Arizona"
+    ],
+    "Awards": 7
+  },
+  {
+    "Name": "Seymour Ginsburg",
+    "Education": [
+      "City College of New York",
+      "University of Michigan"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Robert L. Glass",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Kurt G\u00f6del",
+    "Education": [
+      "University of Vienna",
+      "PhD"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Ashok Goel",
+    "Education": [
+      "Ohio State University"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Joseph Goguen",
+    "Education": [
+      "Harvard University",
+      "University of California Berkeley"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "E. Mark Gold",
+    "Education": [
+      "California Institute of Technology",
+      "Princeton University",
+      "University of California Los Angeles"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Adele Goldberg ",
+    "Education": [
+      "University of Michigan",
+      "University of Chicago"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Andrew V. Goldberg",
+    "Education": [
+      "Massachusetts Institute of Technology",
+      "University of California Berkeley"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Ian Goldberg",
+    "Education": [
+      "University of California Berkeley",
+      "University of Waterloo"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Judy Goldsmith ",
+    "Education": [
+      "Princeton University",
+      "University of Wisconsin\u2013Madison College of Letters and Science"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Oded Goldreich",
+    "Education": [
+      "Technion",
+      "Weizmann Institute"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Shafi Goldwasser",
+    "Education": [
+      "Carnegie Mellon University",
+      "University of California Berkeley"
+    ],
+    "Awards": 11
+  },
+  {
+    "Name": "Gene Golub",
+    "Education": [
+      "University of Illinois at Urbana-Champaign"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Martin Charles Golumbic",
+    "Education": [
+      "Pennsylvania State University",
+      "Columbia University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Gast\u00f3n Gonnet",
+    "Education": [
+      "University of Waterloo"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Ian Goodfellow",
+    "Education": [
+      "Stanford University",
+      "Universit\u00e9 de Montr\u00e9al"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "James Gosling",
+    "Education": [
+      "University of Calgary",
+      "BSc",
+      "Carnegie Mellon University",
+      "MA",
+      "PhD"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Paul Graham ",
+    "Education": [
+      "Cornell University",
+      "Harvard University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Robert M. Graham ",
+    "Education": [
+      "University of Michigan"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Susan L. Graham",
+    "Education": [
+      "Harvard",
+      "Stanford"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Jim Gray ",
+    "Education": [
+      "University of California Berkeley"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Sheila Greibach",
+    "Education": [
+      "Radcliffe College",
+      "Harvard University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "David Gries",
+    "Education": [
+      "Technical University of Munich"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Ralph Griswold",
+    "Education": [
+      "Stanford University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Bill Gropp",
+    "Education": [
+      "Stanford University"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Tom Gruber",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Shelia Guberman",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Ramanathan V. Guha",
+    "Education": [
+      "Indian Institute of Technology Madras",
+      "University of California Berkeley",
+      "Stanford University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Neil J. Gunther",
+    "Education": [
+      "La Trobe University",
+      "University of Southampton"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "J\u00fcrg Gutknecht",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Michael Guy",
+    "Education": [
+      "Alumni of Gonville and Caius College Cambridge"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Robert Griesemer",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Nico Habermann",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Philipp Matth\u00e4us Hahn",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Eldon C. Hall",
+    "Education": [
+      "Eastern Nazarene College",
+      "Harvard University",
+      "Boston University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Wendy Hall",
+    "Education": [
+      "University of Southampton",
+      "City University London"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Joseph Halpern",
+    "Education": [
+      "University of Toronto",
+      "Harvard University"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Margaret Hamilton ",
+    "Education": [
+      "Earlham College",
+      "University of Michigan College of Literature Science and the Arts"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Richard Hamming",
+    "Education": [
+      "University of Chicago",
+      "University of Nebraska",
+      "University of Illinois at Urbana\u2013Champaign"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Jiawei Han",
+    "Education": [
+      "University of Wisconsin - Madison",
+      "PhD",
+      "University of Science and Technology of China",
+      "BSc."
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Frank Harary",
+    "Education": [
+      "Brooklyn College",
+      "University of California Berkeley"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Brian Harris ",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Juris Hartmanis",
+    "Education": [
+      "University of Marburg",
+      "University of Kansas City",
+      "Caltech"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Johan H\u00e5stad",
+    "Education": [
+      "Massachusetts Institute of Technology",
+      "Uppsala University",
+      "Stockholm University"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Les Hatton",
+    "Education": [
+      "King's College Cambridge"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Igor Hawryszkiewycz",
+    "Education": [
+      "MIT School of Engineering"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "He Jifeng",
+    "Education": [
+      "Fudan University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Eric Hehner",
+    "Education": [
+      "Carleton University",
+      "University of Toronto"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Martin Hellman",
+    "Education": [
+      "New York University",
+      "Stanford University"
+    ],
+    "Awards": 9
+  },
+  {
+    "Name": "Gernot Heiser",
+    "Education": [],
+    "Awards": 6
+  },
+  {
+    "Name": "James Hendler",
+    "Education": [
+      "Yale University",
+      "Southern Methodist University",
+      "Brown University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "John L. Hennessy",
+    "Education": [
+      "Villanova University",
+      "Stony Brook University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Andrew Herbert",
+    "Education": [
+      "Alumni of the University of Leeds",
+      "Alumni of St John's College Cambridge"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Carl Hewitt",
+    "Education": [
+      "MIT"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Kelsey Hightower",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Danny Hillis",
+    "Education": [
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Geoffrey Hinton",
+    "Education": [
+      "Alumni of the University of Edinburgh"
+    ],
+    "Awards": 9
+  },
+  {
+    "Name": "Julia Hirschberg",
+    "Education": [
+      "University of Pennsylvania",
+      "University of Michigan"
+    ],
+    "Awards": 9
+  },
+  {
+    "Name": "Tin Kam Ho",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "C. A. R. Hoare",
+    "Education": [
+      "Alumni of Merton College Oxford",
+      "Moscow State University"
+    ],
+    "Awards": 7
+  },
+  {
+    "Name": "Louis Hodes",
+    "Education": [
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Betty Holberton",
+    "Education": [],
+    "Awards": 4
+  },
+  {
+    "Name": "John Henry Holland",
+    "Education": [
+      "University of Michigan"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Herman Hollerith",
+    "Education": [
+      "City College of New York",
+      "Columbia School of Mines"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Gerard Holzmann",
+    "Education": [
+      "Delft University of Technology"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "John Hopcroft",
+    "Education": [
+      "Seattle University",
+      "Stanford University"
+    ],
+    "Awards": 8
+  },
+  {
+    "Name": "Grace Hopper",
+    "Education": [
+      "Vassar College",
+      "BA",
+      "Yale University",
+      "MS",
+      "PhD"
+    ],
+    "Awards": 10
+  },
+  {
+    "Name": "Eric Horvitz",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Alston Householder",
+    "Education": [
+      "University of Chicago"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Paul Hudak",
+    "Education": [
+      "Vanderbilt University",
+      "Massachusetts Institute of Technology",
+      "University of Utah"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "David A. Huffman",
+    "Education": [
+      "Ohio State University",
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "John Hughes ",
+    "Education": [],
+    "Awards": 1
+  },
+  {
+    "Name": "Roger Hui",
+    "Education": [
+      "University of Alberta",
+      "University of Toronto"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Watts Humphrey",
+    "Education": [
+      "University of Chicago Booth School of Business",
+      "Illinois Institute of Technology"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Sandra Hutchins",
+    "Education": [
+      "University of California San Diego"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Jean Ichbiah",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Roberto Ierusalimschy",
+    "Education": [
+      "Pontifical Catholic University of Rio de Janeiro"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Dan Ingalls",
+    "Education": [
+      "Harvard University",
+      "Stanford University School of Engineering"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Mary Jane Irwin",
+    "Education": [
+      "University of Illinois at Urbana-Champaign",
+      "Memphis State University"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Kenneth E. Iverson",
+    "Education": [
+      "Queen's University",
+      "Harvard University"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Ivar Jacobson",
+    "Education": [
+      "Chalmers Institute of Technology",
+      "Gothenburg",
+      "Royal Institute of Technology",
+      "Stockholm"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Anil K. Jain ",
+    "Education": [
+      "IIT Kanpur",
+      "Ohio State University"
+    ],
+    "Awards": 12
+  },
+  {
+    "Name": "Ramesh Jain",
+    "Education": [
+      "Indian Institute of Technology Kharagpur",
+      "Visvesvaraya National Institute of Technology Nagpur"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Jonathan James",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "David S. Johnson",
+    "Education": [
+      "Amherst College",
+      "MIT"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Stephen C. Johnson",
+    "Education": [
+      "Columbia University",
+      "Haverford College"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Cliff Jones ",
+    "Education": [
+      "University of Oxford"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Michael I. Jordan",
+    "Education": [
+      "University of California San Diego"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Mathai Joseph",
+    "Education": [
+      "Wilson College Mumbai",
+      "University of Bombay",
+      "Welsh College of Advanced Technology",
+      "University of Cambridge"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Aravind K. Joshi",
+    "Education": [
+      "College of Engineering Pune",
+      "Indian Institute of Science",
+      "University of Pennsylvania"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Bill Joy",
+    "Education": [
+      "University of Michigan",
+      "University of California Berkeley"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Dan Jurafsky",
+    "Education": [
+      "University of California at Berkeley"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "William Kahan",
+    "Education": [
+      "University of Toronto"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Robert E. Kahn",
+    "Education": [
+      "City College of New York",
+      "Princeton University"
+    ],
+    "Awards": 11
+  },
+  {
+    "Name": "Avinash Kak",
+    "Education": [
+      "University of Madras",
+      "Indian Institute of Technology Delhi"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Poul-Henning Kamp",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "David Karger",
+    "Education": [
+      "Harvard University",
+      "Stanford University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Richard Karp",
+    "Education": [
+      "Harvard University"
+    ],
+    "Awards": 9
+  },
+  {
+    "Name": "Narendra Karmarkar",
+    "Education": [
+      "IIT Bombay",
+      "Caltech",
+      "University of California Berkeley"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Marek Karpinski",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Ted Kaehler",
+    "Education": [
+      "Stanford University",
+      "Carnegie Mellon University",
+      "Gunn High School"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Alan Kay",
+    "Education": [
+      "University of Colorado Boulder",
+      "University of Utah"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Neeraj Kayal",
+    "Education": [
+      "IIT Kanpur"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Manolis Kellis",
+    "Education": [
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "John George Kemeny",
+    "Education": [
+      "George Washington Educational Campus",
+      "Princeton University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Ken Kennedy ",
+    "Education": [
+      "Rice University",
+      "New York University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Brian Kernighan",
+    "Education": [
+      "University of Toronto",
+      "BASc",
+      "Princeton University",
+      "PhD"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Carl Kesselman",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Gregor Kiczales",
+    "Education": [
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Peter T. Kirstein",
+    "Education": [
+      "University of Cambridge",
+      "Stanford University"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Stephen Cole Kleene",
+    "Education": [
+      "Amherst College",
+      "Princeton University"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Dan Klein",
+    "Education": [
+      "Cornell University",
+      "University of Oxford",
+      "Stanford University"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Leonard Kleinrock",
+    "Education": [
+      "City College of New York",
+      "MIT"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Donald Knuth",
+    "Education": [
+      "California Institute of Technology",
+      "Case Western Reserve University"
+    ],
+    "Awards": 13
+  },
+  {
+    "Name": "Andrew Koenig ",
+    "Education": [
+      "Columbia University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Daphne Koller",
+    "Education": [
+      "Stanford University"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Michael K\u00f6lling",
+    "Education": [
+      "University of Bremen",
+      "University of Sydney"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Andrey Nikolaevich Kolmogorov",
+    "Education": [
+      "Moscow State University",
+      "Ph.D."
+    ],
+    "Awards": 7
+  },
+  {
+    "Name": "Janet L. Kolodner",
+    "Education": [
+      "Brandeis University",
+      "Yale University"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "David Korn ",
+    "Education": [
+      "Rensselaer Polytechnic Institute",
+      "Courant Institute of Mathematical Sciences"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Cornelis H. A. Koster",
+    "Education": [
+      "University of Amsterdam"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Robert Kowalski",
+    "Education": [
+      "University of Chicago",
+      "University of Bridgeport",
+      "BA",
+      "Stanford University",
+      "MSc",
+      "University of Warsaw",
+      "University of Edinburgh",
+      "PhD"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "John Koza",
+    "Education": [
+      "University of Michigan"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "John Krogstie",
+    "Education": [
+      "Norwegian University of Science and Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Joseph Kruskal",
+    "Education": [
+      "University of Chicago",
+      "Princeton University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Maarja Kruusmaa",
+    "Education": [
+      "Tallinn University of Technology",
+      "Chalmers University of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Thomas E. Kurtz",
+    "Education": [
+      "Knox College (Illinois)",
+      "Princeton University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Richard E. Ladner",
+    "Education": [
+      "St. Mary's College of California",
+      "University of California Berkeley"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Monica S. Lam",
+    "Education": [
+      "Carnegie Mellon University",
+      "University of British Columbia"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Leslie Lamport",
+    "Education": [
+      "Massachusetts Institute of Technology",
+      "BS",
+      "Brandeis University",
+      "MA",
+      "PhD"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Butler Lampson",
+    "Education": [
+      "Harvard University",
+      "University of California Berkeley"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Peter Landin",
+    "Education": [
+      "Alumni of Clare College Cambridge"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Tom Lane ",
+    "Education": [
+      "Carnegie Mellon University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "B\u00f6rje Langefors",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Chris Lattner",
+    "Education": [
+      "University of Portland",
+      "University of Illinois at Urbana-Champaign"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Steve Lawrence ",
+    "Education": [
+      "Queensland University of Technology",
+      "University of Queensland"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Edward D. Lazowska",
+    "Education": [
+      "Brown University",
+      "University of Toronto"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Joshua Lederberg",
+    "Education": [
+      "Columbia University Vagelos College of Physicians and Surgeons",
+      "Columbia College (New York)",
+      "Stuyvesant High School",
+      "Yale University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Manny M Lehman",
+    "Education": [
+      "Imperial College London"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Charles E. Leiserson",
+    "Education": [
+      "Carnegie Mellon University",
+      "Yale University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Douglas Lenat",
+    "Education": [
+      "Stanford University School of Engineering",
+      "University of Pennsylvania"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Yann LeCun",
+    "Education": [
+      "ESIEE Paris",
+      "MS",
+      "Pierre and Marie Curie University",
+      "PhD"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Rasmus Lerdorf",
+    "Education": [
+      "University of Waterloo"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Max Levchin",
+    "Education": [
+      "Grainger College of Engineering",
+      "Mather High School"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Leonid Levin",
+    "Education": [
+      "Moscow University",
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Kevin Leyton-Brown",
+    "Education": [
+      "McMaster University",
+      "Stanford University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "J.C.R. Licklider",
+    "Education": [
+      "University of Rochester",
+      "Washington University in St. Louis"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "David Liddle",
+    "Education": [
+      "University of Michigan",
+      "University of Toledo"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Jochen Liedtke",
+    "Education": [
+      "Bielefeld University",
+      "Technical University of Berlin"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "John Lions",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Charles H. Lindsey",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Richard J. Lipton",
+    "Education": [
+      "Carnegie Mellon"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Barbara Liskov",
+    "Education": [
+      "University of California Berkeley",
+      "Stanford University"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Yanhong Annie Liu",
+    "Education": [
+      "Cornell University",
+      "Tsinghua University",
+      "Peking University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Darrell Long",
+    "Education": [
+      "San Diego State University",
+      "University of California San Diego"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Patricia D. Lopez",
+    "Education": [
+      "New Mexico State University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Gillian Lovegrove",
+    "Education": [
+      "Newnham College Cambridge",
+      "Cambridge University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Ada Lovelace",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "David Luckham",
+    "Education": [
+      "Ph.D.",
+      "MIT"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Eugene Luks",
+    "Education": [
+      "City College of New York",
+      "Massachusetts Institute of Technology School of Science"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Nancy Lynch",
+    "Education": [
+      "Brooklyn College",
+      "MIT"
+    ],
+    "Awards": 7
+  },
+  {
+    "Name": "Nadia Magnenat Thalmann",
+    "Education": [
+      "University of Geneva",
+      "\u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Tom Maibaum",
+    "Education": [
+      "University of Toronto",
+      "Alumni of Queen Mary University of London",
+      "Alumni of Royal Holloway University of London"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Simon Marlow",
+    "Education": [],
+    "Awards": 1
+  },
+  {
+    "Name": "Zohar Manna",
+    "Education": [
+      "Carnegie Mellon University"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "James Martin ",
+    "Education": [
+      "University of Oxford"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Robert C. Martin",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "John Mashey",
+    "Education": [
+      "Pennsylvania State University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Yuri Matiyasevich",
+    "Education": [
+      "Leningrad State University"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Yukihiro Matsumoto",
+    "Education": [
+      "University of Tsukuba",
+      "Shimane University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "John Mauchly",
+    "Education": [
+      "Johns Hopkins University"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Ujjwal Maulik",
+    "Education": [
+      "Nabadwip Bakultala High School",
+      "Calcutta University",
+      "Jadavpur University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Derek McAuley",
+    "Education": [
+      "University of Cambridge"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "John McCarthy ",
+    "Education": [
+      "Princeton University",
+      "California Institute of Technology"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Andrew McCallum",
+    "Education": [
+      "Dartmouth College",
+      "University of Rochester"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Douglas McIlroy",
+    "Education": [
+      "Cornell University",
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Chris McKinstry",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Marshall Kirk McKusick",
+    "Education": [
+      "Cornell University College of Engineering",
+      "University of California Berkeley"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Lambert Meertens",
+    "Education": [
+      "University of Amsterdam"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Kurt Mehlhorn",
+    "Education": [
+      "Cornell University"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Dora Metcalf",
+    "Education": [
+      "Alumni of the University of London"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Bertrand Meyer",
+    "Education": [
+      "Universit\u00e9 de Nancy",
+      "Stanford University",
+      "\u00c9cole Polytechnique"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Silvio Micali",
+    "Education": [
+      "La Sapienza University of Rome",
+      "UC Berkeley"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Robin Milner",
+    "Education": [
+      "Alumni of King's College Cambridge"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Jack Minker",
+    "Education": [
+      "Brooklyn College",
+      "University of Wisconsin",
+      "University of Pennsylvania"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Marvin Minsky",
+    "Education": [
+      "Ethical Culture Fieldston School",
+      "Harvard College",
+      "Phillips Academy",
+      "Princeton University",
+      "The Bronx High School of Science"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "James G. Mitchell",
+    "Education": [
+      "University of Waterloo",
+      "Carnegie Mellon University"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Tom M. Mitchell",
+    "Education": [
+      "Stanford University",
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Arvind ",
+    "Education": [
+      "IIT Kanpur",
+      "University of Minnesota College of Science and Engineering"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Paul Mockapetris",
+    "Education": [
+      "Massachusetts Institute of Technology",
+      "University of California at Irvine"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Cleve Moler",
+    "Education": [
+      "California Institute of Technology",
+      "Stanford University"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Faron Moller",
+    "Education": [
+      "University of British Columbia",
+      "University of Waterloo",
+      "University of Edinburgh"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "John P. Moon",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Charles H. Moore",
+    "Education": [
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Edward F. Moore",
+    "Education": [
+      "Virginia Tech",
+      "Brown University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Gordon Moore",
+    "Education": [
+      "California Institute of Technology",
+      "San Jose State University",
+      "UC Berkeley College of Chemistry",
+      "Berkeley Student Cooperative",
+      "Sequoia High School (Redwood City California)"
+    ],
+    "Awards": 9
+  },
+  {
+    "Name": "J Strother Moore",
+    "Education": [
+      "Massachusetts Institute of Technology School of Science",
+      "Alumni of the University of Edinburgh"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Roger Moore ",
+    "Education": [
+      "Stanford University"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Hans Moravec",
+    "Education": [
+      "Acadia University",
+      "University of Western Ontario",
+      "Stanford University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Carroll Morgan ",
+    "Education": [
+      "University of Sydney"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Robert Tappan Morris",
+    "Education": [
+      "Cornell University",
+      "Delbarton School",
+      "Harvard John A. Paulson School of Engineering and Applied Sciences"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Joel Moses",
+    "Education": [
+      "Columbia College (New York)",
+      "Midwood High School",
+      "Columbia Graduate School of Arts and Sciences"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Rajeev Motwani",
+    "Education": [
+      "IIT Kanpur",
+      "B.Tech",
+      "C.S.",
+      "UC Berkeley",
+      "Ph.D.",
+      "C.S."
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Oleg A. Mukhanov",
+    "Education": [
+      "Moscow Engineering Physics Institute",
+      "Moscow State University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Stephen Muggleton",
+    "Education": [
+      "University of Edinburgh"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Klaus-Robert M\u00fcller",
+    "Education": [
+      "University of Karlsruhe",
+      "Diplom",
+      "University of Karlsruhe"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Alan Mycroft",
+    "Education": [
+      "University of Cambridge",
+      "University of Edinburgh"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Brad A. Myers",
+    "Education": [
+      "University of Toronto",
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Mihai Nadin",
+    "Education": [
+      "Politehnica University of Bucharest"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Makoto Nagao",
+    "Education": [
+      "Kyoto University"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Frieder Nake",
+    "Education": [
+      "University of Stuttgart"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Bonnie Nardi",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Peter Naur",
+    "Education": [],
+    "Awards": 2
+  },
+  {
+    "Name": "Roger Needham",
+    "Education": [
+      "University of Cambridge"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "James G. Nell",
+    "Education": [
+      "Drexel University",
+      "Bowling Green State University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Greg Nelson ",
+    "Education": [
+      "Harvard University",
+      "Stanford University School of Engineering"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Bernard de Neumann",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Klara Dan von Neumann",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "John von Neumann",
+    "Education": [
+      "ETH Zurich",
+      "Fasori Gimn\u00e1zium"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Allen Newell",
+    "Education": [
+      "Stanford University",
+      "Princeton University",
+      "Carnegie Mellon University"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Max Newman",
+    "Education": [
+      "St John's College Cambridge"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Andrew Ng",
+    "Education": [
+      "University of California Berkeley",
+      "Massachusetts Institute of Technology",
+      "Carnegie Mellon University"
+    ],
+    "Awards": 9
+  },
+  {
+    "Name": "Nils John Nilsson",
+    "Education": [
+      "Stanford University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "G.M. Nijssen",
+    "Education": [
+      "Eindhoven University of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Tobias Nipkow",
+    "Education": [
+      "Technische Universit\u00e4t Darmstadt"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Maurice Nivat",
+    "Education": [
+      "Joseph Fourier University"
+    ],
+    "Awards": 7
+  },
+  {
+    "Name": "Phiwa Nkambule",
+    "Education": [
+      "University of Pretoria"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Jerre Noe",
+    "Education": [
+      "UC Berkeley",
+      "Stanford University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Peter Nordin",
+    "Education": [
+      "University of Dortmund",
+      "Chalmers University of Technology",
+      "G\u00f6teborg University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Donald Norman",
+    "Education": [
+      "MIT",
+      "University of Pennsylvania"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Peter Norvig",
+    "Education": [
+      "Brown University",
+      "University of California Berkeley"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "George Novacky",
+    "Education": [
+      "University of Pittsburgh"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Kristen Nygaard",
+    "Education": [
+      "University of Oslo",
+      "Waldorf school"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Martin Odersky",
+    "Education": [
+      "Ludwig Maximilian University of Munich",
+      "ETH Zurich"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Peter O'Hearn",
+    "Education": [
+      "Dalhousie University",
+      "Queen's University"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "T. William Olle",
+    "Education": [
+      "Alumni of the University of Manchester"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Steve Omohundro",
+    "Education": [
+      "Stanford University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Severo Ornstein",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "John O'Sullivan ",
+    "Education": [
+      "University of Sydney"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "John Ousterhout",
+    "Education": [
+      "Carnegie Mellon University",
+      "Yale University"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Mark Overmars",
+    "Education": [
+      "Utrecht University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Susan Owicki",
+    "Education": [
+      "Cornell University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Larry Page",
+    "Education": [
+      "Stanford University School of Engineering",
+      "University of Michigan College of Engineering"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Sankar Pal",
+    "Education": [
+      "Rajabazar Science College",
+      "University of Calcutta",
+      "Indian Statistical Institute",
+      "Imperial College London"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Paritosh Pandya",
+    "Education": [
+      "Maharaja Sayajirao University of Baroda",
+      "IIT Kanpur",
+      "University of Mumbai",
+      "Tata Institute of Fundamental Research"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Christos Papadimitriou",
+    "Education": [
+      "National Technical University of Athens",
+      "Princeton University"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "David Park ",
+    "Education": [
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "David Parnas",
+    "Education": [
+      "Carnegie Mellon University College of Engineering"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "DJ Patil",
+    "Education": [
+      "University of California San Diego",
+      "University of Maryland College Park",
+      "De Anza College"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Yale Patt",
+    "Education": [
+      "Northeastern University",
+      "Stanford University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "David Patterson ",
+    "Education": [
+      "University of California Los Angeles"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Mike Paterson",
+    "Education": [],
+    "Awards": 2
+  },
+  {
+    "Name": "Mihai P\u0103tra\u0219cu ",
+    "Education": [
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Lawrence Paulson",
+    "Education": [
+      "California Institute of Technology",
+      "Stanford University"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Randy Pausch",
+    "Education": [
+      "Brown University",
+      "Carnegie Mellon University"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Juan Pav\u00f3n",
+    "Education": [
+      "Technical University of Madrid",
+      "Universit\u00e9 Pierre et Marie Curie"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Judea Pearl",
+    "Education": [
+      "Technion \u2013 Israel Institute of Technology",
+      "New Jersey Institute of Technology",
+      "Rutgers University",
+      "New York University Tandon School of Engineering"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Alan Perlis",
+    "Education": [
+      "Chemistry",
+      "Carnegie Mellon",
+      "MIT"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Radia Perlman",
+    "Education": [
+      "MIT"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Pier Giorgio Perotto",
+    "Education": [
+      "Polytechnic University of Turin"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "R\u00f3zsa P\u00e9ter",
+    "Education": [
+      "E\u00f6tv\u00f6s Lor\u00e1nd University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Simon Peyton Jones",
+    "Education": [
+      "University of Cambridge"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Kathy Pham",
+    "Education": [
+      "Georgia Tech"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Roberto Pieraccini",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Keshav K Pingali",
+    "Education": [
+      "IIT Kanpur",
+      "MIT"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Gordon Plotkin",
+    "Education": [
+      "University of Glasgow",
+      "University of Edinburgh"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Amir Pnueli",
+    "Education": [
+      "Technion \u2013 Israel Institute of Technology"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Willem van der Poel",
+    "Education": [
+      "Delft University of Technology",
+      "University of Amsterdam"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Cicely Popplewell",
+    "Education": [
+      "University of Cambridge"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Emil Post",
+    "Education": [
+      "City College of New York",
+      "Columbia University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Jon Postel",
+    "Education": [
+      "UCLA"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Franco Preparata",
+    "Education": [
+      "University of Rome"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "William H. Press",
+    "Education": [
+      "Harvard University",
+      "California Institute of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Rapelang Rabana",
+    "Education": [
+      "University of Cape Town",
+      "Alumni of Roedean School South Africa"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Grzegorz Rozenberg",
+    "Education": [
+      "Polish Academy of Sciences"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Michael O. Rabin",
+    "Education": [
+      "Hebrew University of Jerusalem",
+      "MSc",
+      "University of Pennsylvania",
+      "Princeton University",
+      "PhD"
+    ],
+    "Awards": 10
+  },
+  {
+    "Name": "Dragomir R. Radev",
+    "Education": [
+      "Columbia School of Engineering and Applied Science"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "T. V. Raman",
+    "Education": [
+      "Cornell University",
+      "IIT Bombay"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Brian Randell",
+    "Education": [
+      "Imperial College London"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Anders P. Ravn",
+    "Education": [
+      "University of Copenhagen",
+      "Technical University of Denmark"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Raj Reddy",
+    "Education": [
+      "University of Madras",
+      "BE",
+      "University of New South Wales",
+      "MTech",
+      "Stanford University",
+      "PhD"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "David P. Reed",
+    "Education": [
+      "MIT"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Trygve Reenskaug",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "John C. Reynolds",
+    "Education": [
+      "Harvard University",
+      "Purdue University"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Joyce K. Reynolds",
+    "Education": [
+      "University of Southern California"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Reinder van de Riet",
+    "Education": [
+      "University of Amsterdam"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Bernard Richards",
+    "Education": [
+      "Alumni of the University of Manchester"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Martin Richards ",
+    "Education": [
+      "University of Cambridge"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Adam Riese",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "C. J. van Rijsbergen",
+    "Education": [
+      "University of Western Australia",
+      "University of Cambridge"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Dennis Ritchie",
+    "Education": [
+      "Harvard University",
+      "BS"
+    ],
+    "Awards": 8
+  },
+  {
+    "Name": "Ron Rivest",
+    "Education": [
+      "Stanford University",
+      "Yale University"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Ken Robinson ",
+    "Education": [
+      "University of Sydney"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Colette Rolland",
+    "Education": [
+      "Nancy-Universit\u00e9"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "John Romero",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Azriel Rosenfeld",
+    "Education": [],
+    "Awards": 2
+  },
+  {
+    "Name": "Douglas T. Ross",
+    "Education": [
+      "Oberlin College",
+      "MIT School of Engineering"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Guido van Rossum",
+    "Education": [
+      "University of Amsterdam"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "M. A. Rothman",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Winston W. Royce",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Rudy Rucker",
+    "Education": [
+      "Rutgers University",
+      "Swarthmore College"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Steven Rudich",
+    "Education": [],
+    "Awards": 1
+  },
+  {
+    "Name": "Jeff Rulifson",
+    "Education": [
+      "University of Washington",
+      "Stanford University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "James Rumbaugh",
+    "Education": [
+      "Massachusetts Institute of Technology School of Science",
+      "California Institute of Technology",
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Peter Ru\u017ei\u010dka",
+    "Education": [
+      "Comenius University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "George Sadowsky",
+    "Education": [
+      "Harvard University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Mehrnoosh Sadrzadeh",
+    "Education": [
+      "Universit\u00e9 du Qu\u00e9bec \u00e0 Montr\u00e9al",
+      "Sharif University of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Umar Saif",
+    "Education": [
+      "Aitchison College",
+      "Alumni of Trinity College Cambridge",
+      "Lahore University of Management Sciences"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Gerard Salton",
+    "Education": [
+      "Harvard John A. Paulson School of Engineering and Applied Sciences",
+      "Brooklyn College"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Jean E. Sammet",
+    "Education": [
+      "Mount Holyoke College",
+      "B.A.",
+      "University of Illinois at Urbana Champaign",
+      "M.A.",
+      "Columbia University"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Claude Sammut",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Carl Sassenrath",
+    "Education": [
+      "University of California Davis"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Mahadev Satyanarayanan",
+    "Education": [
+      "Carnegie Mellon University (Ph.D.)",
+      "IIT Madras (M.Tech. B.Tech.)"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Walter Savitch",
+    "Education": [
+      "University of California Berkeley"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Jonathan Schaeffer",
+    "Education": [
+      "University of Waterloo",
+      "University of Toronto"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Wilhelm Schickard",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "J\u00fcrgen Schmidhuber",
+    "Education": [
+      "Technical University of Munich"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Steve Schneider ",
+    "Education": [
+      "University of Oxford"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Bruce Schneier",
+    "Education": [
+      "American University",
+      "University of Rochester"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Fred B. Schneider",
+    "Education": [
+      "Stony Brook University"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Sarita Schoenebeck",
+    "Education": [
+      "Georgia Institute of Technology",
+      "University of California Berkeley",
+      "Dartmouth College"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Glenda Schroeder",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Bernhard Sch\u00f6lkopf",
+    "Education": [
+      "University of London",
+      "University of T\u00fcbingen",
+      "TU Berlin"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Dana Scott",
+    "Education": [
+      "Princeton University",
+      "UC Berkeley College of Letters and Science"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Michael L. Scott",
+    "Education": [
+      "University of Wisconsin\u2013Madison"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Robert Sedgewick ",
+    "Education": [
+      "Brown University"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Ravi Sethi",
+    "Education": [
+      "Indian Institute of Technology Kanpur",
+      "Princeton University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Nigel Shadbolt",
+    "Education": [
+      "Newcastle University",
+      "University of Edinburgh"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Adi Shamir",
+    "Education": [
+      "Tel Aviv University",
+      "Weizmann Institute of Science"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Claude Shannon",
+    "Education": [
+      "University of Michigan",
+      "AB",
+      "BS",
+      "Massachusetts Institute of Technology",
+      "MS",
+      "PhD"
+    ],
+    "Awards": 10
+  },
+  {
+    "Name": "David E. Shaw",
+    "Education": [
+      "Columbia School of Engineering and Applied Science",
+      "Stanford University",
+      "University of California San Diego"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Cliff Shaw",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Scott Shenker",
+    "Education": [
+      "Brown University",
+      "University of Chicago"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Shashi Shekhar ",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Ben Shneiderman",
+    "Education": [
+      "City College of New York",
+      "Stony Brook University"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Edward H. Shortliffe",
+    "Education": [
+      "Harvard John A. Paulson School of Engineering and Applied Sciences",
+      "Stanford University School of Medicine"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Daniel Siewiorek",
+    "Education": [
+      "Stanford University",
+      "University of Michigan College of Engineering"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Joseph Sifakis",
+    "Education": [
+      "National Technical University of Athens",
+      "University of Grenoble"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Herbert A. Simon",
+    "Education": [
+      "University of Chicago"
+    ],
+    "Awards": 10
+  },
+  {
+    "Name": "Munindar P. Singh",
+    "Education": [
+      "University of Texas at Austin",
+      "Indian Institute of Technology Delhi"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Ramesh Sitaraman",
+    "Education": [
+      "Indian Institute of Technology Madras",
+      "Princeton University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Daniel Sleator",
+    "Education": [
+      "University of Illinois at Urbana\u2013Champaign",
+      "Stanford University"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Aaron Sloman",
+    "Education": [
+      "Alumni of Balliol College Oxford",
+      "Alumni of St Antony's College Oxford",
+      "Alumni of the University of Edinburgh",
+      "University of Cape Town"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Arne S\u00f8lvberg",
+    "Education": [
+      "Norwegian Institute of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Brian Cantwell Smith",
+    "Education": [
+      "MIT"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "David Canfield Smith",
+    "Education": [
+      "Oberlin College",
+      "Stanford University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Steven Spewak",
+    "Education": [
+      "Case Western Reserve University",
+      "Ross School of Business"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Carol Spradling",
+    "Education": [
+      "University of Nebraska - Lincoln"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Robert Sproull",
+    "Education": [
+      "Deep Springs College",
+      "Cornell University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Rohini Kesavan Srihari",
+    "Education": [
+      "University of Waterloo",
+      "University at Buffalo"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Sargur Srihari",
+    "Education": [
+      "Bangalore University",
+      "Indian Institute of Science",
+      "Ohio State University"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Maciej Stachowiak",
+    "Education": [
+      "MIT School of Engineering"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Richard Stallman",
+    "Education": [
+      "Harvard John A. Paulson School of Engineering and Applied Sciences",
+      "Massachusetts Institute of Technology School of Science"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Ronald Stamper",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Thad Starner",
+    "Education": [
+      "Massachusetts Institute of Technology School of Science"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Richard E. Stearns",
+    "Education": [
+      "Carleton College",
+      "Princeton University"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Guy L. Steele, Jr.",
+    "Education": [
+      "MIT School of Engineering",
+      "Harvard John A. Paulson School of Engineering and Applied Sciences"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Thomas Sterling ",
+    "Education": [
+      "Old Dominion University",
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Alexander Stepanov",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "W. Richard Stevens",
+    "Education": [
+      "University of Michigan",
+      "University of Arizona"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Larry Stockmeyer",
+    "Education": [
+      "MIT School of Engineering",
+      "Massachusetts Institute of Technology School of Science"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Salvatore Stolfo",
+    "Education": [
+      "Courant Institute of Mathematical Sciences",
+      "Brooklyn College"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Michael Stonebraker",
+    "Education": [
+      "Princeton University",
+      "University of Michigan"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Olaf Storaasli ",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Christopher Strachey",
+    "Education": [
+      "University of Cambridge"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Volker Strassen",
+    "Education": [
+      "University of G\u00f6ttingen"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Bjarne Stroustrup",
+    "Education": [
+      "Aarhus University",
+      "Cand.scient.",
+      "University of Cambridge",
+      "PhD"
+    ],
+    "Awards": 11
+  },
+  {
+    "Name": "Madhu Sudan",
+    "Education": [
+      "IIT Delhi",
+      "University of California Berkeley"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Gerald Jay Sussman",
+    "Education": [
+      "Massachusetts Institute of Technology School of Science"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Bert Sutherland",
+    "Education": [
+      "RPI",
+      "MIT"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Ivan Sutherland",
+    "Education": [
+      "MIT",
+      "Caltech",
+      "Carnegie Institute of Technology"
+    ],
+    "Awards": 8
+  },
+  {
+    "Name": "Latanya Sweeney",
+    "Education": [
+      "Harvard Extension School",
+      "Harvard University",
+      "MIT School of Engineering"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Mario Szegedy",
+    "Education": [
+      "University of Chicago"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Parisa Tabriz",
+    "Education": [
+      "Grainger College of Engineering"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Roberto Tamassia",
+    "Education": [
+      "University of Illinois Urbana-Champaign"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Andrew S. Tanenbaum",
+    "Education": [
+      "Massachusetts Institute of Technology",
+      "University of California Berkeley"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Austin Tate",
+    "Education": [
+      "Lancaster University",
+      "University of Edinburgh"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Bernhard Thalheim",
+    "Education": [
+      "Dresden University of Technology",
+      "Lomonosov Moscow State University"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "\u00c9va Tardos",
+    "Education": [
+      "E\u00f6tv\u00f6s Lor\u00e1nd University"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "G\u00e1bor Tardos",
+    "Education": [
+      "E\u00f6tv\u00f6s Lor\u00e1nd University"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Robert Tarjan",
+    "Education": [
+      "California Institute of Technology",
+      "BS",
+      "Stanford University",
+      "MS",
+      "PhD"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Valerie Taylor ",
+    "Education": [],
+    "Awards": 3
+  },
+  {
+    "Name": "Mario Tchou",
+    "Education": [
+      "Polytechnic Institute of New York University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Jaime Teevan",
+    "Education": [
+      "Yale University",
+      "MIT School of Engineering"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Shang-Hua Teng",
+    "Education": [
+      "Shanghai Jiao Tong University",
+      "University of Southern California",
+      "Carnegie Mellon"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Larry Tesler",
+    "Education": [
+      "Stanford University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Avie Tevanian",
+    "Education": [
+      "Carnegie Mellon University",
+      "University of Rochester"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Charles P. Thacker",
+    "Education": [
+      "University of California Berkeley"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Daniel Thalmann",
+    "Education": [
+      "University of Geneva"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Ken Thompson ",
+    "Education": [
+      "University of California Berkeley"
+    ],
+    "Awards": 9
+  },
+  {
+    "Name": "Sebastian Thrun",
+    "Education": [
+      "University of Bonn",
+      "University of Hildesheim"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Walter F. Tichy",
+    "Education": [
+      "Technische Universit\u00e4t M\u00fcnchen",
+      "Carnegie Mellon University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Seinosuke Toda",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Linus Torvalds",
+    "Education": [
+      "University of Helsinki"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Leonardo Torres Quevedo",
+    "Education": [
+      "Polytechnic University of Madrid"
+    ],
+    "Awards": 7
+  },
+  {
+    "Name": "Godfried Toussaint",
+    "Education": [
+      "University of Tulsa",
+      "University of British Columbia"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Gloria Townsend",
+    "Education": [
+      "Indiana University"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Edwin E. Tozer",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Joseph F Traub",
+    "Education": [
+      "City College of New York (B.S. 1954)",
+      "Columbia University (Ph.D. Applied Mathematics 1959)"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "John V. Tucker",
+    "Education": [
+      "Alumni of the University of Warwick",
+      "Alumni of the University of Bristol"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "John Tukey",
+    "Education": [
+      "Brown University",
+      "Princeton University"
+    ],
+    "Awards": 7
+  },
+  {
+    "Name": "Alan Turing",
+    "Education": [
+      "University of Cambridge",
+      "BA",
+      "MA",
+      "Princeton University"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "David Turner ",
+    "Education": [
+      "Alumni of Brasenose College Oxford"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Murray Turoff",
+    "Education": [
+      "University of California - Berkeley",
+      "Brandeis University"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Jeffrey D. Ullman",
+    "Education": [
+      "Columbia University",
+      "Princeton University"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Leslie Valiant",
+    "Education": [
+      "University of Cambridge",
+      "Imperial College London",
+      "University of Warwick"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Vladimir Vapnik",
+    "Education": [
+      "Institute of Control Sciences Russian Academy of Sciences",
+      "Uzbek State University"
+    ],
+    "Awards": 11
+  },
+  {
+    "Name": "Moshe Vardi",
+    "Education": [
+      "Bar-Ilan University",
+      "Weizmann Institute of Science",
+      "Hebrew University of Jerusalem"
+    ],
+    "Awards": 7
+  },
+  {
+    "Name": "Dorothy Vaughan",
+    "Education": [
+      "Wilberforce University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Bernard Vauquois",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Umesh Vazirani",
+    "Education": [
+      "MIT",
+      "University of California Berkeley"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Manuela M. Veloso",
+    "Education": [
+      "Instituto Superior T\u00e9cnico",
+      "University of Lisbon",
+      "Boston University",
+      "Carnegie Mellon University"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Fran\u00e7ois Vernadat",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Richard Veryard",
+    "Education": [
+      "Alumni of Merton College Oxford",
+      "Alumni of the Department of Computing Imperial College London"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Sergiy Vilkomir",
+    "Education": [
+      "Kharkov State University",
+      "Kharkov Polytechnic Institute"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Paul Vitanyi",
+    "Education": [
+      "Delft University of Technology",
+      "Free University of Amsterdam"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Andrew Viterbi",
+    "Education": [
+      "MIT School of Engineering",
+      "University of Southern California",
+      "Boston Latin School"
+    ],
+    "Awards": 8
+  },
+  {
+    "Name": "Jeffrey Scott Vitter",
+    "Education": [
+      "University of Notre Dame",
+      "Stanford University School of Engineering",
+      "Fuqua School of Business"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Paul Vixie",
+    "Education": [
+      "Keio University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Eiiti Wada",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "David A. Wagner",
+    "Education": [
+      "Princeton University",
+      "UC Berkeley College of Engineering"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "David Waltz",
+    "Education": [
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "James Z. Wang",
+    "Education": [
+      "Stanford University",
+      "M.S.",
+      "M.S.",
+      "Ph.D.",
+      "University of Minnesota",
+      "B.S."
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Steve Ward ",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "Manfred K. Warmuth",
+    "Education": [
+      "University of Colorado Boulder"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "David H. D. Warren",
+    "Education": [
+      "University of Edinburgh"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Kevin Warwick",
+    "Education": [
+      "Aston University",
+      "Imperial College London"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Jan Weglarz",
+    "Education": [
+      "Pozna\u0144 University of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Philip Wadler",
+    "Education": [
+      "Stanford University",
+      "Carnegie Mellon University"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "Peter Wegner",
+    "Education": [],
+    "Awards": 2
+  },
+  {
+    "Name": "Joseph Henry Wegstein",
+    "Education": [
+      "University of Illinois"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Peter J. Weinberger",
+    "Education": [
+      "University of California Berkeley"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Mark Weiser",
+    "Education": [
+      "University of Michigan"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Joseph Weizenbaum",
+    "Education": [
+      "Wayne State University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "David Wheeler ",
+    "Education": [
+      "Alumni of Trinity College Cambridge"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Franklin H. Westervelt",
+    "Education": [
+      "University of Michigan College of Engineering"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Steve Whittaker",
+    "Education": [
+      "Alumni of the University of Cambridge",
+      "Alumni of the University of St Andrews"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Jennifer Widom",
+    "Education": [
+      "Cornell University",
+      "Indiana University Jacobs School of Music"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Gio Wiederhold",
+    "Education": [
+      "University of California San Francisco"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Norbert Wiener",
+    "Education": [
+      "Cornell University",
+      "Harvard Graduate School of Arts and Sciences",
+      "Tufts University School of Arts and Sciences"
+    ],
+    "Awards": 2
+  },
+  {
+    "Name": "Adriaan van Wijngaarden",
+    "Education": [
+      "Delft University of Technology"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Mary Allen Wilkes",
+    "Education": [
+      "Wellesley College",
+      "Harvard Law School"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Maurice Vincent Wilkes",
+    "Education": [
+      "University of Cambridge"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Yorick Wilks",
+    "Education": [
+      "University of Cambridge"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "James H. Wilkinson",
+    "Education": [
+      "Trinity College Cambridge"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Sophie Wilson",
+    "Education": [
+      "Alumni of Selwyn College Cambridge"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Shmuel Winograd",
+    "Education": [
+      "New York University",
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Terry Winograd",
+    "Education": [
+      "Colorado College",
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Patrick Winston",
+    "Education": [
+      "MIT"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Niklaus Wirth",
+    "Education": [
+      "ETH Zurich",
+      "Universit\u00e9 Laval",
+      "UC Berkeley College of Engineering"
+    ],
+    "Awards": 5
+  },
+  {
+    "Name": "Neil Wiseman",
+    "Education": [
+      "University of Cambridge",
+      "University of Illinois",
+      "Queen Mary College"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Dennis E. Wisnosky",
+    "Education": [
+      "University of Dayton",
+      "Swanson School of Engineering"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Stephen Wolfram",
+    "Education": [
+      "St. John's College Oxford",
+      "California Institute of Technology"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Mike Woodger",
+    "Education": [
+      "University College London"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Philip Woodward",
+    "Education": [
+      "Oxford University"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Beatrice Helen Worsley",
+    "Education": [
+      "University of Toronto",
+      "Massachusetts Institute of Technology",
+      "University of Cambridge"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Steve Wozniak",
+    "Education": [
+      "De Anza College",
+      "UC Berkeley College of Engineering",
+      "University of Colorado Boulder",
+      "Homestead High School (California)"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Jie Wu",
+    "Education": [],
+    "Awards": 0
+  },
+  {
+    "Name": "William Wulf",
+    "Education": [
+      "University of Illinois",
+      "University of Virginia School of Engineering and Applied Science"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Mihalis Yannakakis",
+    "Education": [
+      "National Technical University of Athens",
+      "Princeton University"
+    ],
+    "Awards": 1
+  },
+  {
+    "Name": "Andrew Chi-Chih Yao",
+    "Education": [
+      "National Taiwan University",
+      "Harvard University",
+      "University of Illinois at Urbana\u2013Champaign"
+    ],
+    "Awards": 4
+  },
+  {
+    "Name": "John Yen",
+    "Education": [
+      "University of California Berkeley",
+      "Santa Clara University",
+      "National Taiwan University",
+      "National Hsinchu Senior High School"
+    ],
+    "Awards": 3
+  },
+  {
+    "Name": "Nobuo Yoneda",
+    "Education": [
+      "University of Tokyo"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Edward Yourdon",
+    "Education": [
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Moti Yung",
+    "Education": [
+      "Columbia University"
+    ],
+    "Awards": 6
+  },
+  {
+    "Name": "Lotfi Zadeh",
+    "Education": [
+      "University of Tehran",
+      "Massachusetts Institute of Technology",
+      "Columbia University"
+    ],
+    "Awards": 12
+  },
+  {
+    "Name": "Hans Zantema",
+    "Education": [
+      "University of Groningen"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Arif Zaman",
+    "Education": [
+      "Stanford University",
+      "Harvey Mudd College",
+      "Claremont Graduate University"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Stanley Zdonik",
+    "Education": [
+      "Massachusetts Institute of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Hussein Zedan",
+    "Education": [
+      "University of Bristol"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Shlomo Zilberstein",
+    "Education": [
+      "University of California Berkeley",
+      "Technion \u2013 Israel Institute of Technology"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Jill Zimmerman",
+    "Education": [
+      "Purdue University",
+      "University of Minnesota"
+    ],
+    "Awards": 0
+  },
+  {
+    "Name": "Konrad Zuse",
+    "Education": [
+      "Technical University of Berlin"
+    ],
+    "Awards": 6
+  }
+]
