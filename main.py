@@ -36,7 +36,7 @@ def handle_post():
 @app.route('/lookup', methods=['GET'])
 def lookup():
     print("lookup from main "+ str(request.get_data()))
-    #time.sleep(1)
+    time.sleep(1)
     data = request.get_json()
     print("lookup data " + str(data["key"]))
     key = data["key"]
