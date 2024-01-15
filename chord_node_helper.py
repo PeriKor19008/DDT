@@ -91,11 +91,11 @@ class ChordNodeHelper:
             pre_list = [tmp] * node.successor_num
             return pre_list
 
-        for i in range(node.chord_size):
-            if pre_list:
+        for i in range(int(math.log2(node.chord_size))):
+            if not pre_list:
                 pre_list.append(node.lookup((position-(i+1)) % node.chord_size))
             else:
-                pre_list.append(node.lookup((pre_list[-1].position-1) % node.chord_size))
+                pre_list.append(node.lookup(((pre_list[-1].position)-1) % node.chord_size))
         return pre_list
 
     def hash(self, string: str, chord_size: int) -> int:
