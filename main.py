@@ -26,5 +26,6 @@ def receive_info():
     info = data["pos"]
     print("Received data:", data)
     return node.receive_info(info)
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
