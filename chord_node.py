@@ -213,7 +213,7 @@ class ChordNode:
                 if (i > 0) and (self.successors[i - 1].position == self.successors[i].position) and (helper.is_between(self.successors[i].position, self.position, node_position, self.chord_size)):
                     print("if cond in line 214 met")
                     for j in range(len(self.successors)):
-                        self.successors.insert(j, Routes(node_position, node_ip))
+                        self.successors.insert(j+1, Routes(node_position, node_ip))
                         self.successors.pop()
                     break
                 if helper.is_between(self.position, self.successors[i].position, node_position, self.chord_size):
