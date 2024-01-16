@@ -12,9 +12,6 @@ class BTree:
         self.root = Node(True)
         self.t = t
 
-    def is_subset(self, subset, superset):
-        return all(item in superset for item in subset)
-
     def search(self, education, node=None, matches=None):
         node = self.root if node is None else node
         matches = matches if matches is not None else []
@@ -233,6 +230,5 @@ class BTree:
                 self.root = pickle.load(file)
         except FileNotFoundError:
             self.root = Node(True)  # If the file doesn't exist, create a new B-tree
-
 
 

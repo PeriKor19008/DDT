@@ -5,7 +5,7 @@ WORKDIR /DDT
 
 COPY . ../DDT
 
-RUN pip install flask && pip install requests && pip install requests
+RUN pip install flask requests
 
 CMD ["python" , "main.py"]
 
