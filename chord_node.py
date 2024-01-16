@@ -207,7 +207,7 @@ class ChordNode:
         node_position = helper.hash(node_ip, self.chord_size)
         print("handle inform" + str(node_position))
         if s == 1: #node entering the ring
-            ## add node to routing
+            ##add node to routing
 
             for i in range(len(self.successors)):
                 if (i > 0) and (self.successors[i - 1].position == self.successors[i].position) and (helper.is_between(self.successors[i].position, self.position, node_position, self.chord_size)):
