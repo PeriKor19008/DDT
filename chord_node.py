@@ -20,7 +20,7 @@ class ChordNode:
         self.routing_table = []
         self.btree: BTree = BTree(False)
 
-    
+    # Initialize suc/pre of node
     def initialize(self, flask_ip):
         self.ip = flask_ip
         self.position = helper.hash(self.ip, self.chord_size)
@@ -36,6 +36,7 @@ class ChordNode:
 
         return "initialized\n"
     
+    # First node in the ring, has for suc/pre it's own self
     def first(self):
         for i in range(self.successor_num):
             self.successors[i][1] = self.position
@@ -44,11 +45,14 @@ class ChordNode:
         print(self.predecessors)
         return "first node joined\n"
     
+    # Another node asks to join the ring
     def join(self, host):
         response = requests.post(host + "/receive_info", json={"pos": self.position})
         # Process the response if needed
         return "bootstrap(data)"
 
+    # Recreating suc/pre table for host node
+    # returns the changed values of the suc/pre tables
     def receive_info(self, position):
             temp_suc = []
             temp_pre = []
