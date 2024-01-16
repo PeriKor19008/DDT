@@ -5,44 +5,6 @@ import socket
 
 class ChordNodeHelper:
 
-
-
-    def lookup_inner(self, key: int, node):
-        closest_successor = node.successors[0]
-        print("closest succesesor"+str(closest_successor.position))
-        for n in node.predecessors + node.successors:
-            if n.position == key:
-                return [n, True]
-
-        f = Routes(node.position, node.ip)
-        for suc in node.successors:
-
-            if self.is_between(f.position, suc.position, key, node.chord_size):
-                return [suc, True]
-
-
-        print("node routing"+str(node.routing_table[0].position))
-        for r in range(len(node.routing_table)):
-            print("r position"+str(node.routing_table[r].position))
-
-            if node.routing_table[r].position == key:
-                print("a")
-                return [r, False]
-            if (node.routing_table[r].position > closest_successor.position) and (node.routing_table[r].position > key):
-                closest_successor = r
-                print("b")
-                return [closest_successor, False]
-
-
-        return [closest_successor, False]
-
-
-
-
-
-
-
-
     def  get_back_references(self,node):
         r = (node.position - node.predecessors[0].position) % node.chord_size
         references = []
@@ -98,7 +60,11 @@ class ChordNodeHelper:
             if not pre_list:
                 pre_list.append(node.lookup((position-(i+1)) % node.chord_size))
             else:
-                pre_list.append(node.lookup(((pre_list[-1].position)-1) % node.chord_size))
+                for j in range(node.chord_size):
+                    n = node.lookup(((pre_list[-1].position)-1+j) % node.chord_size)
+                    if not any(pre.position == n.position for pre in pre_list):
+                        pre_list.append(n)
+
         return pre_list
 
     def hash(self, string: str, chord_size: int) -> int:

@@ -110,19 +110,15 @@ class ChordNode:
         return "self.routing_table"
     def lookup(self, key: int):
         key = key % self.chord_size  # to be sure that the key is inside the chord bounds
-        print("lookup " + str(key) + "  pos:" + str(self.position))
+        print("lookup key:" + str(key) + " by node with  pos:" + str(self.position))
         for suc in self.successors:
-            print("between " + str(self.position)+" " +str(suc.position)+" " +str(key)+" "+str(helper.is_between(self.position, suc.position, key, self.chord_size)))
             if helper.is_between(self.position, suc.position, key, self.chord_size) or suc.position == key:
-                print("suc:" + str(suc.position))
                 return suc
 
         for r in self.routing_table:
-            print("routing loop")
             f=self.position
             s=r.position
             if helper.is_between(f, s, key, self.chord_size) or suc.position == key:
-                print("rout " + str(r.position))
                 response = requests.get("http://" + r.ip + "/lookup", json={"key": key})
                 data = json.loads(response.content.decode('utf-8'))
                 return Routes(data["position"], data["ip"])
@@ -201,19 +197,28 @@ class ChordNode:
 
     def inform_node(self, node_ip: str, s: int):
         domain = "/inform"
+        print("inform sent to" + str(node_ip))
         response = requests.post("http://" + node_ip + domain,json={"type": s})
+
         return response
 
     def handle_inform(self, node_ip: str, s :int):
 
         node_position = helper.hash(node_ip, self.chord_size)
-        print("handle response" + str(node_position))
+        print("handle inform" + str(node_position))
         if s == 1: #node entering the ring
             ##add node to routing
 
             for i in range(len(self.successors)):
-
+                if (i > 0) and (self.successors[i - 1].position == self.successors[i].position) and (helper.is_between(self.successors[i].position, self.position, node_position, self.chord_size)):
+                    print("if cond in line 214 met")
+                    for j in range(len(self.successors)):
+                        self.successors.insert(j, Routes(node_position, node_ip))
+                        self.successors.pop()
+                    break
                 if helper.is_between(self.position, self.successors[i].position, node_position, self.chord_size):
+
+
                     if i > 0 and self.successors[i - 1].position == node_position:
                         return
                     print("geting node" + str(node_position) + " in suc place:" + str(i) +
