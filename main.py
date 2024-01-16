@@ -42,8 +42,8 @@ def lookup():
     key = data["key"]
 
     result = node.lookup(key)
-    print("result=" + str(result))
-    if isinstance(result,Routes):
+    print("result=" + str(result) + "\n result data, position: " + str(result.position) + " --ip: " + str(result.ip))
+    if not isinstance(result, Routes):
         return result
     return jsonify({"position": result.position, "ip": result.ip})
 

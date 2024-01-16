@@ -79,7 +79,10 @@ class ChordNodeHelper:
             if not suc_list:
                 suc_list.append(node.lookup((position+i+1) % node.chord_size))
             else:
-                suc_list.append(node.lookup((1 + suc_list[-1].position) % node.chord_size))
+                n = node.lookup((1 + suc_list[-1].position) % node.chord_size)
+                if any(suc.position == n.position for suc in suc_list):
+                    n = suc_list[i-1]
+                suc_list.append(n)
         return suc_list
 
     def get_predecessor(self, position, node):
@@ -102,6 +105,10 @@ class ChordNodeHelper:
         h = 0
         for i in string:
             h = ord(i) * 7 + h
+        result = h % chord_size
+        print("----------------------------------------------"
+              + "\nHASH\n"
+              + "string:" + str(string) + "  result:" + str(result))
         return h % chord_size
 
     def lookup_back_references(self, references, node):

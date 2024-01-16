@@ -24,6 +24,62 @@ services:
       - ./log/:/log
     networks:
       mynetwork:
+  myapp4:
+    image: app
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./log/:/log
+    networks:
+      mynetwork:
+  myapp5:
+    image: app
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./log/:/log
+    networks:
+      mynetwork:
+  myapp6:
+    image: app
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./log/:/log
+    networks:
+      mynetwork:
+  myapp7:
+    image: app
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./log/:/log
+    networks:
+      mynetwork:
+  myapp8:
+    image: app
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./log/:/log
+    networks:
+      mynetwork:
+  myapp9:
+    image: app
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./log/:/log
+    networks:
+      mynetwork:
+  myapp10:
+    image: app
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./log/:/log
+    networks:
+      mynetwork:
 volumes:
   shared-data:
 networks:
