@@ -9,8 +9,6 @@ def open_bootstrap_window():
     def send_data():
         sender_ip = sender_ip_entry.get()
         receiver_ip = receiver_ip_entry.get()
-        ip_prefix = ip_prefix_entry.get()
-        node_amount = node_amount_entry.get()
         if not receiver_ip.startswith("http://"):
             receiver_ip = "http://" + receiver_ip
         curl_command = f"curl -X POST -d '{receiver_ip}' http://{sender_ip}/bootstrap"
@@ -49,7 +47,7 @@ def open_bootstrap_window():
         try:
             # Convert node amount to an integer
             node_amount = int(node_amount_entry.get())
-            subprocess.run(["./bootstrap.sh", ip_prefix, str(node_amount)], check=True)
+            subprocess.run(["../bootstrap.sh", ip_prefix, str(node_amount)], check=True)
             command_label.config(text="Bootstrap script executed successfully")
         except ValueError:
             command_label.config(text="Node amount must be an integer")
