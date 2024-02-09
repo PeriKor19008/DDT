@@ -24,7 +24,7 @@ def open_log_window():
     # Function to handle logging all
     def log_all():
         try:
-            subprocess.run(["./log.sh"], check=True)
+            subprocess.run(["../log.sh"], check=True)
             print("Script executed successfully")
         except subprocess.CalledProcessError as e:
             print("Error executing script:", e)
