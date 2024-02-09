@@ -1,0 +1,30 @@
+version: '3'
+services:
+  myapp1:
+    image: app
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./log/:/log
+    networks:
+      mynetwork:
+  myapp2:
+    image: app
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./log/:/log
+    networks:
+      mynetwork:
+  myapp3:
+    image: app
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./log/:/log
+    networks:
+      mynetwork:
+volumes:
+  shared-data:
+networks:
+  mynetwork:
