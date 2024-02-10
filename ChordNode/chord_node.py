@@ -367,24 +367,21 @@ class ChordNode:
                     response = requests.post("http://" + s.ip)
                     if response.status_code != 200:
                         self.delete_node_from_routing(s.position)
-                        print("node is unrechable")
-                    else:
-                        print("node ok")
+                        print("node" + str(s.position) + " is unrechable")
+
                 response = requests.post("http://" + self.predecessor.ip)
                 if response.status_code != 200:
                     self.delete_node_from_routing(self.predecessor.position)
-                    print("node is unrechable")
-                else:
-                    print("node ok")
+                    print("node" + str(self.predecessor.position) + " is unrechable")
+
 
             if t == 2:
                 for r in self.routing_table:
                     response = requests.post("http://" + r.ip)
                     if response.status_code != 200:
                         self.delete_node_from_routing(r.position)
-                        print("node is unrechable")
-                    else:
-                        print("node ok")
+                        print("node" + str(r.position) + " is unrechable")
+
 
     def log(self):
         print("##################################################################")
