@@ -115,7 +115,7 @@ def open_bootstrap_window():
         try:
             node_amount = int(node_amount_entry.get())
             # Adjusted script execution command
-            subprocess.run(["./bootstrap.sh", f"{ip_prefix}", str(node_amount)], check=True)
+            subprocess.run(["../bootstrap.sh", f"{ip_prefix}", str(node_amount)], check=True)
             command_label.config(text="Bootstrap script executed successfully")
         except ValueError:
             command_label.config(text="Node amount must be an integer")
