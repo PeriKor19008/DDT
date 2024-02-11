@@ -61,8 +61,9 @@ def open_add_data_window():
                 csv_reader = csv.DictReader(file)
                 counter = 0
                 for row in csv_reader:
-                    if counter > int(count):
-                        break
+                    if len(count) != 0:
+                        if counter > int(count):
+                            break
                     name = row['Name'].replace('"', r'\"')
                     row['Education'] = row['Education'].replace("'s","")
                     row['Education'] = row['Education'].replace('""',"'")
