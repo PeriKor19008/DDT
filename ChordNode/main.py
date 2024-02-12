@@ -122,7 +122,7 @@ def store_data_route():
 
     for item in data:
         node.btree.insert(item)
-    node.btree.print_tree(node.btree.root)
+    # node.btree.print_tree(node.btree.root)
     return "Data from depart received from successor"
 
 
@@ -153,6 +153,10 @@ def depart():
     response = node.inform_node(request.remote_addr +":5000/", 2)
     return response
 
+@app.route('/print_tree', methods=['GET'])
+def print_tree():
+    node.btree.print_tree(node.btree.root)
+    return "\n\nBtree Data\n\n"
 
 def suc_alive():
     return node.is_alive(1)

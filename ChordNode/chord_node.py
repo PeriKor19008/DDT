@@ -163,13 +163,17 @@ class ChordNode:
                     return "Data sent to the appropriate node for insertion"
 
     def store_data(self, tree_data, send_to_suc):
-        self.btree.insert(tree_data)
-        if send_to_suc:
-            keys = tree_data.get("Education", [])
-            self.btree.owned(keys)
-            result = self.backup_data(tree_data)
-            return result
-        return "Data stored"
+        if len(tree_data) > 0:
+            self.btree.insert(tree_data)
+            if send_to_suc:
+                keys = tree_data.get("Education", [])
+                self.btree.owned(keys)
+                result = self.backup_data(tree_data)
+                return result
+            return "Data stored"
+        else:
+            return "No data to store"
+        
     def backup_data(self, tree_data):
         for selected_node in self.successors:
             target_node_ip = "http://" + selected_node.ip + "/backup_data"
@@ -181,27 +185,28 @@ class ChordNode:
 
     def retrieve_data(self, search_key):
 
-        for data in search_key:
-            target_node = self.lookup(helper.hash(data, self.chord_size))
+        # for data in search_key:
+        target_node = self.lookup(helper.hash(search_key, self.chord_size))
 
-            if target_node.ip == self.ip:
-                if not hasattr(self, 'btree'):
-                    return "B-tree is not initialized"
+        if target_node.ip == self.ip:
+            if not hasattr(self, 'btree'):
+                return "B-tree is not initialized"
 
-                matches = self.btree.search(data)
+            matches = self.btree.search(search_key)
+            if len(matches) == 0:
+                print("\n\n No matches \n\n")
+            search_results = []
+            for node, index in matches:
+                search_results.append(node.keys[index])
 
-                search_results = []
-                for node, index in matches:
-                    search_results.append(node.keys[index])
-
-                if search_results:
-                    return jsonify(search_results)
-                else:
-                    return "No data found"
+            if search_results:
+                return jsonify(search_results)
             else:
-                target_node_ip = "http://" + target_node.ip + "/retrieve_data"
-                response = requests.get(target_node_ip, json={"Education": data})
-                return response.text
+                return "No data found"
+        else:
+            target_node_ip = "http://" + target_node.ip + "/retrieve_data"
+            response = requests.get(target_node_ip, json={"Education": search_key})
+            return response.text
 
     def search_data(self, search_key):
 
@@ -245,7 +250,9 @@ class ChordNode:
                     for node, index in search_results:
                         if index < len(node.keys):
                             tmp.append(node.keys[index])
-                json_data = json.dumps(tmp)
+                                
+            json_data = json.dumps(tmp)
+            if tmp:
                 target_node_ip = "http://" + self.successors[0].ip + "/receive_data"
                 requests.post(target_node_ip, json=json_data,
                             headers={'Content-Type': 'application/json'})
@@ -336,7 +343,6 @@ class ChordNode:
     def handle_post(self, data):
         data = request.get_data(as_text=True)
         name = self.ip
-        print("url \' / \' invoked with data: " + name)
         file = open("/log/log.txt", 'a')
         file.write(name + "\n")
 

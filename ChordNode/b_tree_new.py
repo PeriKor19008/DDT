@@ -36,7 +36,7 @@ class BTree:
 
         i = 0
         while i < len(node.keys):
-            if education in node.keys[i]['Education']:
+            if education in node.keys[i]:
                 matches.append((node, i))
                 # print(node.keys[i])
             i += 1
@@ -90,19 +90,19 @@ class BTree:
         # find the correct spot in the leaf to insert the key
         if x.leaf:
             x.keys.append(None)
-            while i >= 0 and data["Education"] < x.keys[i]["Education"]:
+            while i >= 0 and data["Education"][0] < x.keys[i].get("Education")[0]:
                 x.keys[i + 1] = x.keys[i]
                 i -= 1
             x.keys[i + 1] = data
         # if not a leaf, find the correct subtree to insert the key
         else:
-            while i >= 0 and data["Education"] < x.keys[i]["Education"]:
+            while i >= 0 and data["Education"][0] < x.keys[i].get("Education")[0]:
                 i -= 1
             i += 1
             # if child node is full, split it
             if len(x.children[i].keys) == (2 * t) - 1:
                 self.split_child(x, i)
-                if data["Education"] > x.keys[i]["Education"]:
+                if data["Education"][0] > x.keys[i].get("Education")[0]:
                     i += 1
             self.insert_non_full(x.children[i], data)
 
