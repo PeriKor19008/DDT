@@ -11,3 +11,4 @@ curl -X POST -d 'http://192.168.1.108:5000/' http://192.168.1.108:5000/init_data
 curl -X POST  http://172.19.0.2:5000/depart
 
 curl -X POST http://172.19.0.5:5000/insert_data -H 'Content-Type: application/json' -d '{"Name": "Atta ur Rehman Khan", "Education": ["University of Malaya", "COMSATS University"], "Awards": 0}'
+curl -X GET http://172.21.0.2:5000/retrieve_data -H 'Content-Type: application/json' -d '{"Education":"University of Malaya"}'

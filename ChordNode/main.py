@@ -119,9 +119,9 @@ def store_data_route():
     if not node_active():
         abort(404)
     data = [request.get_json()]
-
-    for item in data:
-        node.btree.insert(item)
+    if len(data) > 0:
+        for item in data:
+            node.btree.insert(item)
     # node.btree.print_tree(node.btree.root)
     return "Data from depart received from successor"
 
@@ -168,8 +168,8 @@ def rout_alive():
 
 
 if __name__ == '__main__':
-    scheduler = BackgroundScheduler()
-    scheduler.start()
-    scheduler.add_job(suc_alive, 'interval', seconds=2)
-    scheduler.add_job(rout_alive, 'interval', seconds=7)
+    # scheduler = BackgroundScheduler()
+    # scheduler.start()
+    # scheduler.add_job(suc_alive, 'interval', seconds=2)
+    # scheduler.add_job(rout_alive, 'interval', seconds=7)
     app.run(host='0.0.0.0', port=5000)

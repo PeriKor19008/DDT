@@ -50,15 +50,11 @@ Lenore Blum,"['Simmons College', 'Massachusetts Institute of Technology']",3
 Manuel Blum,"['Massachusetts Institute of Technology', 'BA', 'MA', 'PhD']",1
 Barry Boehm,"['Harvard College', 'Harvard University', 'University of California Los Angeles']",0
 Corrado Böhm,['ETH Zürich'],0
-Kurt Bollacker,[],0
-Jeff Bonwick,[],0
 Grady Booch,"['United States Air Force Academy', 'University of California Santa Barbara']",2
-George Boole,[],0
 Andrew Donald Booth,['Jesus College'],0
 Kathleen Booth,['University of London'],0
 Anita Borg,['New York University'],0
 Bert Bos,['University of Groningen'],0
-Mikhail Botvinnik,[],0
 Jonathan Bowen,"['University College', 'Oxford']",1
 Stephen R. Bourne,"[""Alumni of King's College London"", 'Alumni of Trinity College Cambridge']",3
 Harry Bouwman,"['Vrije Universiteit Amsterdam', 'Radboud University Nijmegen']",0
@@ -83,7 +79,6 @@ Rod Canion,['University of Houston'],0
 Bryan Cantrill,['Brown University'],0
 Luca Cardelli,"['University of Pisa', 'University of Edinburgh']",2
 John Carmack,['University of Missouri–Kansas City'],0
-Michael E. Caspersen,[],4
 Edwin Catmull,['University of Utah'],4
 Vint Cerf,"['Stanford University', 'BS', 'University of California Los Angeles', 'MS', 'PhD']",12
 Gregory Chaitin,"['The Bronx High School of Science', 'City College of New York']",0
@@ -98,30 +93,23 @@ Edmund M. Clarke,['Cornell University'],1
 John Cocke ,['Duke University'],6
 Edgar F. Codd,"['Exeter College Oxford', 'University of Michigan']",1
 Jacques Cohen ,['Grenoble Alpes University'],0
-Ian Coldwater,[],0
 Simon Colton,"['Durham University', 'University of Liverpool', 'University of Edinburgh']",0
 Alain Colmerauer,['Grenoble Institute of Technology'],0
 Douglas Comer,"['Houghton University', 'Penn State College of Engineering']",0
-Paul Justin Compton,[],0
 Richard W. Conway,['Cornell University'],2
-Gordon Cormack,[],0
 Stephen Cook,"['Harvard University', 'University of Michigan']",9
 James Cooley,"['Manhattan College', 'Columbia School of Engineering and Applied Science']",0
 Danese Cooper,['University of California Los Angeles'],0
 Fernando J. Corbató,"['California Institute of Technology', 'Massachusetts Institute of Technology']",2
-Kit Cosper,[],0
 Patrick Cousot,['École Nationale Supérieure des Mines de Nancy'],10
 Ingemar Cox,"['University College London', 'Oxford University']",0
 Seymour Cray,['University of Minnesota'],0
 Nello Cristianini,"['University of Trieste', 'University of London', 'University of Bristol']",2
 Jon Crowcroft,"['University of Cambridge', 'University College London']",2
-W. Bruce Croft,[],0
 Glen Culler,"['University of California Berkeley', 'University of California Los Angeles']",3
 Haskell Curry,"['Harvard University', 'University of Göttingen']",0
 Luigi Dadda,['Politecnico di Milano'],0
 Ole-Johan Dahl,['University of Oslo'],2
-Ryan Dahl,[],0
-Andries van Dam,[],0
 Samir Das,"['Georgia Tech', 'Indian Institute of Science', 'Jadavpur University']",0
 Neil Daswani,"['Stanford University', 'Columbia University']",0
 Christopher J. Date,['University of Cambridge'],0
@@ -133,25 +121,20 @@ Richard DeMillo,"['University of St. Thomas', 'Georgia Institute of Technology']
 Dorothy E. Denning,"['University of Michigan', 'Purdue University']",2
 Peter J. Denning,"['Massachusetts Institute of Technology', 'Manhattan College']",2
 Michael Dertouzos,"['University of Arkansas', 'MIT School of Engineering']",0
-Alexander Dewdney,[],0
 Robert Dewar,['University of Chicago'],0
 Vinod Dham,"['Delhi College of Engineering', 'Delhi Technological University', 'Delhi University', 'University of Cincinnati']",0
 Jan Dietz,['Eindhoven University of Technology'],0
 Whitfield Diffie,['Massachusetts Institute of Technology'],6
 Edsger W. Dijkstra,['Leiden University'],5
 Matthew Dillon,['University of California Berkeley'],0
-Alan Dix,[],0
 Jack Dongarra,"['Chicago State University', 'BS', 'Illinois Institute of Technology', 'MS', 'University of New Mexico', 'PhD']",15
-Marco Dorigo,[],0
 Paul Dourish,['Alumni of the University of Edinburgh'],0
 Charles Stark Draper,"['Massachusetts Institute of Technology', 'Stanford University']",6
 Susan Dumais,"['Indiana University', 'Bates College']",0
 Adam Dunkels,['Luleå University of Technology'],0
 Jon Michael Dunn,"['Oberlin College', 'University of Pittsburgh']",0
-Schahram Dustdar,[],0
 Peter Eades,['Australian National University'],0
 Annie Easley,['Cleveland State University'],0
-Wim Ebbinkhuijsen,[],0
 John Presper Eckert,['University of Pennsylvania'],4
 Alan Edelman,"['MIT', 'Yale University']",3
 Brendan Eich,"['University of Illinois Urbana-Champaign', 'Santa Clara University']",0
@@ -172,7 +155,6 @@ Edward Felten,"['California Institute of Technology', 'University of Washington 
 Tim Finin,"['MIT School of Engineering', 'Grainger College of Engineering']",2
 Raphael Finkel,"['University of Chicago', 'Stanford University']",0
 Donald Firesmith,['Arizona State University'],0
-Gary William Flake,[],0
 Tommy Flowers,['Alumni of the University of London'],0
 Robert W. Floyd,['University of Chicago'],2
 Sally Floyd,['University of California Berkeley'],0
@@ -184,13 +166,11 @@ Lance Fortnow,"['Cornell University', 'Massachusetts Institute of Technology']",
 Mahmoud Samir Fayed,"['Menoufia University', 'King Saud University']",0
 Martin Fowler ,['Alumni of University College London'],0
 Robert France,"['University of the West Indies', 'Trinidad and Tobago', 'Massey University', 'New Zealand']",1
-Herbert W. Franke,[],0
 Edward Fredkin,['California Institute of Technology'],1
 Yoav Freund,"['The Hebrew University of Jerusalem', 'University of California Santa Cruz']",1
 Daniel P. Friedman,['University of Houston'],0
 Charlotte Froese Fischer,"['University of British Columbia', 'University of Cambridge']",7
 Ping Fu,['University of California San Diego'],0
-Xiaoming Fu,[],0
 Kunihiko Fukushima,['Kyoto University'],0
 D. R. Fulkerson,"['Southern Illinois University', 'University of Wisconsin–Madison']",2
 Richard P. Gabriel,"['Massachusetts Institute of Technology School of Science', 'University of Illinois', 'Stanford University School of Engineering', 'Northeastern University']",2
@@ -198,7 +178,6 @@ Zvi Galil,"['Tel Aviv University', 'BSc', 'MSc', 'Cornell University', 'PhD']",3
 Bernard Galler,"['University of Chicago', 'University of California Los Angeles']",0
 Hector Garcia-Molina,"['Monterrey Institute of Technology and Higher Education', 'Stanford University School of Engineering']",1
 Michael Garey,['University of Wisconsin–Madison'],0
-Hugo de Garis,[],0
 Bill Gates,"['Harvard College', 'Lakeside School (Seattle)']",4
 David Gelernter,"['Yale University', 'BA', 'State University of New York at Stony Brook', 'PhD']",1
 Lisa Gelobter,['Brown University'],0
@@ -209,7 +188,6 @@ Jeremy Gibbons,"['Alumni of the University of Oxford', 'Alumni of the University
 Juan E. Gilbert,"['Miami University', 'University of Cincinnati']",0
 Lee Giles,"['Rhodes College', 'University of Tennessee', 'University of Michigan', 'University of Arizona']",7
 Seymour Ginsburg,"['City College of New York', 'University of Michigan']",0
-Robert L. Glass,[],0
 Kurt Gödel,"['University of Vienna', 'PhD']",3
 Ashok Goel,['Ohio State University'],2
 Joseph Goguen,"['Harvard University', 'University of California Berkeley']",0
@@ -233,15 +211,9 @@ Sheila Greibach,"['Radcliffe College', 'Harvard University']",0
 David Gries,['Technical University of Munich'],5
 Ralph Griswold,['Stanford University'],0
 Bill Gropp,['Stanford University'],2
-Tom Gruber,[],0
-Shelia Guberman,[],0
 Ramanathan V. Guha,"['Indian Institute of Technology Madras', 'University of California Berkeley', 'Stanford University']",0
 Neil J. Gunther,"['La Trobe University', 'University of Southampton']",0
-Jürg Gutknecht,[],0
 Michael Guy,['Alumni of Gonville and Caius College Cambridge'],0
-Robert Griesemer,[],0
-Nico Habermann,[],0
-Philipp Matthäus Hahn,[],0
 Eldon C. Hall,"['Eastern Nazarene College', 'Harvard University', 'Boston University']",0
 Wendy Hall,"['University of Southampton', 'City University London']",1
 Joseph Halpern,"['University of Toronto', 'Harvard University']",3
@@ -249,7 +221,6 @@ Margaret Hamilton ,"['Earlham College', 'University of Michigan College of Liter
 Richard Hamming,"['University of Chicago', 'University of Nebraska', 'University of Illinois at Urbana–Champaign']",4
 Jiawei Han,"['University of Wisconsin - Madison', 'PhD', 'University of Science and Technology of China', 'BSc.']",0
 Frank Harary,"['Brooklyn College', 'University of California Berkeley']",0
-Brian Harris ,[],0
 Juris Hartmanis,"['University of Marburg', 'University of Kansas City', 'Caltech']",1
 Johan Håstad,"['Massachusetts Institute of Technology', 'Uppsala University', 'Stockholm University']",4
 Les Hatton,"[""King's College Cambridge""]",1
@@ -257,33 +228,26 @@ Igor Hawryszkiewycz,['MIT School of Engineering'],0
 He Jifeng,['Fudan University'],0
 Eric Hehner,"['Carleton University', 'University of Toronto']",0
 Martin Hellman,"['New York University', 'Stanford University']",9
-Gernot Heiser,[],6
 James Hendler,"['Yale University', 'Southern Methodist University', 'Brown University']",0
 John L. Hennessy,"['Villanova University', 'Stony Brook University']",0
 Andrew Herbert,"['Alumni of the University of Leeds', ""Alumni of St John's College Cambridge""]",0
 Carl Hewitt,['MIT'],0
-Kelsey Hightower,[],0
 Danny Hillis,['Massachusetts Institute of Technology'],2
 Geoffrey Hinton,['Alumni of the University of Edinburgh'],9
 Julia Hirschberg,"['University of Pennsylvania', 'University of Michigan']",9
-Tin Kam Ho,[],0
 C. A. R. Hoare,"['Alumni of Merton College Oxford', 'Moscow State University']",7
 Louis Hodes,['Massachusetts Institute of Technology'],0
-Betty Holberton,[],4
 John Henry Holland,['University of Michigan'],2
 Herman Hollerith,"['City College of New York', 'Columbia School of Mines']",3
 Gerard Holzmann,['Delft University of Technology'],1
 John Hopcroft,"['Seattle University', 'Stanford University']",8
 Grace Hopper,"['Vassar College', 'BA', 'Yale University', 'MS', 'PhD']",10
-Eric Horvitz,[],0
 Alston Householder,['University of Chicago'],0
 Paul Hudak,"['Vanderbilt University', 'Massachusetts Institute of Technology', 'University of Utah']",3
 David A. Huffman,"['Ohio State University', 'Massachusetts Institute of Technology']",1
-John Hughes ,[],1
 Roger Hui,"['University of Alberta', 'University of Toronto']",1
 Watts Humphrey,"['University of Chicago Booth School of Business', 'Illinois Institute of Technology']",1
 Sandra Hutchins,['University of California San Diego'],0
-Jean Ichbiah,[],0
 Roberto Ierusalimschy,['Pontifical Catholic University of Rio de Janeiro'],0
 Dan Ingalls,"['Harvard University', 'Stanford University School of Engineering']",3
 Mary Jane Irwin,"['University of Illinois at Urbana-Champaign', 'Memphis State University']",3
@@ -291,7 +255,6 @@ Kenneth E. Iverson,"[""Queen's University"", 'Harvard University']",4
 Ivar Jacobson,"['Chalmers Institute of Technology', 'Gothenburg', 'Royal Institute of Technology', 'Stockholm']",0
 Anil K. Jain ,"['IIT Kanpur', 'Ohio State University']",12
 Ramesh Jain,"['Indian Institute of Technology Kharagpur', 'Visvesvaraya National Institute of Technology Nagpur']",0
-Jonathan James,[],0
 David S. Johnson,"['Amherst College', 'MIT']",2
 Stephen C. Johnson,"['Columbia University', 'Haverford College']",0
 Cliff Jones ,['University of Oxford'],0
@@ -303,11 +266,9 @@ Dan Jurafsky,['University of California at Berkeley'],1
 William Kahan,['University of Toronto'],4
 Robert E. Kahn,"['City College of New York', 'Princeton University']",11
 Avinash Kak,"['University of Madras', 'Indian Institute of Technology Delhi']",0
-Poul-Henning Kamp,[],0
 David Karger,"['Harvard University', 'Stanford University']",0
 Richard Karp,['Harvard University'],9
 Narendra Karmarkar,"['IIT Bombay', 'Caltech', 'University of California Berkeley']",0
-Marek Karpinski,[],0
 Ted Kaehler,"['Stanford University', 'Carnegie Mellon University', 'Gunn High School']",0
 Alan Kay,"['University of Colorado Boulder', 'University of Utah']",3
 Neeraj Kayal,['IIT Kanpur'],0
@@ -315,7 +276,6 @@ Manolis Kellis,['Massachusetts Institute of Technology'],4
 John George Kemeny,"['George Washington Educational Campus', 'Princeton University']",0
 Ken Kennedy ,"['Rice University', 'New York University']",0
 Brian Kernighan,"['University of Toronto', 'BASc', 'Princeton University', 'PhD']",0
-Carl Kesselman,[],0
 Gregor Kiczales,['Massachusetts Institute of Technology'],0
 Peter T. Kirstein,"['University of Cambridge', 'Stanford University']",3
 Stephen Cole Kleene,"['Amherst College', 'Princeton University']",2
@@ -341,7 +301,6 @@ Leslie Lamport,"['Massachusetts Institute of Technology', 'BS', 'Brandeis Univer
 Butler Lampson,"['Harvard University', 'University of California Berkeley']",6
 Peter Landin,['Alumni of Clare College Cambridge'],0
 Tom Lane ,['Carnegie Mellon University'],0
-Börje Langefors,[],0
 Chris Lattner,"['University of Portland', 'University of Illinois at Urbana-Champaign']",2
 Steve Lawrence ,"['Queensland University of Technology', 'University of Queensland']",0
 Edward D. Lazowska,"['Brown University', 'University of Toronto']",0
@@ -357,24 +316,19 @@ Kevin Leyton-Brown,"['McMaster University', 'Stanford University']",0
 J.C.R. Licklider,"['University of Rochester', 'Washington University in St. Louis']",0
 David Liddle,"['University of Michigan', 'University of Toledo']",0
 Jochen Liedtke,"['Bielefeld University', 'Technical University of Berlin']",0
-John Lions,[],0
-Charles H. Lindsey,[],0
 Richard J. Lipton,['Carnegie Mellon'],1
 Barbara Liskov,"['University of California Berkeley', 'Stanford University']",3
 Yanhong Annie Liu,"['Cornell University', 'Tsinghua University', 'Peking University']",0
 Darrell Long,"['San Diego State University', 'University of California San Diego']",2
 Patricia D. Lopez,['New Mexico State University'],0
 Gillian Lovegrove,"['Newnham College Cambridge', 'Cambridge University']",0
-Ada Lovelace,[],0
 David Luckham,"['Ph.D.', 'MIT']",0
 Eugene Luks,"['City College of New York', 'Massachusetts Institute of Technology School of Science']",0
 Nancy Lynch,"['Brooklyn College', 'MIT']",7
 Nadia Magnenat Thalmann,"['University of Geneva', 'École Polytechnique Fédérale de Lausanne']",0
 Tom Maibaum,"['University of Toronto', 'Alumni of Queen Mary University of London', 'Alumni of Royal Holloway University of London']",1
-Simon Marlow,[],1
 Zohar Manna,['Carnegie Mellon University'],4
 James Martin ,['University of Oxford'],1
-Robert C. Martin,[],0
 John Mashey,['Pennsylvania State University'],0
 Yuri Matiyasevich,['Leningrad State University'],2
 Yukihiro Matsumoto,"['University of Tsukuba', 'Shimane University']",0
@@ -384,7 +338,6 @@ Derek McAuley,['University of Cambridge'],1
 John McCarthy ,"['Princeton University', 'California Institute of Technology']",6
 Andrew McCallum,"['Dartmouth College', 'University of Rochester']",0
 Douglas McIlroy,"['Cornell University', 'Massachusetts Institute of Technology']",0
-Chris McKinstry,[],0
 Marshall Kirk McKusick,"['Cornell University College of Engineering', 'University of California Berkeley']",0
 Lambert Meertens,['University of Amsterdam'],1
 Kurt Mehlhorn,['Cornell University'],4
@@ -400,7 +353,6 @@ Arvind ,"['IIT Kanpur', 'University of Minnesota College of Science and Engineer
 Paul Mockapetris,"['Massachusetts Institute of Technology', 'University of California at Irvine']",4
 Cleve Moler,"['California Institute of Technology', 'Stanford University']",2
 Faron Moller,"['University of British Columbia', 'University of Waterloo', 'University of Edinburgh']",0
-John P. Moon,[],0
 Charles H. Moore,['Massachusetts Institute of Technology'],0
 Edward F. Moore,"['Virginia Tech', 'Brown University']",0
 Gordon Moore,"['California Institute of Technology', 'San Jose State University', 'UC Berkeley College of Chemistry', 'Berkeley Student Cooperative', 'Sequoia High School (Redwood City California)']",9
@@ -419,13 +371,9 @@ Brad A. Myers,"['University of Toronto', 'Massachusetts Institute of Technology'
 Mihai Nadin,['Politehnica University of Bucharest'],0
 Makoto Nagao,['Kyoto University'],3
 Frieder Nake,['University of Stuttgart'],0
-Bonnie Nardi,[],0
-Peter Naur,[],2
 Roger Needham,['University of Cambridge'],1
 James G. Nell,"['Drexel University', 'Bowling Green State University']",0
 Greg Nelson ,"['Harvard University', 'Stanford University School of Engineering']",1
-Bernard de Neumann,[],0
-Klara Dan von Neumann,[],0
 John von Neumann,"['ETH Zurich', 'Fasori Gimnázium']",0
 Allen Newell,"['Stanford University', 'Princeton University', 'Carnegie Mellon University']",5
 Max Newman,"[""St John's College Cambridge""]",3
@@ -445,7 +393,6 @@ Martin Odersky,"['Ludwig Maximilian University of Munich', 'ETH Zurich']",0
 Peter O'Hearn,"['Dalhousie University', ""Queen's University""]",6
 T. William Olle,['Alumni of the University of Manchester'],0
 Steve Omohundro,['Stanford University'],0
-Severo Ornstein,[],0
 John O'Sullivan ,['University of Sydney'],2
 John Ousterhout,"['Carnegie Mellon University', 'Yale University']",2
 Mark Overmars,['Utrecht University'],0
@@ -459,7 +406,6 @@ David Parnas,['Carnegie Mellon University College of Engineering'],0
 DJ Patil,"['University of California San Diego', 'University of Maryland College Park', 'De Anza College']",0
 Yale Patt,"['Northeastern University', 'Stanford University']",0
 David Patterson ,['University of California Los Angeles'],6
-Mike Paterson,[],2
 Mihai Pătrașcu ,['Massachusetts Institute of Technology'],0
 Lawrence Paulson,"['California Institute of Technology', 'Stanford University']",1
 Randy Pausch,"['Brown University', 'Carnegie Mellon University']",4
@@ -471,7 +417,6 @@ Pier Giorgio Perotto,['Polytechnic University of Turin'],0
 Rózsa Péter,['Eötvös Loránd University'],0
 Simon Peyton Jones,['University of Cambridge'],1
 Kathy Pham,['Georgia Tech'],0
-Roberto Pieraccini,[],0
 Keshav K Pingali,"['IIT Kanpur', 'MIT']",3
 Gordon Plotkin,"['University of Glasgow', 'University of Edinburgh']",3
 Amir Pnueli,['Technion – Israel Institute of Technology'],2
@@ -490,26 +435,19 @@ Brian Randell,['Imperial College London'],0
 Anders P. Ravn,"['University of Copenhagen', 'Technical University of Denmark']",1
 Raj Reddy,"['University of Madras', 'BE', 'University of New South Wales', 'MTech', 'Stanford University', 'PhD']",4
 David P. Reed,['MIT'],0
-Trygve Reenskaug,[],0
 John C. Reynolds,"['Harvard University', 'Purdue University']",1
 Joyce K. Reynolds,['University of Southern California'],0
 Reinder van de Riet,['University of Amsterdam'],0
 Bernard Richards,['Alumni of the University of Manchester'],0
 Martin Richards ,['University of Cambridge'],0
-Adam Riese,[],0
 C. J. van Rijsbergen,"['University of Western Australia', 'University of Cambridge']",0
 Dennis Ritchie,"['Harvard University', 'BS']",8
 Ron Rivest,"['Stanford University', 'Yale University']",5
 Ken Robinson ,['University of Sydney'],1
 Colette Rolland,['Nancy-Université'],0
-John Romero,[],0
-Azriel Rosenfeld,[],2
 Douglas T. Ross,"['Oberlin College', 'MIT School of Engineering']",2
 Guido van Rossum,['University of Amsterdam'],1
-M. A. Rothman,[],0
-Winston W. Royce,[],0
 Rudy Rucker,"['Rutgers University', 'Swarthmore College']",0
-Steven Rudich,[],1
 Jeff Rulifson,"['University of Washington', 'Stanford University']",0
 James Rumbaugh,"['Massachusetts Institute of Technology School of Science', 'California Institute of Technology', 'Massachusetts Institute of Technology']",0
 Peter Ružička,['Comenius University'],0
@@ -518,18 +456,15 @@ Mehrnoosh Sadrzadeh,"['Université du Québec à Montréal', 'Sharif University 
 Umar Saif,"['Aitchison College', 'Alumni of Trinity College Cambridge', 'Lahore University of Management Sciences']",0
 Gerard Salton,"['Harvard John A. Paulson School of Engineering and Applied Sciences', 'Brooklyn College']",0
 Jean E. Sammet,"['Mount Holyoke College', 'B.A.', 'University of Illinois at Urbana Champaign', 'M.A.', 'Columbia University']",2
-Claude Sammut,[],0
 Carl Sassenrath,['University of California Davis'],0
 Mahadev Satyanarayanan,"['Carnegie Mellon University (Ph.D.)', 'IIT Madras (M.Tech. B.Tech.)']",5
 Walter Savitch,['University of California Berkeley'],0
 Jonathan Schaeffer,"['University of Waterloo', 'University of Toronto']",2
-Wilhelm Schickard,[],0
 Jürgen Schmidhuber,['Technical University of Munich'],0
 Steve Schneider ,['University of Oxford'],0
 Bruce Schneier,"['American University', 'University of Rochester']",0
 Fred B. Schneider,['Stony Brook University'],1
 Sarita Schoenebeck,"['Georgia Institute of Technology', 'University of California Berkeley', 'Dartmouth College']",0
-Glenda Schroeder,[],0
 Bernhard Schölkopf,"['University of London', 'University of Tübingen', 'TU Berlin']",5
 Dana Scott,"['Princeton University', 'UC Berkeley College of Letters and Science']",6
 Michael L. Scott,['University of Wisconsin–Madison'],0
@@ -539,9 +474,7 @@ Nigel Shadbolt,"['Newcastle University', 'University of Edinburgh']",1
 Adi Shamir,"['Tel Aviv University', 'Weizmann Institute of Science']",6
 Claude Shannon,"['University of Michigan', 'AB', 'BS', 'Massachusetts Institute of Technology', 'MS', 'PhD']",10
 David E. Shaw,"['Columbia School of Engineering and Applied Science', 'Stanford University', 'University of California San Diego']",0
-Cliff Shaw,[],0
 Scott Shenker,"['Brown University', 'University of Chicago']",5
-Shashi Shekhar ,[],0
 Ben Shneiderman,"['City College of New York', 'Stony Brook University']",1
 Edward H. Shortliffe,"['Harvard John A. Paulson School of Engineering and Applied Sciences', 'Stanford University School of Medicine']",0
 Daniel Siewiorek,"['Stanford University', 'University of Michigan College of Engineering']",2
@@ -561,17 +494,14 @@ Rohini Kesavan Srihari,"['University of Waterloo', 'University at Buffalo']",0
 Sargur Srihari,"['Bangalore University', 'Indian Institute of Science', 'Ohio State University']",2
 Maciej Stachowiak,['MIT School of Engineering'],0
 Richard Stallman,"['Harvard John A. Paulson School of Engineering and Applied Sciences', 'Massachusetts Institute of Technology School of Science']",5
-Ronald Stamper,[],0
 Thad Starner,['Massachusetts Institute of Technology School of Science'],0
 Richard E. Stearns,"['Carleton College', 'Princeton University']",3
 "Guy L. Steele, Jr.","['MIT School of Engineering', 'Harvard John A. Paulson School of Engineering and Applied Sciences']",2
 Thomas Sterling ,"['Old Dominion University', 'Massachusetts Institute of Technology']",6
-Alexander Stepanov,[],0
 W. Richard Stevens,"['University of Michigan', 'University of Arizona']",0
 Larry Stockmeyer,"['MIT School of Engineering', 'Massachusetts Institute of Technology School of Science']",0
 Salvatore Stolfo,"['Courant Institute of Mathematical Sciences', 'Brooklyn College']",0
 Michael Stonebraker,"['Princeton University', 'University of Michigan']",2
-Olaf Storaasli ,[],0
 Christopher Strachey,['University of Cambridge'],0
 Volker Strassen,['University of Göttingen'],0
 Bjarne Stroustrup,"['Aarhus University', 'Cand.scient.', 'University of Cambridge', 'PhD']",11
@@ -589,7 +519,6 @@ Bernhard Thalheim,"['Dresden University of Technology', 'Lomonosov Moscow State 
 Éva Tardos,['Eötvös Loránd University'],5
 Gábor Tardos,['Eötvös Loránd University'],4
 Robert Tarjan,"['California Institute of Technology', 'BS', 'Stanford University', 'MS', 'PhD']",3
-Valerie Taylor ,[],3
 Mario Tchou,['Polytechnic Institute of New York University'],0
 Jaime Teevan,"['Yale University', 'MIT School of Engineering']",5
 Shang-Hua Teng,"['Shanghai Jiao Tong University', 'University of Southern California', 'Carnegie Mellon']",2
@@ -600,12 +529,10 @@ Daniel Thalmann,['University of Geneva'],1
 Ken Thompson ,['University of California Berkeley'],9
 Sebastian Thrun,"['University of Bonn', 'University of Hildesheim']",3
 Walter F. Tichy,"['Technische Universität München', 'Carnegie Mellon University']",0
-Seinosuke Toda,[],0
 Linus Torvalds,['University of Helsinki'],0
 Leonardo Torres Quevedo,['Polytechnic University of Madrid'],7
 Godfried Toussaint,"['University of Tulsa', 'University of British Columbia']",0
 Gloria Townsend,['Indiana University'],1
-Edwin E. Tozer,[],0
 Joseph F Traub,"['City College of New York (B.S. 1954)', 'Columbia University (Ph.D. Applied Mathematics 1959)']",0
 John V. Tucker,"['Alumni of the University of Warwick', 'Alumni of the University of Bristol']",0
 John Tukey,"['Brown University', 'Princeton University']",7
@@ -617,27 +544,22 @@ Leslie Valiant,"['University of Cambridge', 'Imperial College London', 'Universi
 Vladimir Vapnik,"['Institute of Control Sciences Russian Academy of Sciences', 'Uzbek State University']",11
 Moshe Vardi,"['Bar-Ilan University', 'Weizmann Institute of Science', 'Hebrew University of Jerusalem']",7
 Dorothy Vaughan,['Wilberforce University'],0
-Bernard Vauquois,[],0
 Umesh Vazirani,"['MIT', 'University of California Berkeley']",1
 Manuela M. Veloso,"['Instituto Superior Técnico', 'University of Lisbon', 'Boston University', 'Carnegie Mellon University']",3
-François Vernadat,[],0
 Richard Veryard,"['Alumni of Merton College Oxford', 'Alumni of the Department of Computing Imperial College London']",0
 Sergiy Vilkomir,"['Kharkov State University', 'Kharkov Polytechnic Institute']",2
 Paul Vitanyi,"['Delft University of Technology', 'Free University of Amsterdam']",0
 Andrew Viterbi,"['MIT School of Engineering', 'University of Southern California', 'Boston Latin School']",8
 Jeffrey Scott Vitter,"['University of Notre Dame', 'Stanford University School of Engineering', 'Fuqua School of Business']",0
 Paul Vixie,['Keio University'],0
-Eiiti Wada,[],0
 David A. Wagner,"['Princeton University', 'UC Berkeley College of Engineering']",0
 David Waltz,['Massachusetts Institute of Technology'],2
 James Z. Wang,"['Stanford University', 'M.S.', 'M.S.', 'Ph.D.', 'University of Minnesota', 'B.S.']",0
-Steve Ward ,[],0
 Manfred K. Warmuth,['University of Colorado Boulder'],1
 David H. D. Warren,['University of Edinburgh'],0
 Kevin Warwick,"['Aston University', 'Imperial College London']",4
 Jan Weglarz,['Poznań University of Technology'],0
 Philip Wadler,"['Stanford University', 'Carnegie Mellon University']",4
-Peter Wegner,[],2
 Joseph Henry Wegstein,['University of Illinois'],0
 Peter J. Weinberger,['University of California Berkeley'],0
 Mark Weiser,['University of Michigan'],0
@@ -665,7 +587,6 @@ Mike Woodger,['University College London'],0
 Philip Woodward,['Oxford University'],3
 Beatrice Helen Worsley,"['University of Toronto', 'Massachusetts Institute of Technology', 'University of Cambridge']",0
 Steve Wozniak,"['De Anza College', 'UC Berkeley College of Engineering', 'University of Colorado Boulder', 'Homestead High School (California)']",0
-Jie Wu,[],0
 William Wulf,"['University of Illinois', 'University of Virginia School of Engineering and Applied Science']",0
 Mihalis Yannakakis,"['National Technical University of Athens', 'Princeton University']",1
 Andrew Chi-Chih Yao,"['National Taiwan University', 'Harvard University', 'University of Illinois at Urbana–Champaign']",4

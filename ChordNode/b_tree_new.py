@@ -36,7 +36,7 @@ class BTree:
 
         i = 0
         while i < len(node.keys):
-            if education in node.keys[i]:
+            if education in node.keys[i]["Education"]:
                 matches.append((node, i))
                 # print(node.keys[i])
             i += 1

@@ -206,6 +206,12 @@ class ChordNode:
         else:
             target_node_ip = "http://" + target_node.ip + "/retrieve_data"
             response = requests.get(target_node_ip, json={"Education": search_key})
+
+            if response.status_code !=200:
+                result = self.lookup(target_node.position + 1)
+                result_ip = "http://" + result.ip + "/search_data"
+                response = requests.get(result_ip, json={"Education": search_key})
+
             return response.text
 
     def search_data(self, search_key):
@@ -256,7 +262,7 @@ class ChordNode:
                 target_node_ip = "http://" + self.successors[0].ip + "/receive_data"
                 requests.post(target_node_ip, json=json_data,
                             headers={'Content-Type': 'application/json'})
-
+                
             return 'Node ' + str(self.position) + ' left the ring'
             
 
