@@ -141,6 +141,12 @@ class ChordNode:
             if helper.is_between(f, s, key, self.chord_size) or self.routing_table[i].position == key:
                 print("http://" + self.routing_table[i].ip + "lookup\n\n\n\n")
                 response = requests.get("http://" + self.routing_table[i].ip + "lookup", json={"key": key})
+                while response.status_code != 200:
+                    if i==0:
+                        response = requests.get("http://" + self.successors[0].ip + "lookup", json={"key": key})
+                    else:
+                        response = requests.get("http://" + self.routing_table[i-1].ip + "lookup", json={"key": key})
+
                 data = json.loads(response.content.decode('utf-8'))
                 return Routes(data["position"], data["ip"])
 
@@ -149,6 +155,11 @@ class ChordNode:
             return Routes(self.position, self.ip)
 
         response = requests.get("http://" + self.routing_table[-1].ip + "lookup", json={"key": key})
+        while response.status_code != 200:
+            if i == 0:
+                response = requests.get("http://" + self.successors[0].ip + "lookup", json={"key": key})
+            else:
+                response = requests.get("http://" + self.routing_table[i - 1].ip + "lookup", json={"key": key})
         data = json.loads(response.content.decode('utf-8'))
         return Routes(data["position"], data["ip"])
 

@@ -2,6 +2,9 @@ import tkinter as tk
 import subprocess
 import csv
 import json
+import os
+script_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "web_crawler", "computer_scientists.csv"))
+
 def open_add_data_window():
     add_data_window = tk.Toplevel()
     add_data_window.title("Add Data Window")
@@ -57,7 +60,7 @@ def open_add_data_window():
         try:
             prefix = ip_prefix_entry.get()
             count = data_count_entry.get()
-            with open('web_crawler/computer_scientists.csv', mode='r') as file:
+            with open(script_path, mode='r') as file:
                 csv_reader = csv.DictReader(file)
                 counter = 0
                 for row in csv_reader:

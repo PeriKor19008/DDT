@@ -25,7 +25,7 @@ def open_log_window():
             print("Node amount must be an integer")
         except subprocess.CalledProcessError as e:
             print("Error executing script:", e)
-        log_window.destroy()
+        #log_window.destroy()
 
     node_ip_label = tk.Label(log_window, text="Node IP:")
     node_ip_label.grid(row=0, column=0, padx=10, pady=5)

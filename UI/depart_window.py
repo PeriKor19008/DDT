@@ -9,7 +9,7 @@ def open_depart_window():
     # Function to depart node
     def depart_node():
         node_ip = node_ip_entry.get()
-        curl_command = f"curl -X POST -d '' http://{node_ip}/depart"
+        curl_command = f"curl -X POST -d '' http://{node_ip}:5000/depart"
         try:
             subprocess.run(curl_command, shell=True, check=True)
             print("Command executed successfully")
