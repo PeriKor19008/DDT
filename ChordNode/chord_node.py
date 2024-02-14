@@ -143,6 +143,7 @@ class ChordNode:
                 print("http://" + self.routing_table[i].ip + "lookup\n\n\n\n")
                 response = requests.get("http://" + self.routing_table[i].ip + "lookup", json={"key": key})
                 while response.status_code != 200:
+                    
                     if i==0:
                         response = requests.get("http://" + self.successors[0].ip + "lookup", json={"key": key})
                     else:
