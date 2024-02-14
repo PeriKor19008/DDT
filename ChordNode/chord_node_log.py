@@ -17,7 +17,7 @@ class ChordNodeLog:
 
     def log_routes(self, node) -> None:
             print("--------------------------------------------------------\n")
-            print("self position ="+ str(node.position))
+            print("self position ="+ str(node.position) +"\nself ip =" + str(node.ip))
             print("SUCCESSORS \n")
             for succ in node.successors:
                 print("succ position: "+str(succ.position)+"---succ ip: "+succ.ip+"\n")
