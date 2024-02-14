@@ -124,21 +124,59 @@ class ChordNode:
         return "self.routing_table"
 
     def lookup(self, key: int):
+
         key = key % self.chord_size  # to be sure that the key is inside the chord bounds
         print("lookup key:" + str(key) + " by node with  pos:" + str(self.position))
+
+        if key == self.position:
+            return Routes(self.position, self.ip)
         for suc in self.successors:
             if helper.is_between(self.position, suc.position, key, self.chord_size) or suc.position == key:
+                print("returning succ")
                 return suc
 
-        for r in self.routing_table:
-            f=self.position
-            s=r.position
-            if helper.is_between(f, s, key, self.chord_size) or r.position == key:
-                print("http://" + r.ip + "lookup\n\n\n\n")
-                response = requests.get("http://" + r.ip + "lookup", json={"key": key})
+        for i in range(len(self.routing_table) -1) :
+            f = self.routing_table[i].position
+            s = self.routing_table[i+1].position
+            if helper.is_between(f, s, key, self.chord_size) or self.routing_table[i].position == key:
+                print("http://" + self.routing_table[i].ip + "lookup\n\n\n\n")
+                response = requests.get("http://" + self.routing_table[i].ip + "lookup", json={"key": key})
                 data = json.loads(response.content.decode('utf-8'))
                 return Routes(data["position"], data["ip"])
-        return Routes(self.position, self.ip)
+
+        if self.position == self.routing_table[-1].position:
+            print("returnig self by rout")
+            return Routes(self.position, self.ip)
+
+        response = requests.get("http://" + self.routing_table[-1].ip + "lookup", json={"key": key})
+        data = json.loads(response.content.decode('utf-8'))
+        return Routes(data["position"], data["ip"])
+
+
+        # key = key % self.chord_size  # to be sure that the key is inside the chord bounds
+        # print("lookup key:" + str(key) + " by node with  pos:" + str(self.position))
+        #
+        # if helper.is_between(self.position - 1, self.successors[0].position, key, self.chord_size):
+        #     print("returing self")
+        #     return Routes(self.position, self.ip)
+        #
+        # closest_route = self.successors[0]
+        # for suc in self.successors:
+        #     if helper.is_between(closest_route.position, key + 1, suc.position,  self.chord_size):
+        #         closest_route = suc
+        #
+        # for r in self.routing_table:
+        #     if helper.is_between(closest_route.position, key + 1, r.position,  self.chord_size):
+        #         closest_route = r
+        # if closest_route.position == self.position or helper.is_between(closest_route.position, key, self.position,self.chord_size):
+        #     return Routes(self.position, self.ip)
+        # print("sending lookup req from" + str(self.position) + "  to:" + str(closest_route.position))
+        # response = requests.get("http://" + closest_route.ip + "lookup", json={"key": key})
+        # data = json.loads(response.content.decode('utf-8'))
+        # return Routes(data["position"], data["ip"])
+
+
+
 
     def insert_data(self, data):
 
@@ -296,7 +334,7 @@ class ChordNode:
 
 
                     if i > 0 and self.successors[i - 1].position == node_position:
-                        return
+                        break
                     print("geting node" + str(node_position) + " in suc place:" + str(i) +
                           "pos:" + str(self.position) + " suc_pos" + str(self.successors[i].position))
                     self.successors.insert(i, Routes(node_position, node_ip))
@@ -312,14 +350,26 @@ class ChordNode:
                                     headers={'Content-Type': 'application/json'})
                     self.successors.pop()
 
-            if self.routing_table[0].position > node_position:
-                return 'error'
+
             for i in range(len(self.routing_table)):
 
-                if self.position == self.routing_table[i].position or (helper.is_between(self.routing_table[i].position, self.position+(2 ^ i), node_position, self.chord_size)):
-                    tmp = Routes(node_position, node_ip )
-                    self.routing_table[i] = tmp
-                    print("geting node" + str(node_position) + " in routing table place:" + str(i))
+                print("\n\n\n\n#######################\ninform for routes "
+                      "self pos:" + str(self.position) + "ideal pos:"
+                      + str(self.position + (2 ** i) + 1) + "node pos:" + str(node_position))
+                if i == 0:
+                    self.routing_table[0] = self.successors[0]
+                    continue
+                if helper.is_between((self.position + (2 ** i) ) % self.chord_size,self.routing_table[i].position, node_position, self.chord_size):
+                    print("route inserted")
+                    self.routing_table[i] = Routes(node_position, node_ip)
+                    print("route inserted" + str(self.routing_table[i].position))
+                print("\n\n\n")
+                f = self.position + (2 ** i)
+
+                # if self.position == self.routing_table[i].position or (helper.is_between( self.position+(2 ^ i), self.routing_table[i].position, node_position, self.chord_size)):
+                #     tmp = Routes(node_position, node_ip )
+                #     self.routing_table[i] = tmp
+                #     print("geting node" + str(node_position) + " in routing table place:" + str(i))
 
 
         else: #node exiting ring

@@ -2,8 +2,11 @@ import math
 import requests
 from routes import Routes
 import socket
+from chord_node_log import ChordNodeLog
 
+loger = ChordNodeLog()
 class ChordNodeHelper:
+
 
     def __init__(self):
         self.collision_counter: int = 0
@@ -77,9 +80,18 @@ class ChordNodeHelper:
 
     def lookup_back_references(self, references, node):
         nodes = []
+        print("\n\n\nLOG")
+        loger.log_routes(node)
+        print("\n\n\nLOG")
         for r in references:
             tmp = node.lookup(r)
+            print("of node " + str(node.position) + " for refrence:" + str(r) + " the result was:" + str(tmp.ip) + " at " +str(tmp.position))
             nodes.append(tmp.ip)
+
+        print("\n\n\nback refrences of node:" + str(node.position))
+        for n in set(nodes):
+            print(n)
+
         return set(nodes)
 
     def get_ip(self) -> str:
