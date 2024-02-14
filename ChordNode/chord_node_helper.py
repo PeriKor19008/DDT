@@ -14,6 +14,7 @@ class ChordNodeHelper:
     def get_back_references(self, node):
         r = (node.position - node.predecessor.position) % node.chord_size
         references = []
+        references.append(node.predecessor.position)
 
         for i in range(int(math.sqrt(node.chord_size))):
             references.append((node.position - (2 ^ i)) % node.chord_size)
@@ -21,6 +22,9 @@ class ChordNodeHelper:
         for i in range(j):
             for k in range(r):
                 references.append(references[i]-k)
+        print("REFRENCIS:")
+        for r in references:
+            print(str(r))
         return set(references)
 
 

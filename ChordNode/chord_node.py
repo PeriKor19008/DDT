@@ -127,6 +127,7 @@ class ChordNode:
 
         key = key % self.chord_size  # to be sure that the key is inside the chord bounds
         print("lookup key:" + str(key) + " by node with  pos:" + str(self.position))
+        loger.log_routes(self)
 
         if key == self.position:
             return Routes(self.position, self.ip)
