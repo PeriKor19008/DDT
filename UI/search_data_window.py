@@ -25,13 +25,19 @@ def open_search_data_window():
         try:
             education = education_entry.get()
             prefix = ip_prefix_entry.get()
-            curl_command = f"curl -X GET http://172.{prefix}.0.2:5000/retrieve_data -H 'Content-Type: application/json' -d '{{\"Education\": \"{education}\"}}'"
-            print(curl_command)
+            for i in range(2,4):
+                try:
+                    curl_command = f"curl -X GET http://172.{prefix}.0.{i}:5000/retrieve_data -H 'Content-Type: application/json' -d '{{\"Education\": \"{education}\"}}'"
+                    print(curl_command)
 
-            # Capture the output of the command
-            result = subprocess.run(curl_command, shell=True, check=True, stdout=subprocess.PIPE)
-            output = result.stdout.decode('utf-8')
-
+                    # Capture the output of the command
+                    result = subprocess.run(curl_command, shell=True, check=True, stdout=subprocess.PIPE)
+                    output = result.stdout.decode('utf-8')
+                    break
+                except subprocess.CalledProcessError as e:
+                    print("Error executing script:", e)
+                    continue
+                
             # Parse JSON response
             entries = json.loads(output)
 
@@ -59,8 +65,10 @@ def open_search_data_window():
         except subprocess.CalledProcessError as e:
             print("Error executing script:", e)
 
+
     search_data_button = tk.Button(search_data_window, text="Search Data", command=search_data)
     search_data_button.grid(row=3, column=1, columnspan=2, padx=10, pady=10)
 
     search_data_window.mainloop()
+
 
