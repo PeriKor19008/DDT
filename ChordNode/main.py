@@ -1,3 +1,5 @@
+import json
+
 from chord_node import ChordNode, request
 from flask import Flask, jsonify, abort
 from routes import Routes
@@ -18,11 +20,36 @@ def bootstrap():
     data = request.get_data(as_text=True)
     return node.bootstrap(data)
 
-@app.route('/insertnode', methods=['GET'])
-def init():
-    data = request.get_json()
-    return node.init(data)
+# @app.route('/insertnode', methods=['GET'])
+# def init():
+#     data = request.get_json()
+#     return node.init(data)
 
+
+@app.route('/get_succ', methods=['GET'])
+def get_succ():
+    data = request.get_json()
+    return node.get_succ(data)
+
+@app.route('/get_predecessor', methods=['GET'])
+def get_succ():
+    pre_ip = node.predecessor.ip
+    pre_pos = node.predecessor.position
+    data = jsonify({"ip": pre_ip, "pos": pre_pos})
+    return data
+
+@app.route('/new_predecessor', methods=['GET'])
+def new_predecessor():
+
+    data = request.get_json()
+    result = node.new_predecessor(data)
+    return result
+@app.route('/new_successor', methods=['POST'])
+def new_successor():
+
+    data = request.get_json()
+    result = node.new_successor(data)
+    return result
 
 @app.route('/ping', methods=['POST'])
 def ping():
@@ -159,11 +186,11 @@ def print_tree():
     return "\n\nBtree Data\n\n"
 
 def suc_alive():
-    return node.is_alive(1)
+    return node.stabilize(1)
 
 
 def rout_alive():
-    return node.is_alive(2)
+    return node.stabilize(2)
 
 
 

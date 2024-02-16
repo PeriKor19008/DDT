@@ -24,8 +24,8 @@ class ChordNode:
         self.ip = helper.get_ip()
         self.position: int = helper.hash(self.ip, self.chord_size)
         temp_self_route = Routes(self.position, self.ip)
-        self.successors: List[Routes] = [temp_self_route] * self.successor_num
-        self.routing_table: List[Routes] = [temp_self_route] * self.successor_num
+        self.successors: [Routes] = [temp_self_route] * 2
+        self.routing_table: List[Routes] = [temp_self_route] * int(math.log2(self.chord_size))
         self.predecessor: Routes = temp_self_route
         self.btree: BTree = BTree(False)
         print("ip:" + str(self.ip)
@@ -36,7 +36,7 @@ class ChordNode:
     def bootstrap(self, data):
         self.active = True
         host = data
-        domain = "/insertnode"
+        domain = "/get_succ"
 
         # send request
         # Loop the request and if the response has json with key: error it recalculates position
@@ -55,24 +55,65 @@ class ChordNode:
                 break
                 
         data = response.content
-        self.get_init_data(data)
+        data = json.loads(data)
+        tmp = json.loads(data["successor"])
+        self.successors[0] = Routes(tmp['position'], tmp['ip'])
+        self.successors[1] = self.lookup(self.successors[0].position + 1)
 
-        n = helper.get_back_references(self)
-        nodes = helper.lookup_back_references(n, self)
-        print("refrences" + str(nodes))
-        for node in nodes:
-            if node != self.ip:
-                self.inform_node(node, 1)
-        for r in self.successors:
-            if r.ip != self.ip:
-                self.inform_node(r.ip, 1)
+        response = requests.get("http://" + self.successors[0].ip + "/new_predecessor", json={"ip": self.ip, "pos": self.position})
+
+        ####use response to save your keys
+
+
+        self.routing_table = self.make_routing_table()
 
         loger.log_routes(self)
 
         print("\n\n\n\n\n\n.")
         return data
 
-    def init(self, data):
+
+    def new_predecessor(self,data):
+        new_pred_ip = data["ip"]
+        new_pred_pos = data["pos"]
+
+        old_pred_ip = self.predecessor.ip
+        old_pred_pos = self.predecessor.position
+        self.predecessor = Routes(new_pred_pos, new_pred_ip)
+
+        #if new node just get the predecessor
+        if self.predecessor.position == self.position:
+            return "success"
+        keys_to_send = []
+        for key in self.btree.owned_data:
+            if helper.is_between(old_pred_pos, self.predecessor.position + 1, key, self.chord_size):
+                keys_to_send.append(key)
+
+        requests.post("http://" + old_pred_ip + "/new_successor", json={"ip": self.predecessor.ip,
+                                                            "pos": self.predecessor.position})
+
+        ##delete copied keys of old pred
+
+        ## send keys to
+        return "this should be the keys to send"
+
+    def new_successor(self,data):
+        new_suc_ip = data["ip"]
+        new_suc_pos = data["pos"]
+
+        self.successors[1] = self.successors[0]
+        self.successors[0] = Routes(new_suc_pos,new_suc_ip)
+        ## copy keys to new succ
+
+        ############################################
+        #requests.post("http://" + self.successors[0] + "/back_data",json)
+
+        response = requests.get("http://" +self.successors[0].ip + "/new_predecessor", json={"ip": self.ip, "pos": self.position})
+
+        return "success"
+
+
+    def get_succ(self, data):
         self.active = True
         new_node_ip = data["ip"]
         new_node_position = data["pos"]
@@ -84,44 +125,14 @@ class ChordNode:
             return {"error":"position"}
 
         
-        new_node_successors = helper.get_successors(new_node_position, self)
-        new_node_predecessor = helper.get_predecessor(new_node_position,self)
-
-        if self.successors[0].position == self.position:
-            for i in range(len(self.successors)):
-                self.successors[i] = Routes(new_node_position, new_node_ip)
-
-            for i in range(len(self.routing_table)):
-                self.routing_table[i] = Routes(new_node_position, new_node_ip)
-        if self.predecessor.position == self.position:
-            self.predecessor = Routes(new_node_position, new_node_ip)
+        new_node_successor = self.lookup(new_node_position + 1)
 
 
-        json_successors = json.dumps(new_node_successors, default=Routes.serialize_routes, indent=2)
-        json_predecessor = json.dumps(new_node_predecessor,default=Routes.serialize_routes, indent=2)
-        data_to_send = {"successors": json_successors,
-                        "predecessor": json_predecessor}
-
+        json_successors = json.dumps(new_node_successor, default=Routes.serialize_routes, indent=2)
+        data_to_send = {"successor": json_successors}
         data = json.dumps(data_to_send)
         return data
 
-    def get_init_data(self, data):
-        print(data)
-        data = json.loads(data)
-
-        tmp = json.loads(data["successors"])
-        self.successors = Routes.deserialize_routes(tmp)
-        tmp = json.loads(data["predecessor"])
-        self.predecessor = Routes(tmp['position'], tmp['ip'])
-
-        for i in range(len(self.routing_table)):
-            self.routing_table[i] = self.successors[0]
-        print("log1")
-        loger.log_routes(self)
-        print("log2")
-        self.routing_table = self.make_routing_table()
-
-        return "self.routing_table"
 
     def lookup(self, key: int):
 
@@ -129,65 +140,28 @@ class ChordNode:
         print("lookup key:" + str(key) + " by node with  pos:" + str(self.position))
         loger.log_routes(self)
 
-        if key == self.position:
-            return Routes(self.position, self.ip)
-        for suc in self.successors:
-            if helper.is_between(self.position, suc.position, key, self.chord_size) or suc.position == key:
-                print("returning succ")
-                return suc
-
-        for i in range(len(self.routing_table) -1) :
-            f = self.routing_table[i].position
-            s = self.routing_table[i+1].position
-            if helper.is_between(f, s, key, self.chord_size) or self.routing_table[i].position == key:
-                print("http://" + self.routing_table[i].ip + "lookup\n\n\n\n")
-                response = requests.get("http://" + self.routing_table[i].ip + "lookup", json={"key": key})
-                while response.status_code != 200:
-                    
-                    if i==0:
-                        response = requests.get("http://" + self.successors[0].ip + "lookup", json={"key": key})
-                    else:
-                        response = requests.get("http://" + self.routing_table[i-1].ip + "lookup", json={"key": key})
-
-                data = json.loads(response.content.decode('utf-8'))
-                return Routes(data["position"], data["ip"])
-
-        if self.position == self.routing_table[-1].position:
-            print("returnig self by rout")
+        if self.successors[0].position == self.position or helper.is_between(self.predecessor.position, self.position + 1, key, self.chord_size):
             return Routes(self.position, self.ip)
 
-        response = requests.get("http://" + self.routing_table[-1].ip + "lookup", json={"key": key})
-        while response.status_code != 200:
-            if i == 0:
-                response = requests.get("http://" + self.successors[0].ip + "lookup", json={"key": key})
+        if self.routing_table[0] == self.ip:
+            return self.successors[0]
+
+        closest_route = self.successors[0]
+
+        for route in self.routing_table:
+            if helper.is_between(closest_route.position, route.position, key, self.chord_size):
+                break
+            closest_route = route
+
+        response = requests.get("http://" + closest_route.ip + "lookup", json={"key": key})
+        if response.status_code != 200:
+            if closest_route.position == self.successors[0].position:
+                self.stabilize(1)
+                return self.lookup(key)
             else:
-                response = requests.get("http://" + self.routing_table[i - 1].ip + "lookup", json={"key": key})
+                response = requests.get("http://" +self.successors[0].ip + "lookup", json={"key": key})
         data = json.loads(response.content.decode('utf-8'))
         return Routes(data["position"], data["ip"])
-
-
-        # key = key % self.chord_size  # to be sure that the key is inside the chord bounds
-        # print("lookup key:" + str(key) + " by node with  pos:" + str(self.position))
-        #
-        # if helper.is_between(self.position - 1, self.successors[0].position, key, self.chord_size):
-        #     print("returing self")
-        #     return Routes(self.position, self.ip)
-        #
-        # closest_route = self.successors[0]
-        # for suc in self.successors:
-        #     if helper.is_between(closest_route.position, key + 1, suc.position,  self.chord_size):
-        #         closest_route = suc
-        #
-        # for r in self.routing_table:
-        #     if helper.is_between(closest_route.position, key + 1, r.position,  self.chord_size):
-        #         closest_route = r
-        # if closest_route.position == self.position or helper.is_between(closest_route.position, key, self.position,self.chord_size):
-        #     return Routes(self.position, self.ip)
-        # print("sending lookup req from" + str(self.position) + "  to:" + str(closest_route.position))
-        # response = requests.get("http://" + closest_route.ip + "lookup", json={"key": key})
-        # data = json.loads(response.content.decode('utf-8'))
-        # return Routes(data["position"], data["ip"])
-
 
 
 
@@ -434,32 +408,64 @@ class ChordNode:
             i = i + 1
         return table
 
-    def is_alive(self, t: int):
+    def stabilize(self, t: int):
         if self.active:
             if t == 1:
-                print("check if sucessors are alive")
-                for s in self.successors:
-                    response = requests.post("http://" + s.ip)
-                    if response.status_code != 200:
-                        self.delete_node_from_routing(s.position)
-                        print("node" + str(s.position) + " is unrechable")
+                for i in range(len(self.successors)):
+                    flag = True
+                    s = self.successors[i].ip
+                    while flag:
+                        response = requests.post("http://" + s + "/get_predecessor")
+                        if response.status_code != 200:
+                            if i == 0:
+                                self.successors[0] = self.successors[1]
 
-                response = requests.post("http://" + self.predecessor.ip)
-                if response.status_code != 200:
-                    self.delete_node_from_routing(self.predecessor.position)
-                    print("node" + str(self.predecessor.position) + " is unrechable")
+                            else:
+                                self.successors[1] = self.lookup(self.successors[0].position + 1)
+                            continue
+                        data = response.json()
 
+                        if data["pos"] != self.position:
+                            s=data["ip"]
+                        else:
+                            self.successors[i] = Routes(data["pos"], data["ip"])
 
             if t == 2:
-                for r in self.routing_table:
-                    response = requests.post("http://" + r.ip)
-                    if response.status_code != 200:
-                        self.delete_node_from_routing(r.position)
-                        print("node" + str(r.position) + " is unrechable")
-
+                for i in range(len(self.routing_table)):
+                    r = self.routing_table[i]
+                    response = requests.post("http://" + r.ip + "/get_predecessor")
+                    data = response.json()
+                    if helper.is_between(self.position + 2**i,r.position,int(data["pos"]),self.chord_size):
+                        self.routing_table[i] = Routes(data["pos"], data["ip"])
 
     def log(self):
         print("##################################################################")
         print("###################################################################")
         print("LOG")
         loger.log_routes(self)
+
+
+
+
+
+
+
+
+
+    # def get_init_data(self, data):
+    #     print(data)
+    #     data = json.loads(data)
+    #
+    #     tmp = json.loads(data["successors"])
+    #     self.successors = Routes.deserialize_routes(tmp)
+    #     tmp = json.loads(data["predecessor"])
+    #     self.predecessor = Routes(tmp['position'], tmp['ip'])
+    #
+    #     for i in range(len(self.routing_table)):
+    #         self.routing_table[i] = self.successors[0]
+    #     print("log1")
+    #     loger.log_routes(self)
+    #     print("log2")
+    #     self.routing_table = self.make_routing_table()
+    #
+    #     return "self.routing_table"
