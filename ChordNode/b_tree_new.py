@@ -17,6 +17,7 @@ class BTree:
     def __init__(self, t):
         self.root = Node(True)
         self.owned_data = set()
+        self.backup_data = set()
         self.t = t
 
     def to_dict(self):

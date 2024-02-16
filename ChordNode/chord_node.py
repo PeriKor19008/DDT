@@ -62,7 +62,7 @@ class ChordNode:
 
         response = requests.get("http://" + self.successors[0].ip + "/new_predecessor", json={"ip": self.ip, "pos": self.position})
 
-        ####use response to save your keys
+        #### EFREM use response to save your keys
 
 
         self.routing_table = self.make_routing_table()
@@ -85,17 +85,28 @@ class ChordNode:
         if self.predecessor.position == self.position:
             return "success"
         keys_to_send = []
+
         for key in self.btree.owned_data:
             if helper.is_between(old_pred_pos, self.predecessor.position + 1, key, self.chord_size):
                 keys_to_send.append(key)
+                self.btree.owned_data.remove(key)
 
+
+
+        ## EFREM search with keys all data and put them in json
         requests.post("http://" + old_pred_ip + "/new_successor", json={"ip": self.predecessor.ip,
                                                             "pos": self.predecessor.position})
+        json_data = "data returned form search"
 
-        ##delete copied keys of old pred
+        ## EFREM delete back keys of old pred (btree.backup_data)
+
+
+
+        for key in keys_to_send:
+            self.btree.owned_data.add(key)
 
         ## send keys to
-        return "this should be the keys to send"
+        return json_data
 
     def new_successor(self,data):
         new_suc_ip = data["ip"]
@@ -105,11 +116,14 @@ class ChordNode:
         self.successors[0] = Routes(new_suc_pos,new_suc_ip)
         ## copy keys to new succ
 
-        ############################################
-        #requests.post("http://" + self.successors[0] + "/back_data",json)
+
 
         response = requests.get("http://" +self.successors[0].ip + "/new_predecessor", json={"ip": self.ip, "pos": self.position})
 
+
+        ############################################
+        ## EFREM send data to new successor to backup
+        ## requests.post("http://" + self.successors[0] + "/back_data",json)
         return "success"
 
 

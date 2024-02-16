@@ -27,25 +27,25 @@ def bootstrap():
 
 
 @app.route('/get_succ', methods=['GET'])
-def get_succ():
+def get_suc():
     data = request.get_json()
     return node.get_succ(data)
 
 @app.route('/get_predecessor', methods=['GET'])
-def get_succ():
+def get_pre():
     pre_ip = node.predecessor.ip
     pre_pos = node.predecessor.position
     data = jsonify({"ip": pre_ip, "pos": pre_pos})
     return data
 
 @app.route('/new_predecessor', methods=['GET'])
-def new_predecessor():
+def new_pred():
 
     data = request.get_json()
     result = node.new_predecessor(data)
     return result
 @app.route('/new_successor', methods=['POST'])
-def new_successor():
+def new_suc():
 
     data = request.get_json()
     result = node.new_successor(data)
