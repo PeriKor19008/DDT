@@ -64,14 +64,27 @@ class BTree:
         return self._search(self.root, key)
 
     def _search(self, node, key):
+        result = []
         i = 0
         while i < len(node.keys) and key > node.keys[i]["Education"]:
             i += 1
         if i < len(node.keys) and key == node.keys[i]["Education"]:
-            return node.keys[i]
+            result.append(node.keys[i])
+            # Search for more matches to the left
+            j = i - 1
+            while j >= 0 and node.keys[j]["Education"] == key:
+                result.insert(0, node.keys[j])
+                j -= 1
+            # Search for more matches to the right
+            j = i + 1
+            while j < len(node.keys) and node.keys[j]["Education"] == key:
+                result.append(node.keys[j])
+                j += 1
+            return result
         if node.leaf:
             return None
         return self._search(node.children[i], key)
+
 
     def delete(self, key):
         if self.search(key) is None:

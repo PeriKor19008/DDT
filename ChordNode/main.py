@@ -107,8 +107,8 @@ def show_routes():
 def btree_insert_route():
     if not node_active():
         abort(404)
-    data = request.get_json()
-    result = node.store_data(data,True)
+    data = [request.get_json()]
+    result = node.insert_data(data)
     return result
 
 
@@ -148,16 +148,8 @@ def store_data_route():
         abort(404)
 
     data = request.get_json()
-    data = [data]
-    if isinstance(data, list):
-        for item in data:
-            if isinstance(item, dict):
-                node.btree.insert(item)
-                node.btree.backup_data.add(item.get("Education"))
-            else:
-                print("Invalid item format:", item)
-    else:
-        print("Invalid data format:", data)
+    node.btree.insert(data)
+    node.btree.backup_data.add(data['Education'])
 
     return "Data from depart received from successor"
 

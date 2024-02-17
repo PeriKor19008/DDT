@@ -239,27 +239,28 @@ class ChordNode:
             data = decoded_data.get("keys", [])
 
         for item in data:
-            for edu in item["Education"]:
-                key = helper.hash(edu, self.chord_size)
-                target_node = self.lookup(key)
+            key = helper.hash(item['Education'], self.chord_size)
 
-                if target_node.ip == self.ip:
-                    if not hasattr(self, 'btree'):
-                        t = 3
-                        self.btree = BTree(t)
-                    self.store_data(item,True)
-                    return "Data inserted successfully"
-                else:
-                    target_node_ip = "http://" + target_node.ip + "/insert_data"
-                    requests.post(target_node_ip, json=item)
-                    return "Data sent to the appropriate node for insertion"
+            target_node = self.lookup(key)
+            print(target_node.ip)
+            if target_node.ip == self.ip:
+                if not hasattr(self, 'btree'):
+                    t = 3
+                    self.btree = BTree(t)
+                self.store_data(item,True)
+                return "Data inserted successfully"
+            else:
+                target_node_ip = "http://" + target_node.ip + "/insert_data"
+                requests.post(target_node_ip, json=item)
+                return "Data sent to the appropriate node for insertion"
 
     def store_data(self, tree_data, send_to_suc):
-        if len(tree_data) > 0:
+        if tree_data:
             self.btree.insert(tree_data)
             if send_to_suc:
-                keys = tree_data.get("Education", [])
-                self.btree.owned(keys)
+                print("sending to successors")
+                print(tree_data)
+                self.btree.owned(tree_data["Education"])
                 result = self.backup_data(tree_data)
                 return result
             return "Data stored"
@@ -279,22 +280,17 @@ class ChordNode:
 
         # for data in search_key:
         target_node = self.lookup(helper.hash(search_key, self.chord_size))
-
+        print(f"This is the search key: {search_key}")
+        print(f"This is the target ip: {target_node.ip}")
+        
         if target_node.ip == self.ip:
-            if not hasattr(self, 'btree'):
-                return "B-tree is not initialized"
 
             matches = self.btree.search(search_key)
-            if len(matches) == 0:
-                print("\n\n No matches \n\n")
-            search_results = []
-            for node, index in matches:
-                search_results.append(node.keys[index])
-
-            if search_results:
-                return jsonify(search_results)
+            print(matches)
+            if not matches:
+                return "\n\n No matches \n\n"
             else:
-                return "No data found"
+                return jsonify(matches)
         else:
             target_node_ip = "http://" + target_node.ip + "/retrieve_data"
             response = requests.get(target_node_ip, json={"Education": search_key})
@@ -312,12 +308,8 @@ class ChordNode:
             return "B-tree is not initialized"
 
         matches = self.btree.search(search_key)
-        search_results = []
-        for node, index in matches:
-            search_results.append(node.keys[index])
-
-        if search_results:
-            return jsonify(search_results)
+        if matches:
+            return jsonify(matches)
         else:
             return "No matching data found"
 
