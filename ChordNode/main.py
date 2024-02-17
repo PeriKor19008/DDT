@@ -218,11 +218,9 @@ def suc_alive():
 def rout_alive():
     return node.stabilize(2)
 
-
-
 if __name__ == '__main__':
-    scheduler = BackgroundScheduler()
-    scheduler.start()
-    scheduler.add_job(suc_alive, 'interval', seconds=20)
-    scheduler.add_job(rout_alive, 'interval', seconds=70)
+    # scheduler = BackgroundScheduler()
+    # scheduler.start()
+    # scheduler.add_job(suc_alive, 'interval', seconds=20)
+    # scheduler.add_job(rout_alive, 'interval', seconds=70)
     app.run(host='0.0.0.0', port=5000)
