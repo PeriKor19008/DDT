@@ -178,7 +178,7 @@ def depart():
         abort(404)
     global status
     status = node.active
-    response = node.inform_node(request.remote_addr +":5000/", 2)
+    response = node.depart()
     return response
 
 @app.route('/print_tree', methods=['GET'])

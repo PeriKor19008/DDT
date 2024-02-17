@@ -7,13 +7,13 @@ def open_log_window():
 
     def log_node():
         node_ip = node_ip_entry.get()
-        curl_command = f"curl -X POST -d '' http://{node_ip}/show_routes"
+        curl_command = f"curl -X POST  http://{node_ip}:5000/show_routes"
         try:
             subprocess.run(curl_command, shell=True, check=True)
             print("Command executed successfully")
         except subprocess.CalledProcessError as e:
             print("Error executing command:", e)
-        log_window.destroy()
+
 
     def log_all():
         try:

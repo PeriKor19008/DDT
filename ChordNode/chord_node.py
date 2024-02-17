@@ -76,8 +76,8 @@ class ChordNode:
             self.btree.insert(keys)
             self.btree.backup_data.add(keys["Education"])
 
+        self.make_routing_table()
 
-        self.routing_table = self.make_routing_table()
         self.stabilize()
         loger.log_routes(self)
 
@@ -199,14 +199,16 @@ class ChordNode:
 
         key = key % self.chord_size  # to be sure that the key is inside the chord bounds
         print("\n\n\n\######## lookup key:" + str(key) + " by node with  pos:" + str(self.position))
-        #loger.log_routes(self)
+        loger.log_routes(self)
 
         #if chord empy or if key belongs to node
         if self.successors[0].position == self.position or helper.is_between(self.predecessor.position, self.position + 1, key, self.chord_size):
+            print("returning self route because chrod is empty")
             return Routes(self.position, self.ip)
 
         #if routing table empty
-        if self.routing_table[0] == self.ip:
+        if self.routing_table[0].position == self.position:
+            print("returning successor because routing table is empty")
             return self.successors[0]
 
         closest_route = self.successors[0]
@@ -218,6 +220,7 @@ class ChordNode:
                 break
             closest_route = route
             if closest_route.position == self.position:
+                print("returning self route because closest route is self")
                 return Routes(self.position, self.ip)
 
         response = requests.get("http://" + closest_route.ip + "lookup", json={"key": key})
@@ -230,7 +233,8 @@ class ChordNode:
         data = json.loads(response.content.decode('utf-8'))
         return Routes(data["position"], data["ip"])
 
-
+    def depart(self):
+        ##############to do
 
     def insert_data(self, data):
 
@@ -451,9 +455,10 @@ class ChordNode:
         return name
 
     def make_routing_table(self):
-        table = []
-        table.append(self.successors[0])
+        self.routing_table[0] = self.successors[0]
         flag = False
+        print("\n\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+              "MAKE ROUTING TABLe")
         for i in range(1,len(self.routing_table)) :
             print("pos + " + str(2 ** i))
             result = self.lookup(((2 ** i) + (self.position)) % self.chord_size)
@@ -461,12 +466,15 @@ class ChordNode:
 
             if result.position == self.position:
                 flag = True
+                print("Flag = TRUE")
             if flag:
-                table.append(table[-1])
+                print("table apending last element:" + str(self.routing_table[-1].position))
+                self.routing_table[i] = self.routing_table[-1]
             else:
-                table.append(result)
+                print("table apending result:" + str(result.position))
+                self.routing_table[i] = result
+        print("\n\n\n\n\n\n")
 
-        return table
 
     def stabilize(self, t: int = 0):
         if self.active:
@@ -487,33 +495,48 @@ class ChordNode:
                             else:
                                 print("b")
                                 self.successors[1] = self.lookup(self.successors[0].position + 1)
+                            s = Routes(self.successors[i].position, self.successors[i].ip)
 
-
-                        data = response.json()
-                        print("\n\nresponse for stabilaze of node " + str(pos) + "is: " + str(data["pos"]) + "on suc num: " + str(i))
-                        if i==0 or (self.successors[0].position != self.predecessor.position and i>0):
-                            print("not first in network")
-                            if data["pos"] != pos:
-                                s = Routes(data["pos"],data["ip"])
-                                print("c " +str(data["pos"]))
-
-                            else:
-                                self.successors[i] = Routes(s.position, s.ip)
-                                flag = False
-                                break
                         else:
-                            print("First on network")
-                            self.successors[0] = self.successors[1]
-                            break
+                            data = response.json()
+                            print("\n\nresponse for stabilaze of node " + str(pos) + "is: " + str(data["pos"]) + "on suc num: " + str(i))
+                            if i==0 or (self.successors[0].position != self.predecessor.position and i>0):
+                                print("not first in network")
+                                if data["pos"] != pos:
+                                    s = Routes(data["pos"],data["ip"])
+                                    print("c " +str(data["pos"]))
+
+                                else:
+                                    self.successors[i] = Routes(s.position, s.ip)
+                                    flag = False
+                                    break
+                            else:
+                                print("First on network")
+                                self.successors[0] = self.successors[1]
+                                break
                     pos = self.successors[i].position
 
             if t == 2 or t == 0:
                 for i in range(len(self.routing_table)):
                     r = self.routing_table[i]
-                    response = requests.get("http://" + r.ip + "/get_predecessor")
-                    data = response.json()
-                    if helper.is_between(self.position + 2**i,r.position,int(data["pos"]),self.chord_size):
-                        self.routing_table[i] = Routes(data["pos"], data["ip"])
+                    while True:
+                        response = requests.get("http://" + r.ip + "/get_predecessor")
+                        if response.status_code == 200:
+                            data = response.json()
+                            print("Correct Curl ")
+                            print("for node:" + str(self.position)
+                                  + "route num:" + str(i) + "position is: " + str(r.position)
+                                  + " \nideal pos" + str((2**i + self.position) % self.chord_size)  + " response pos:" + str(data["pos"]))
+                            if helper.is_between((self.position + 2**i) % self.chord_size -1, r.position, int(data["pos"]), self.chord_size):
+
+                                self.routing_table[i] = Routes(data["pos"], data["ip"])
+                            break
+                        else:
+                            self.routing_table[i] = self.lookup(self.routing_table[i].position + 1)
+                            r = self.routing_table[i]
+
+
+
 
     def log(self):
         print("##################################################################")
