@@ -4,6 +4,7 @@ from depart_window import open_depart_window
 from log_window import open_log_window
 from add_data_window import open_add_data_window
 from search_data_window import open_search_data_window
+from stabilization_window import open_stabilize_window
 
 # Create the main application window
 root = tk.Tk()
@@ -12,8 +13,8 @@ root.title("Simple UI")
 
 
 # Create buttons
-labels = ["Bootstrap", "Depart", "Log", "Add Data", "Search Data"]
-commands = [open_bootstrap_window, open_depart_window, open_log_window, open_add_data_window, open_search_data_window]
+labels = ["Bootstrap", "Depart", "Log","Stabilize", "Add Data", "Search Data"]
+commands = [open_bootstrap_window, open_depart_window, open_log_window,open_stabilize_window, open_add_data_window, open_search_data_window]
 
 
 # Create a label for information

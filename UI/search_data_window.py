@@ -25,18 +25,13 @@ def open_search_data_window():
         try:
             education = education_entry.get()
             prefix = ip_prefix_entry.get()
-            for i in range(2,4):
-                try:
-                    curl_command = f"curl -X GET http://172.{prefix}.0.{i}:5000/retrieve_data -H 'Content-Type: application/json' -d '{{\"Education\": \"{education}\"}}'"
-                    print(curl_command)
+            
+            curl_command = f"curl -X GET http://{prefix}:5000/retrieve_data -H 'Content-Type: application/json' -d '{{\"Education\": \"{education}\"}}'"
+            print(curl_command)
 
-                    # Capture the output of the command
-                    result = subprocess.run(curl_command, shell=True, check=True, stdout=subprocess.PIPE)
-                    output = result.stdout.decode('utf-8')
-                    break
-                except subprocess.CalledProcessError as e:
-                    print("Error executing script:", e)
-                    continue
+            # Capture the output of the command
+            result = subprocess.run(curl_command, shell=True, check=True, stdout=subprocess.PIPE)
+            output = result.stdout.decode('utf-8')
                 
             # Parse JSON response
             entries = json.loads(output)
