@@ -24,7 +24,7 @@ class ChordNode:
         self.ip = helper.get_ip()
         self.position: int = helper.hash(self.ip, self.chord_size)
         temp_self_route = Routes(self.position, self.ip)
-        self.successors: [Routes] = [temp_self_route] * 2
+        self.successors: List[Routes] = [temp_self_route] * 2
         self.routing_table: List[Routes] = [temp_self_route] * int(math.log2(self.chord_size))
         self.predecessor: Routes = temp_self_route
         self.btree: BTree = BTree(False)
@@ -34,6 +34,8 @@ class ChordNode:
 
 
     def bootstrap(self, data):
+
+        print("\n\n\n\######## bootstrap of " + str(self.position) + " ##########\n\n\n")
         self.active = True
         host = data
         domain = "/get_succ"
@@ -58,53 +60,84 @@ class ChordNode:
         data = json.loads(data)
         tmp = json.loads(data["successor"])
         self.successors[0] = Routes(tmp['position'], tmp['ip'])
-        self.successors[1] = self.lookup(self.successors[0].position + 1)
-
+        tmp =self.lookup(self.successors[0].position + 1)
+        if tmp.position == self.position:
+            self.successors[1] = self.successors[0]
+        else:
+            self.successors[1] = tmp
+        if self.successors[0].position == self.successors[1].position:
+            self.predecessor = self.successors[0]
         response = requests.get("http://" + self.successors[0].ip + "/new_predecessor", json={"ip": self.ip, "pos": self.position})
 
+
         #### EFREM use response to save your keys
+        info = response.json()
+        for keys in info:
+            self.btree.insert(keys)
+            self.btree.backup_data.add(keys["Education"])
 
 
         self.routing_table = self.make_routing_table()
-
+        self.stabilize()
         loger.log_routes(self)
 
         print("\n\n\n\n\n\n.")
         return data
 
+    def set_pred(self,data):
+        print("SET PRED for" + str(self.position) +" with data:" +str(data["pos"]))
+        self.predecessor = Routes(data["pos"] , data["ip"])
 
     def new_predecessor(self,data):
         new_pred_ip = data["ip"]
         new_pred_pos = data["pos"]
 
+        print("\n\n\n\######## new_predecessor by: " + str(self.position) + "||invoked from: " + str(new_pred_pos))
+
+
         old_pred_ip = self.predecessor.ip
         old_pred_pos = self.predecessor.position
         self.predecessor = Routes(new_pred_pos, new_pred_ip)
 
-        #if new node just get the predecessor
-        if self.predecessor.position == self.position:
-            return "success"
-        keys_to_send = []
+        # if first on chord
+        if old_pred_pos != self.position:
+            print("\n\n\n######## new_successor NOT first by:" + str(old_pred_pos) + "invoked from: " +str(self.position) + " with data: " +str(self.predecessor.position))
 
+            requests.post("http://" + old_pred_ip + "/new_successor", json={"ip": self.predecessor.ip,
+                                                                "pos": self.predecessor.position})
+        else:
+            self.successors[0] = self.predecessor
+            self.successors[1] = self.predecessor
+            print("\n\n\n######## new_successor FIRST by:" + str(self.successors[0].position) + "invoked from: " + str(
+                self.position) + " with data: " + str(self.position))
+
+            requests.post("http://" + self.successors[0].ip + "/new_successor", json={"ip": self.ip,
+                                                                            "pos": self.position})
+            for r in range(len(self.routing_table)):
+                self.routing_table[r] = self.successors[0]
+
+        keys_to_send = []
         for key in self.btree.owned_data:
             if helper.is_between(old_pred_pos, self.predecessor.position + 1, key, self.chord_size):
                 keys_to_send.append(key)
                 self.btree.owned_data.remove(key)
 
-
-
-        ## EFREM search with keys all data and put them in json
-        requests.post("http://" + old_pred_ip + "/new_successor", json={"ip": self.predecessor.ip,
-                                                            "pos": self.predecessor.position})
-        json_data = "data returned form search"
+        json_data = []
+        for send_keys in keys_to_send:
+            json_data.append(self.search_data(send_keys))
 
         ## EFREM delete back keys of old pred (btree.backup_data)
+        for backup_keys in self.btree.backup_data:
+            self.btree.delete(backup_keys)
+            self.btree.backup_data.remove(backup_keys)
+
 
 
 
         for key in keys_to_send:
-            self.btree.owned_data.add(key)
+            self.btree.backup_data.add(key)
 
+        self.stabilize()
         ## send keys to
         return json_data
 
@@ -112,18 +145,31 @@ class ChordNode:
         new_suc_ip = data["ip"]
         new_suc_pos = data["pos"]
 
+        if new_suc_pos == self.position:
+            return "success"
+
         self.successors[1] = self.successors[0]
-        self.successors[0] = Routes(new_suc_pos,new_suc_ip)
+        tmp = Routes(new_suc_pos,new_suc_ip)
+        if tmp.position == self.position:
+            self.successors[1] = self.successors[0]
+        else:
+            self.successors[0] = tmp
+
+
+        if self.routing_table[0].position == self.position:
+            for i in range(len(self.routing_table)):
+                self.routing_table[i] = self.successors[0]
+
         ## copy keys to new succ
+        send_keys = []
+        for keys in self.btree.owned_data:
+            send_keys.append(self.search_data(keys))
+        if send_keys:
+            requests.post("http://" + self.successors[0].ip + "/backup_data", json=send_keys)
 
-
-
-        response = requests.get("http://" +self.successors[0].ip + "/new_predecessor", json={"ip": self.ip, "pos": self.position})
-
-
-        ############################################
-        ## EFREM send data to new successor to backup
-        ## requests.post("http://" + self.successors[0] + "/back_data",json)
+        print("\n\n\n\n\n#########################3")
+        response = requests.post("http://" +self.successors[0].ip + "/pred_notif", json={"ip": self.ip, "pos": self.position})
+        self.stabilize()
         return "success"
 
 
@@ -131,6 +177,7 @@ class ChordNode:
         self.active = True
         new_node_ip = data["ip"]
         new_node_position = data["pos"]
+        print("\n\n\n\######## get_succ by: " + str(self.position) + "||invoked from: " + str(new_node_position))
         
         # Checks if position already exists
         # Returns json with key:error
@@ -151,21 +198,27 @@ class ChordNode:
     def lookup(self, key: int):
 
         key = key % self.chord_size  # to be sure that the key is inside the chord bounds
-        print("lookup key:" + str(key) + " by node with  pos:" + str(self.position))
-        loger.log_routes(self)
+        print("\n\n\n\######## lookup key:" + str(key) + " by node with  pos:" + str(self.position))
+        #loger.log_routes(self)
 
+        #if chord empy or if key belongs to node
         if self.successors[0].position == self.position or helper.is_between(self.predecessor.position, self.position + 1, key, self.chord_size):
             return Routes(self.position, self.ip)
 
+        #if routing table empty
         if self.routing_table[0] == self.ip:
             return self.successors[0]
 
         closest_route = self.successors[0]
 
         for route in self.routing_table:
-            if helper.is_between(closest_route.position, route.position, key, self.chord_size):
+            if route.position == self.position or route.position == closest_route.position:
+                break
+            if helper.is_between((closest_route.position - 1) % self.chord_size, route.position, key, self.chord_size):
                 break
             closest_route = route
+            if closest_route.position == self.position:
+                return Routes(self.position, self.ip)
 
         response = requests.get("http://" + closest_route.ip + "lookup", json={"key": key})
         if response.status_code != 200:
@@ -214,10 +267,10 @@ class ChordNode:
             return "No data to store"
         
     def backup_data(self, tree_data):
-        for selected_node in self.successors:
-            target_node_ip = "http://" + selected_node.ip + "/backup_data"
-            requests.post(target_node_ip, json=tree_data,
-                          headers={'Content-Type': 'application/json'})
+
+        target_node_ip = "http://" + self.successors[0].ip + "/backup_data"
+        requests.post(target_node_ip, json=tree_data,
+                      headers={'Content-Type': 'application/json'})
 
 
         return "Data sent to Successors"
@@ -407,10 +460,11 @@ class ChordNode:
 
     def make_routing_table(self):
         table = []
+        table.append(self.successors[0])
         flag = False
-        for i in range(len(self.routing_table)) :
+        for i in range(1,len(self.routing_table)) :
             print("pos + " + str(2 ** i))
-            result = self.lookup((2 ** i) + (self.position))
+            result = self.lookup(((2 ** i) + (self.position)) % self.chord_size)
             print("result is" + str(result.position) + "\n\n\n")
 
             if result.position == self.position:
@@ -419,35 +473,52 @@ class ChordNode:
                 table.append(table[-1])
             else:
                 table.append(result)
-            i = i + 1
+
         return table
 
-    def stabilize(self, t: int):
+    def stabilize(self, t: int = 0):
         if self.active:
-            if t == 1:
+            if t == 1 or t == 0:
+                pos = self.position
                 for i in range(len(self.successors)):
-                    flag = True
-                    s = self.successors[i].ip
-                    while flag:
-                        response = requests.post("http://" + s + "/get_predecessor")
+
+                    s = Routes(self.successors[i].position, self.successors[i].ip)
+                    while True:
+                        response = requests.get("http://" + s.ip + "/get_predecessor")
+
                         if response.status_code != 200:
                             if i == 0:
+                                print("a")
                                 self.successors[0] = self.successors[1]
+                                self.successors[1] = self.lookup(self.successors[0].position + 1)
 
                             else:
+                                print("b")
                                 self.successors[1] = self.lookup(self.successors[0].position + 1)
-                            continue
+
+
                         data = response.json()
+                        print("\n\nresponse for stabilaze of node " + str(pos) + "is: " + str(data["pos"]) + "on suc num: " + str(i))
+                        if i==0 or (self.successors[0].position != self.predecessor.position and i>0):
+                            print("not first in network")
+                            if data["pos"] != pos:
+                                s = Routes(data["pos"],data["ip"])
+                                print("c " +str(data["pos"]))
 
-                        if data["pos"] != self.position:
-                            s=data["ip"]
+                            else:
+                                self.successors[i] = Routes(s.position, s.ip)
+                                flag = False
+                                break
                         else:
-                            self.successors[i] = Routes(data["pos"], data["ip"])
+                            print("First on network")
+                            self.successors[0] = self.successors[1]
+                            break
+                    pos = self.successors[i].position
 
-            if t == 2:
+            if t == 2 or t == 0:
                 for i in range(len(self.routing_table)):
                     r = self.routing_table[i]
-                    response = requests.post("http://" + r.ip + "/get_predecessor")
+                    response = requests.get("http://" + r.ip + "/get_predecessor")
                     data = response.json()
                     if helper.is_between(self.position + 2**i,r.position,int(data["pos"]),self.chord_size):
                         self.routing_table[i] = Routes(data["pos"], data["ip"])

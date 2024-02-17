@@ -18,7 +18,7 @@ def open_bootstrap_window():
             command_label.config(text="Command sent: " + curl_command)
         except subprocess.CalledProcessError as e:
             command_label.config(text="Error executing command: " + str(e))
-        bootstrap_window.destroy()
+
 
     sender_ip_label = tk.Label(bootstrap_window, text="Sender IP:")
     sender_ip_label.grid(row=0, column=0, padx=10, pady=5)
