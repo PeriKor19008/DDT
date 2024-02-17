@@ -40,27 +40,19 @@ def open_search_data_window():
                 
             # Parse JSON response
             entries = json.loads(output)
-
-            # Create a DataFrame
-            df = pd.DataFrame(entries)
-
-            # Get the count of results
             num_results = len(entries)
+            representation = ""
+            representation += f"Number of results: {num_results}\n"
 
-            # Display DataFrame in Excel-like format with wider column spacing
-            pd.set_option('display.max_colwidth', None)  # Allow displaying full content of each cell
-            pd.set_option('display.expand_frame_repr', False)  # Prevent wrapping DataFrame
+            for entry in entries:
+                for key, value in entry.items():
+                    representation += f"{key}: {value}, "
+                representation += "\n"
 
-            # Remove brackets from 'Education' field
-            df['Education'] = df['Education'].apply(lambda x: ', '.join(x))
-
-            # Reorder the columns
-            df = df[['Name', 'Education', 'Awards']]
-
-            formatted_output = f"Number of results: {num_results}\n\n\n\n\n{df.to_string(index=False, col_space=5)}"
+            representation = representation.rstrip(", \n")
 
             result_text.delete(1.0, tk.END)  # Clear previous content
-            result_text.insert(tk.END, formatted_output)
+            result_text.insert(tk.END, representation)
 
         except subprocess.CalledProcessError as e:
             print("Error executing script:", e)

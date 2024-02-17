@@ -42,7 +42,8 @@ def open_add_data_window():
             awards = int(award_entry.get())
             prefix = ip_prefix_entry.get()
 
-            curl_command = f"curl -X POST http://172.{prefix}.0.2:5000/insert_data -H 'Content-Type: application/json' -d '{{\"Name\": \"{name}\", \"Education\": [\"{education}\"], \"Awards\": {awards}}}'"
+            curl_command = f'curl -X POST http://172.{prefix}.0.2:5000/insert_data -H "Content-Type: application/json" -d \'{{\"Name\": "{name}", \"Education\": "{education}", \"Awards\": "{awards}"}}\''
+            print(curl_command)
             subprocess.run(curl_command, shell=True, check=True)
             
         except subprocess.CalledProcessError as e:
@@ -59,24 +60,25 @@ def open_add_data_window():
     def add_data_all():
         try:
             prefix = ip_prefix_entry.get()
-            count = data_count_entry.get()
+            data_count = data_count_entry.get()
             with open(script_path, mode='r') as file:
                 csv_reader = csv.DictReader(file)
-                counter = 0
+                counter = 1
                 for row in csv_reader:
-                    if len(count) != 0:
-                        if counter > int(count):
+                    if data_count:
+                        if counter > int(data_count):
                             break
+                    counter += 1    
                     name = row['Name'].replace('"', r'\"')
                     row['Education'] = row['Education'].replace("'s","")
-                    row['Education'] = row['Education'].replace('""',"'")
-                    education = json.dumps(eval(row['Education']))
+                    education = json.dumps(row['Education'])
                     awards = json.dumps(row['Awards'])
 
                     # Constructing the curl command with proper escaping
                     curl_command = f'curl -X POST http://172.{prefix}.0.2:5000/insert_data -H "Content-Type: application/json" -d \'{{\"Name\": "{name}", \"Education\": {education}, \"Awards\": {awards}}}\''
+                    print(curl_command)
                     subprocess.run(curl_command, shell=True, check=True)
-                    counter += 1
+                    
         except subprocess.CalledProcessError as e:
             print("Error executing script:", e)
 
