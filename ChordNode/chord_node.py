@@ -234,7 +234,20 @@ class ChordNode:
         return Routes(data["position"], data["ip"])
 
     def depart(self):
-        ##############to do
+        requests.post("http://" + self.predecessor.ip + "/suc_depart", json={"suc_num":1})
+        self.active = False
+
+    def successor_depart(self,suc_num: int):
+        if suc_num == 1:
+            requests.post("http://" + self.predecessor.ip + "/suc_depart", json={"suc_num": 2})
+            self.successors[0]=self.successors[1]
+            self.successors[1] = self.lookup((self.successors[1].position + 1) % self.chord_size)
+            requests.post("http://" + self.successors[0].ip + "/pred_depart",json={"ip": self.ip, "pos": self.position})
+        else:
+            self.successors[1] = self.lookup((self.successors[1].position + 1) % self.chord_size)
+
+    def predecessor_depart(self,data):
+        self.predecessor = Routes(data["pos"], data["ip"])
 
     def insert_data(self, data):
 

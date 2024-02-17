@@ -171,6 +171,21 @@ def receive_inform():
     data=request.get_json()
     return jsonify(node.handle_inform(request.remote_addr +":5000/", data['pos'] , data['type']))
 
+@app.route('/suc_depart',methods=['POST'])
+def successor_depart():
+    if not node_active():
+        abort(404)
+    data=request.get_json()
+    node.successor_depart(data["suc_num"])
+    return "node changed successor"
+@app.route('/pred_depart',methods=['POST'])
+def predecessor_depart():
+    if not node_active():
+        abort(404)
+    data=request.get_json()
+    node.predecessor_depart(data)
+    return "node changed predecessor"
+
 
 @app.route('/depart', methods=['POST'])
 def depart():
@@ -179,15 +194,19 @@ def depart():
     global status
     status = node.active
     response = node.depart()
-    return response
+    return "node departed"
 
 @app.route('/print_tree', methods=['GET'])
 def print_tree():
+    if not node_active():
+        abort(404)
     node.btree.print_tree(node.btree.root)
     return "\n\nBtree Data\n\n"
 
 @app.route('/stabilization', methods=['GET'])
 def stabilaz():
+    if not node_active():
+        abort(404)
     suc_alive()
     rout_alive()
     return "done"
@@ -202,8 +221,8 @@ def rout_alive():
 
 
 if __name__ == '__main__':
-    # scheduler = BackgroundScheduler()
-    # scheduler.start()
-    # scheduler.add_job(suc_alive, 'interval', seconds=20)
-    # scheduler.add_job(rout_alive, 'interval', seconds=70)
+    scheduler = BackgroundScheduler()
+    scheduler.start()
+    scheduler.add_job(suc_alive, 'interval', seconds=20)
+    scheduler.add_job(rout_alive, 'interval', seconds=70)
     app.run(host='0.0.0.0', port=5000)
