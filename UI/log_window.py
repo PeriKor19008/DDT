@@ -1,5 +1,8 @@
 import tkinter as tk
 import subprocess
+import os
+
+script_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "log.sh"))
 
 def open_log_window():
     log_window = tk.Toplevel()
@@ -19,7 +22,7 @@ def open_log_window():
         try:
             ip_prefix = ip_prefix_entry.get()
             node_amount = int(node_amount_entry.get())
-            subprocess.run(["./log.sh", f"{ip_prefix}", str(node_amount)], check=True)
+            subprocess.run([script_path, f"{ip_prefix}", str(node_amount)], check=True)
             print("Script executed successfully")
         except ValueError:
             print("Node amount must be an integer")

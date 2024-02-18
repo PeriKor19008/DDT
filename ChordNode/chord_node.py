@@ -200,7 +200,6 @@ class ChordNode:
 
         key = key % self.chord_size  # to be sure that the key is inside the chord bounds
         print("\n\n\n\######## lookup key:" + str(key) + " by node with  pos:" + str(self.position))
-        loger.log_routes(self)
 
         #if chord empy or if key belongs to node
         if self.successors[0].position == self.position or helper.is_between(self.predecessor.position, self.position + 1, key, self.chord_size):

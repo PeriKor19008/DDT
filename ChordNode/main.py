@@ -1,5 +1,4 @@
 import json
-
 from chord_node import ChordNode, request
 from flask import Flask, jsonify, abort
 from routes import Routes
@@ -52,30 +51,9 @@ def new_suc():
     result = node.new_successor(data)
     return result
 
-@app.route('/ping', methods=['POST'])
-def ping():
-
-    result = node.is_alive()
-    return result
 
 def node_active():
     return node.active
-
-
-@app.route('/init_data', methods=['POST'])
-def get_init_data():
-    if not node_active():
-        abort(404)
-    data = request.get_data(as_text=True)
-    return node.get_init_data(data)
-
-
-@app.route('/', methods=['POST'])
-def handle_post():
-    if not node_active():
-        abort(404)
-    data = request.get_data(as_text=True)
-    return node.handle_post(data)
 
 
 @app.route('/lookup', methods=['GET'])
@@ -122,24 +100,7 @@ def btree_search_route_retrieve():
     return result
 
 
-@app.route('/search_data', methods=['GET'])
-def btree_search_route_search():
-    if not node_active():
-        abort(404)
-    search_data = request.get_json()
-    search_key = search_data['Education']
-    result = node.search_data(search_key)
-    return result
 
-
-@app.route('/delete_data', methods=['GET'])
-def delete_data_from_btree():
-    if not node_active():
-        abort(404)
-    data = request.get_json()
-    for d in data:
-        node.btree.delete(node.btree.root, d['Education'])
-    return "data deleted"
 
 
 @app.route('/backup_data', methods=['POST'])
@@ -163,13 +124,7 @@ def receive_data_route():
     return result
 
 
-@app.route('/inform',methods=['POST'])
-def receive_inform():
-    if not node_active():
-        abort(404)
-    print("inform")
-    data=request.get_json()
-    return jsonify(node.handle_inform(request.remote_addr +":5000/", data['pos'] , data['type']))
+
 
 @app.route('/suc_depart',methods=['POST'])
 def successor_depart():
@@ -196,12 +151,8 @@ def depart():
     response = node.depart()
     return "node departed"
 
-@app.route('/print_tree', methods=['GET'])
-def print_tree():
-    if not node_active():
-        abort(404)
-    node.btree.print_tree(node.btree.root)
-    return "\n\nBtree Data\n\n"
+
+
 
 @app.route('/stabilization', methods=['GET'])
 def stabilaz():
@@ -210,6 +161,7 @@ def stabilaz():
     suc_alive()
     rout_alive()
     return "done"
+
 
 def suc_alive():
     return node.stabilize(1)

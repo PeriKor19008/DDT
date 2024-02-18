@@ -1,5 +1,8 @@
 import tkinter as tk
 import subprocess
+import os
+
+script_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "stabilize.sh"))
 
 def open_stabilize_window():
     stab_window = tk.Toplevel()
@@ -10,7 +13,7 @@ def open_stabilize_window():
         try:
             ip_prefix = ip_prefix_entry.get()
             node_amount = int(node_amount_entry.get())
-            subprocess.run(["../stabilize.sh", f"{ip_prefix}", str(node_amount)], check=True)
+            subprocess.run([script_path, f"{ip_prefix}", str(node_amount)], check=True)
             print("Script executed successfully")
         except ValueError:
             print("Node amount must be an integer")
