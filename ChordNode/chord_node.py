@@ -344,6 +344,11 @@ class ChordNode:
         print("\n\n\n\n\n\n")
 
 
+    def search_data(self, data):
+        matches = self.btree.search(data)
+        return matches
+
+
     def stabilize(self, t: int = 0):
         if self.active:
             if t == 1 or t == 0:
